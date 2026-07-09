@@ -128,14 +128,13 @@
 
 <br><br>
 
-<!-- GitHub Open Source Activity -->
-<img src="https://github-readme-stats.vercel.app/api?username=GuntiPrasanthKumar&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;hide_border=true&amp;bg_color=0A0A0A&amp;title_color=3B82F6&amp;text_color=A1A1AA&amp;icon_color=3B82F6" alt="GitHub Stats" width="390" />
+<img src="https://github-readme-stats-eight.vercel.app/api?username=GuntiPrasanthKumar&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0A0A0A&title_color=3B82F6&text_color=A1A1AA&icon_color=3B82F6" alt="GitHub Stats" width="390" />
 &nbsp;&nbsp;
-<img src="https://streak-stats.demolab.com?user=GuntiPrasanthKumar&amp;background=0A0A0A&amp;hide_border=true&amp;stroke=27272A&amp;ring=3B82F6&amp;fire=3B82F6&amp;currStreakNum=EDEDED&amp;currStreakLabel=3B82F6&amp;sideNums=A1A1AA&amp;sideLabels=A1A1AA&amp;dates=71717A" alt="GitHub Streak" width="390" />
+<img src="https://streak-stats.demolab.com?user=GuntiPrasanthKumar&background=0A0A0A&hide_border=true&stroke=27272A&ring=3B82F6&fire=3B82F6&currStreakNum=EDEDED&currStreakLabel=3B82F6&sideNums=A1A1AA&sideLabels=A1A1AA&dates=71717A" alt="GitHub Streak" width="390" />
 
 <br><br>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&amp;layout=compact&amp;hide_border=true&amp;langs_count=8&amp;bg_color=0A0A0A&amp;title_color=3B82F6&amp;text_color=A1A1AA" alt="Top Languages" width="800" />
+<img src="https://github-readme-stats-eight.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&layout=compact&hide_border=true&langs_count=8&bg_color=0A0A0A&title_color=3B82F6&text_color=A1A1AA" alt="Top Languages" width="800" />
 
 <br><br>
 

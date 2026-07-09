@@ -1,0 +1,49 @@
+<svg width="800" height="230" viewBox="0 0 800 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
+    .principle-item { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #A1A1AA; }
+    .highlight { fill: #EDEDED; font-weight: 600; }
+  </style>
+
+  <!-- Defs -->
+  <defs>
+    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0A"/>
+      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Section Label -->
+  <text x="56" y="36" class="label-header">ENGINEERING PRINCIPLES</text>
+
+  <!-- Card Background -->
+  <rect x="0.5" y="48.5" width="799" height="179" class="bg"/>
+
+  <!-- Subtle Top Gradient Border -->
+  <path d="M 0 49 L 800 49" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Principles List -->
+  <!-- Principle 1 -->
+  <text x="56" y="88" class="principle-item">
+    <tspan class="highlight">1. Solve Real Problems.</tspan> Focus on utility and impact, not on unnecessary complexity.
+  </text>
+
+  <!-- Principle 2 -->
+  <text x="56" y="118" class="principle-item">
+    <tspan class="highlight">2. Simplicity Scales.</tspan> Build robust, readable, and maintainable systems from day one.
+  </text>
+
+  <!-- Principle 3 -->
+  <text x="56" y="148" class="principle-item">
+    <tspan class="highlight">3. User-Centric Design.</tspan> Build with the end-user in mind, optimizing for efficiency.
+  </text>
+
+  <!-- Principle 4 -->
+  <text x="56" y="178" class="principle-item">
+    <tspan class="highlight">4. Ship and Iterate.</tspan> Execution and rapid feedback are the absolute metrics of success.
+  </text>
+</svg>

@@ -1,0 +1,96 @@
+<svg width="800" height="260" viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
+    .project-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 28px; font-weight: 700; fill: #EDEDED; letter-spacing: -0.5px; }
+    .project-type { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.1px; }
+    .project-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #A1A1AA; }
+    .status-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #10B981; letter-spacing: 1px; }
+    .highlight-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #EDEDED; }
+    .highlight-bullet { fill: #3B82F6; }
+    .tag-bg { fill: #121212; stroke: #27272A; stroke-width: 1; rx: 5px; }
+    .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #EDEDED; text-anchor: middle; }
+  </style>
+
+  <!-- Defs -->
+  <defs>
+    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0A"/>
+      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0.5" y="0.5" width="799" height="259" class="bg"/>
+
+  <!-- Subtle Top Gradient Border -->
+  <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Section Label & Status -->
+  <text x="56" y="48" class="label-header">CURRENTLY BUILDING</text>
+  <g transform="translate(605, 38)">
+    <circle cx="6" cy="6" r="4" fill="#10B981" />
+    <text x="16" y="10" class="status-text">ACTIVE DEVELOPMENT</text>
+  </g>
+
+  <!-- Project Title & Subtitle -->
+  <text x="56" y="80" class="project-title">SkillTrove</text>
+  <text x="56" y="102" class="project-type">AI-Powered Learning &amp; Assessment Platform</text>
+  <text x="56" y="126" class="project-desc">Building an intelligent learning platform combining adaptive assessments and secure AI proctoring.</text>
+
+  <!-- 2-Column Highlights Grid -->
+  <!-- Column 1 -->
+  <g transform="translate(56, 144)">
+    <circle cx="4" cy="6" r="2.5" class="highlight-bullet"/>
+    <text x="16" y="10" class="highlight-text">Adaptive Bloom's Taxonomy Assessments</text>
+    
+    <circle cx="4" cy="26" r="2.5" class="highlight-bullet"/>
+    <text x="16" y="30" class="highlight-text">Secure AI Proctoring (Face, Eye &amp; Head Tracking)</text>
+  </g>
+
+  <!-- Column 2 -->
+  <g transform="translate(430, 144)">
+    <circle cx="4" cy="6" r="2.5" class="highlight-bullet"/>
+    <text x="16" y="10" class="highlight-text">Coding, Aptitude &amp; Reasoning Engines</text>
+    
+    <circle cx="4" cy="26" r="2.5" class="highlight-bullet"/>
+    <text x="16" y="30" class="highlight-text">Real-time Performance Analytics &amp; Feedback</text>
+  </g>
+
+  <!-- Technology Stack Tags -->
+  <g transform="translate(56, 200)">
+    <!-- React 19 -->
+    <g transform="translate(0, 0)">
+      <rect width="68" height="24" class="tag-bg" />
+      <text x="34" y="16" class="tag-text">React 19</text>
+    </g>
+    <!-- Node.js -->
+    <g transform="translate(76, 0)">
+      <rect width="68" height="24" class="tag-bg" />
+      <text x="34" y="16" class="tag-text">Node.js</text>
+    </g>
+    <!-- MongoDB -->
+    <g transform="translate(152, 0)">
+      <rect width="72" height="24" class="tag-bg" />
+      <text x="36" y="16" class="tag-text">MongoDB</text>
+    </g>
+    <!-- Gemini API -->
+    <g transform="translate(232, 0)">
+      <rect width="84" height="24" class="tag-bg" />
+      <text x="42" y="16" class="tag-text">Gemini API</text>
+    </g>
+    <!-- TensorFlow.js -->
+    <g transform="translate(324, 0)">
+      <rect width="98" height="24" class="tag-bg" />
+      <text x="49" y="16" class="tag-text">TensorFlow.js</text>
+    </g>
+    <!-- Tailwind CSS -->
+    <g transform="translate(430, 0)">
+      <rect width="90" height="24" class="tag-bg" />
+      <text x="45" y="16" class="tag-text">Tailwind CSS</text>
+    </g>
+  </g>
+</svg>

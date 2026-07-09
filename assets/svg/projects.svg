@@ -1,0 +1,84 @@
+<svg width="800" height="370" viewBox="0 0 800 370" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
+    .project-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 700; fill: #F3F4F6; letter-spacing: -0.4px; }
+    .project-type { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.1px; }
+    .project-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #A1A1AA; }
+    .tag-bg { fill: #121212; stroke: #27272A; stroke-width: 1; rx: 5px; }
+    .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #EDEDED; text-anchor: middle; }
+    .arrow { fill: #A1A1AA; }
+  </style>
+
+  <!-- Defs -->
+  <defs>
+    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0A"/>
+      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Section Label -->
+  <text x="56" y="36" class="label-header">FEATURED PROJECTS</text>
+
+  <!-- PROJECT 1: AI Forensic Analyzer -->
+  <g transform="translate(0, 48)">
+    <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
+    <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+    
+    <text x="56" y="36" class="project-title">AI Forensic Analyzer</text>
+    <text x="56" y="56" class="project-type">Machine Learning / NLP Application</text>
+    
+    <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <text x="56" y="80" class="project-desc">Leveraging natural language processing and the Gemini API for advanced data analysis and forensic insights.</text>
+    
+    <!-- Tags -->
+    <g transform="translate(56, 98)">
+      <g transform="translate(0, 0)">
+        <rect width="56" height="24" class="tag-bg" />
+        <text x="28" y="16" class="tag-text">Python</text>
+      </g>
+      <g transform="translate(64, 0)">
+        <rect width="60" height="24" class="tag-bg" />
+        <text x="30" y="16" class="tag-text">FastAPI</text>
+      </g>
+      <g transform="translate(132, 0)">
+        <rect width="80" height="24" class="tag-bg" />
+        <text x="40" y="16" class="tag-text">Gemini API</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- PROJECT 2: ClimateSCOMC -->
+  <g transform="translate(0, 212)">
+    <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
+    <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+    
+    <text x="56" y="36" class="project-title">ClimateSCOMC</text>
+    <text x="56" y="56" class="project-type">AI-powered Climate Intelligence Platform</text>
+    
+    <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <text x="56" y="80" class="project-desc">A predictive modeling and data visualization platform built to provide actionable climate intelligence.</text>
+    
+    <!-- Tags -->
+    <g transform="translate(56, 98)">
+      <g transform="translate(0, 0)">
+        <rect width="56" height="24" class="tag-bg" />
+        <text x="28" y="16" class="tag-text">Python</text>
+      </g>
+      <g transform="translate(64, 0)">
+        <rect width="84" height="24" class="tag-bg" />
+        <text x="42" y="16" class="tag-text">ML Libraries</text>
+      </g>
+      <g transform="translate(156, 0)">
+        <rect width="70" height="24" class="tag-bg" />
+        <text x="35" y="16" class="tag-text">Data Viz</text>
+      </g>
+    </g>
+  </g>
+</svg>

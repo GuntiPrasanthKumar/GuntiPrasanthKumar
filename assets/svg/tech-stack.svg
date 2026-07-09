@@ -1,0 +1,83 @@
+<svg width="800" height="190" viewBox="0 0 800 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
+    .item { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #EDEDED; }
+    .bullet { fill: #3B82F6; }
+    .line { stroke: #27272A; stroke-width: 1; }
+  </style>
+
+  <!-- Defs -->
+  <defs>
+    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0A"/>
+      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0.5" y="0.5" width="799" height="189" class="bg"/>
+
+  <!-- Subtle Top Gradient Border -->
+  <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Vertical Column Dividers -->
+  <line x1="266" y1="0" x2="266" y2="190" class="line"/>
+  <line x1="533" y1="0" x2="533" y2="190" class="line"/>
+  
+  <!-- Horizontal Header Divider -->
+  <line x1="0" y1="40" x2="800" y2="40" class="line"/>
+
+  <!-- Column Headers -->
+  <text x="32" y="26" class="header">AI ENGINEERING</text>
+  <text x="298" y="26" class="header">SOFTWARE ENGINEERING</text>
+  <text x="565" y="26" class="header">DEVELOPER TOOLKIT</text>
+
+  <!-- Column 1: AI Engineering Stack -->
+  <g transform="translate(32, 54)">
+    <circle cx="4" cy="14" r="2" class="bullet"/>
+    <text x="16" y="18" class="item">LLMs &amp; NLP</text>
+
+    <circle cx="4" cy="42" r="2" class="bullet"/>
+    <text x="16" y="46" class="item">RAG Architectures</text>
+
+    <circle cx="4" cy="70" r="2" class="bullet"/>
+    <text x="16" y="74" class="item">Agentic Frameworks</text>
+
+    <circle cx="4" cy="98" r="2" class="bullet"/>
+    <text x="16" y="102" class="item">OpenAI &amp; Gemini APIs</text>
+  </g>
+
+  <!-- Column 2: Software Engineering Stack -->
+  <g transform="translate(298, 54)">
+    <circle cx="4" cy="14" r="2" class="bullet"/>
+    <text x="16" y="18" class="item">Python</text>
+
+    <circle cx="4" cy="42" r="2" class="bullet"/>
+    <text x="16" y="46" class="item">React.js &amp; Vite</text>
+
+    <circle cx="4" cy="70" r="2" class="bullet"/>
+    <text x="16" y="74" class="item">Node.js &amp; FastAPI</text>
+
+    <circle cx="4" cy="98" r="2" class="bullet"/>
+    <text x="16" y="102" class="item">MongoDB &amp; MySQL</text>
+  </g>
+
+  <!-- Column 3: Developer Toolkit -->
+  <g transform="translate(565, 54)">
+    <circle cx="4" cy="14" r="2" class="bullet"/>
+    <text x="16" y="18" class="item">Git &amp; GitHub</text>
+
+    <circle cx="4" cy="42" r="2" class="bullet"/>
+    <text x="16" y="46" class="item">Vercel &amp; Render</text>
+
+    <circle cx="4" cy="70" r="2" class="bullet"/>
+    <text x="16" y="74" class="item">Tailwind CSS</text>
+
+    <circle cx="4" cy="98" r="2" class="bullet"/>
+    <text x="16" y="102" class="item">CI/CD Pipelines</text>
+  </g>
+</svg>

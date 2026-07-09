@@ -1,0 +1,39 @@
+<svg width="800" height="150" viewBox="0 0 800 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
+    .philosophy-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 400; fill: #EDEDED; line-height: 1.6; }
+    .highlight { fill: #3B82F6; font-weight: 500; }
+  </style>
+
+  <!-- Defs -->
+  <defs>
+    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0A"/>
+      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0.5" y="0.5" width="799" height="149" class="bg"/>
+
+  <!-- Subtle Top Gradient Border -->
+  <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Section Label -->
+  <text x="56" y="48" class="label-header">ENGINEERING PHILOSOPHY</text>
+
+  <!-- Philosophy Narrative -->
+  <text x="56" y="80" class="philosophy-text">
+    As an Information Technology undergraduate (Class of 2027), I specialize in the integration of
+  </text>
+  <text x="56" y="102" class="philosophy-text">
+    machine learning models with robust full-stack architectures. My vision is centered on engineering
+  </text>
+  <text x="56" y="124" class="philosophy-text">
+    next-generation <tspan class="highlight">autonomous AI systems</tspan> that solve complex computational problems at scale.
+  </text>
+</svg>

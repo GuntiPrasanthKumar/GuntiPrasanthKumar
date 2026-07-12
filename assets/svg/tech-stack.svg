@@ -1,11 +1,27 @@
-<svg width="800" height="190" viewBox="0 0 800 190" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles -->
+<svg width="800" height="340" viewBox="0 0 800 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles and keyframe animations -->
   <style>
     .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
     .header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
-    .item { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #EDEDED; }
-    .bullet { fill: #3B82F6; }
-    .line { stroke: #27272A; stroke-width: 1; }
+    .item { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 500; fill: #EDEDED; }
+    .sub-item { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 400; fill: #71717A; }
+    .divider { stroke: #27272A; stroke-width: 1; }
+    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
+
+    /* Vector Icon Animations */
+    .spin-react { transform-origin: 324px 74px; animation: spin 12s linear infinite; }
+    .glow-py { animation: glowBlue 4s ease-in-out infinite; }
+    .pulse-fastapi { animation: flicker 3s ease-in-out infinite; }
+    .pulse-gemini { transform-origin: 68px 154px; animation: heartbeat 2.5s ease-in-out infinite; }
+    .rotate-docker { transform-origin: 580px 194px; animation: floatDocker 5s ease-in-out infinite; }
+
+    /* Keyframes */
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes pulseAccent { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.9; } }
+    @keyframes glowBlue { 0%, 100% { filter: drop-shadow(0 0 1px rgba(59,130,246,0.3)); } 50% { filter: drop-shadow(0 0 5px rgba(59,130,246,0.8)); } }
+    @keyframes flicker { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+    @keyframes heartbeat { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.25); opacity: 1; } }
+    @keyframes floatDocker { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
   </style>
 
   <!-- Defs -->
@@ -19,65 +35,156 @@
   </defs>
 
   <!-- Background -->
-  <rect x="0.5" y="0.5" width="799" height="189" class="bg"/>
+  <rect x="0.5" y="48.5" width="799" height="290" class="bg"/>
 
   <!-- Subtle Top Gradient Border -->
-  <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 0 49 L 800 49" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
 
-  <!-- Vertical Column Dividers -->
-  <line x1="266" y1="0" x2="266" y2="190" class="line"/>
-  <line x1="533" y1="0" x2="533" y2="190" class="line"/>
-  
-  <!-- Horizontal Header Divider -->
-  <line x1="0" y1="40" x2="800" y2="40" class="line"/>
+  <!-- Section Label -->
+  <text x="56" y="36" class="label-header">SKILL SET</text>
+
+  <!-- Column Dividers -->
+  <line x1="266" y1="49" x2="266" y2="338" class="divider"/>
+  <line x1="533" y1="49" x2="533" y2="338" class="divider"/>
 
   <!-- Column Headers -->
-  <text x="32" y="26" class="header">AI ENGINEERING</text>
-  <text x="298" y="26" class="header">SOFTWARE ENGINEERING</text>
-  <text x="565" y="26" class="header">DEVELOPER TOOLKIT</text>
+  <text x="56" y="74" class="header">AI &amp; MACHINE LEARNING</text>
+  <text x="312" y="74" class="header">SOFTWARE ENGINEERING</text>
+  <text x="578" y="74" class="header">DEVELOPER TOOLKIT</text>
 
-  <!-- Column 1: AI Engineering Stack -->
-  <g transform="translate(32, 54)">
-    <circle cx="4" cy="14" r="2" class="bullet"/>
-    <text x="16" y="18" class="item">LLMs &amp; NLP</text>
-
-    <circle cx="4" cy="42" r="2" class="bullet"/>
-    <text x="16" y="46" class="item">RAG Architectures</text>
-
-    <circle cx="4" cy="70" r="2" class="bullet"/>
-    <text x="16" y="74" class="item">Agentic Frameworks</text>
-
-    <circle cx="4" cy="98" r="2" class="bullet"/>
-    <text x="16" y="102" class="item">OpenAI &amp; Gemini APIs</text>
+  <!-- ================= COLUMN 1: AI / ML ================= -->
+  <!-- Python -->
+  <g transform="translate(56, 94)">
+    <!-- Python Snake Abstract Vector -->
+    <path class="glow-py" d="M10 2C5.58 2 2 5.58 2 10C2 14.42 5.58 18 10 18H14V14H10C7.79 14 6 12.21 6 10C6 7.79 7.79 6 10 6H22V10C22 14.42 18.42 18 14 18" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="10" cy="10" r="2" fill="#EDEDED"/>
+    <text x="36" y="14" class="item">Python</text>
   </g>
 
-  <!-- Column 2: Software Engineering Stack -->
-  <g transform="translate(298, 54)">
-    <circle cx="4" cy="14" r="2" class="bullet"/>
-    <text x="16" y="18" class="item">Python</text>
-
-    <circle cx="4" cy="42" r="2" class="bullet"/>
-    <text x="16" y="46" class="item">React.js &amp; Vite</text>
-
-    <circle cx="4" cy="70" r="2" class="bullet"/>
-    <text x="16" y="74" class="item">Node.js &amp; FastAPI</text>
-
-    <circle cx="4" cy="98" r="2" class="bullet"/>
-    <text x="16" y="102" class="item">MongoDB &amp; MySQL</text>
+  <!-- FastAPI -->
+  <g transform="translate(56, 134)">
+    <!-- FastAPI Lightning Bolt Vector -->
+    <path class="pulse-fastapi" d="M12 2L4 12H11L10 20L18 10H11L12 2Z" fill="#10B981" stroke="#059669" stroke-width="1"/>
+    <text x="36" y="14" class="item">FastAPI</text>
   </g>
 
-  <!-- Column 3: Developer Toolkit -->
-  <g transform="translate(565, 54)">
-    <circle cx="4" cy="14" r="2" class="bullet"/>
-    <text x="16" y="18" class="item">Git &amp; GitHub</text>
+  <!-- Gemini API -->
+  <g transform="translate(56, 174)">
+    <!-- Gemini Sparkle Vector -->
+    <path class="pulse-gemini" d="M12 4L14.5 9.5L20 12L14.5 14.5L12 20L9.5 14.5L4 12L9.5 9.5L12 4Z" fill="#3B82F6"/>
+    <text x="36" y="14" class="item">Gemini API</text>
+  </g>
 
-    <circle cx="4" cy="42" r="2" class="bullet"/>
-    <text x="16" y="46" class="item">Vercel &amp; Render</text>
+  <!-- OpenAI API -->
+  <g transform="translate(56, 214)">
+    <!-- OpenAI Spiral Vector -->
+    <path d="M12 6A6 6 0 0118 12M12 6A6 6 0 006 12M12 6V18M6 12A6 6 0 0012 18M18 12A6 6 0 0112 18" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+    <text x="36" y="14" class="item">OpenAI API</text>
+  </g>
 
-    <circle cx="4" cy="70" r="2" class="bullet"/>
-    <text x="16" y="74" class="item">Tailwind CSS</text>
+  <!-- LangChain & LangGraph -->
+  <g transform="translate(56, 254)">
+    <!-- Node Connection Vector -->
+    <circle cx="6" cy="6" r="3" fill="#EDEDED"/>
+    <circle cx="18" cy="14" r="3" fill="#3B82F6"/>
+    <line x1="6" y1="6" x2="18" y2="14" stroke="#71717A" stroke-width="1.5"/>
+    <text x="36" y="10" class="item">LangChain / LangGraph</text>
+    <text x="36" y="22" class="sub-item">Learning / Active Integration</text>
+  </g>
 
-    <circle cx="4" cy="98" r="2" class="bullet"/>
-    <text x="16" y="102" class="item">CI/CD Pipelines</text>
+
+  <!-- ================= COLUMN 2: SOFTWARE ENGINEERING ================= -->
+  <!-- React.js & Vite -->
+  <g transform="translate(312, 94)">
+    <!-- React Atom Vector -->
+    <g class="spin-react">
+      <ellipse rx="12" ry="4" transform="translate(12,10)" stroke="#3B82F6" stroke-width="1" fill="none"/>
+      <ellipse rx="12" ry="4" transform="translate(12,10) rotate(60)" stroke="#3B82F6" stroke-width="1" fill="none"/>
+      <ellipse rx="12" ry="4" transform="translate(12,10) rotate(120)" stroke="#3B82F6" stroke-width="1" fill="none"/>
+      <circle cx="12" cy="10" r="2.5" fill="#3B82F6"/>
+    </g>
+    <text x="36" y="14" class="item">React.js &amp; Vite</text>
+  </g>
+
+  <!-- JavaScript -->
+  <g transform="translate(312, 134)">
+    <!-- JS Shield -->
+    <rect x="4" y="2" width="16" height="16" rx="2" fill="#FBBF24"/>
+    <text x="8" y="14" font-family="sans-serif" font-size="10" font-weight="900" fill="#0A0A0A">JS</text>
+    <text x="36" y="14" class="item">JavaScript</text>
+  </g>
+
+  <!-- Node.js & Express -->
+  <g transform="translate(312, 174)">
+    <!-- Hexagonal Node Vector -->
+    <polygon points="12,2 20,6 20,14 12,18 4,14 4,6" fill="none" stroke="#10B981" stroke-width="2"/>
+    <circle cx="12" cy="10" r="3" fill="#10B981"/>
+    <text x="36" y="14" class="item">Node.js &amp; Express</text>
+  </g>
+
+  <!-- MongoDB -->
+  <g transform="translate(312, 214)">
+    <!-- MongoDB Leaf Vector -->
+    <path d="M12 2C12 2 6 7 6 12C6 16.42 12 20 12 20C12 20 18 16.42 18 12C18 7 12 2 12 2Z" fill="none" stroke="#10B981" stroke-width="1.5"/>
+    <path d="M12 2V20" stroke="#10B981" stroke-width="1.5"/>
+    <text x="36" y="14" class="item">MongoDB</text>
+  </g>
+
+  <!-- MySQL -->
+  <g transform="translate(312, 254)">
+    <!-- Database Stack Vector -->
+    <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+    <path d="M4 6V11C4 12.66 12 14 12 14C12 14 20 12.66 20 11V6" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+    <path d="M4 11V16C4 17.66 12 19 12 19C12 19 20 17.66 20 16V11" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="36" y="14" class="item">MySQL</text>
+  </g>
+
+
+  <!-- ================= COLUMN 3: DEVELOPER TOOLKIT ================= -->
+  <!-- Git & GitHub -->
+  <g transform="translate(578, 94)">
+    <!-- Git Branch Vector -->
+    <circle cx="8" cy="6" r="2.5" fill="#EDEDED"/>
+    <circle cx="8" cy="14" r="2.5" fill="#EDEDED"/>
+    <circle cx="16" cy="14" r="2.5" fill="#3B82F6"/>
+    <line x1="8" y1="6" x2="8" y2="14" stroke="#71717A" stroke-width="1.5"/>
+    <path d="M8 10C12 10 16 11 16 14" stroke="#71717A" stroke-width="1.5" fill="none"/>
+    <text x="36" y="14" class="item">Git &amp; GitHub</text>
+  </g>
+
+  <!-- Tailwind CSS -->
+  <g transform="translate(578, 134)">
+    <!-- Tailwind Wave Vector -->
+    <path d="M6 10C6 10 9 6 12 6C16 6 18 10 18 10C18 10 15 14 12 14C8 14 6 10 6 10Z" fill="#3B82F6" opacity="0.8"/>
+    <path d="M10 12C10 12 12 9 14 9C16.67 9 18 12 18 12C18 12 16 15 14 15C11.33 15 10 12 10 12Z" fill="#06B6D4" opacity="0.8"/>
+    <text x="36" y="14" class="item">Tailwind CSS</text>
+  </g>
+
+  <!-- VS Code -->
+  <g transform="translate(578, 174)">
+    <!-- VS Code Ribbon Vector -->
+    <path d="M4 6L14 2V18L4 14V6Z" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+    <path d="M14 2L20 7V13L14 18" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="36" y="14" class="item">VS Code</text>
+  </g>
+
+  <!-- Docker -->
+  <g transform="translate(578, 214)">
+    <!-- Docker Whale/Ship Vector -->
+    <g class="rotate-docker">
+      <rect x="6" y="4" width="4" height="4" fill="#3B82F6" rx="0.5"/>
+      <rect x="12" y="4" width="4" height="4" fill="#3B82F6" rx="0.5"/>
+      <rect x="9" y="9" width="4" height="4" fill="#3B82F6" rx="0.5"/>
+      <path d="M4 14C4 14 8 16 12 16C16 16 20 14 20 14V11H4V14Z" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+    </g>
+    <text x="36" y="10" class="item">Docker</text>
+    <text x="36" y="22" class="sub-item">Learning / Dev Container</text>
+  </g>
+
+  <!-- Vercel & Render -->
+  <g transform="translate(578, 254)">
+    <!-- Triangles Vector -->
+    <polygon points="12,4 20,16 4,16" fill="#EDEDED"/>
+    <text x="36" y="14" class="item">Vercel &amp; Render</text>
   </g>
 </svg>

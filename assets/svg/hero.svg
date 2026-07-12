@@ -1,7 +1,7 @@
 <svg width="800" height="270" viewBox="0 0 800 270" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles and Keyframe Animations -->
+  <!-- Styles and keyframe animations -->
   <style>
-    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .bg { fill: #0A0A0A; stroke: #27272A; stroke-width: 1; rx: 8px; }
     
     /* Sequential Fade-in Animations */
     .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
@@ -11,56 +11,84 @@
     .delay-4 { animation-delay: 1.1s; }
     .delay-5 { animation-delay: 1.4s; }
 
-    .name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #EDEDED; letter-spacing: -0.5px; }
-    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.2px; }
-    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 400; fill: #71717A; }
-    .statement { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; fill: #A1A1AA; }
+    .name { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 34px; font-weight: 700; fill: #EDEDED; letter-spacing: -0.5px; }
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.2px; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #71717A; }
+    .statement { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 400; fill: #A1A1AA; }
     
     /* Text Link Styling and Hover Interactions */
     .link-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #EDEDED; transition: fill 0.2s; }
     .link:hover .link-text { fill: #3B82F6; }
 
-    /* Top Accent Pulse */
-    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
+    /* Neon Border Light Trail Animation */
+    .border-trace {
+      stroke: #3B82F6;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-dasharray: 180 1960;
+      animation: trace 7s linear infinite;
+    }
+
+    /* Background Scanner Bar */
+    .scanner {
+      animation: scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
 
     /* Custom Vector Graphic Animations */
-    .rotating-ring { transform-origin: 670px 135px; animation: rotateRing 25s linear infinite; }
-    .pulse-node-1 { transform-origin: 645px 115px; animation: nodePulse 4s ease-in-out infinite; }
-    .pulse-node-2 { transform-origin: 695px 120px; animation: nodePulse 4s ease-in-out infinite 1.3s; }
-    .pulse-node-3 { transform-origin: 660px 160px; animation: nodePulse 4s ease-in-out infinite 2.6s; }
+    .rotating-ring { transform-origin: 670px 135px; animation: rotateRing 20s linear infinite; }
+    .pulse-node-1 { transform-origin: 645px 115px; animation: nodePulse 3s ease-in-out infinite; }
+    .pulse-node-2 { transform-origin: 695px 120px; animation: nodePulse 3s ease-in-out infinite 1s; }
+    .pulse-node-3 { transform-origin: 660px 160px; animation: nodePulse 3s ease-in-out infinite 2s; }
 
     /* Keyframes */
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-    @keyframes pulseAccent {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.9; }
+    @keyframes trace {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -2140; }
+    }
+    @keyframes scan {
+      0% { transform: translateX(-50px); opacity: 0; }
+      10% { opacity: 0.25; }
+      40% { opacity: 0.25; }
+      50% { transform: translateX(850px); opacity: 0; }
+      100% { transform: translateX(850px); opacity: 0; }
     }
     @keyframes rotateRing {
       100% { transform: rotate(360deg); }
     }
     @keyframes nodePulse {
       0%, 100% { transform: scale(1); opacity: 0.6; fill: #71717A; }
-      50% { transform: scale(1.3); opacity: 1; fill: #3B82F6; }
+      50% { transform: scale(1.3); opacity: 1; fill: #3B82F6; filter: drop-shadow(0 0 3px #3B82F6); }
     }
   </style>
 
-  <!-- Defs -->
+  <!-- Defs & Patterns -->
   <defs>
-    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0A0A0A"/>
-      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#0A0A0A"/>
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16161D" stroke-width="0.7" />
+    </pattern>
+    <!-- Vertical Scanner Gradient -->
+    <linearGradient id="scan-grad" x1="0" y1="0" x2="4" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
+  <!-- Background Base -->
   <rect x="0.5" y="0.5" width="799" height="269" class="bg"/>
 
-  <!-- Subtle Top Gradient Border (Animated Pulse) -->
-  <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
+  <!-- Scanning Grid Pattern -->
+  <rect x="1" y="1" width="798" height="268" fill="url(#grid)" rx="8" />
+
+  <!-- Animated Scanner Bar -->
+  <rect x="0" y="1" width="4" height="268" fill="url(#scan-grad)" class="scanner" />
+
+  <!-- Glowing Border Light Trail (Perimeter = 2140) -->
+  <rect x="0.5" y="0.5" width="799" height="269" fill="none" class="border-trace" rx="8" />
 
   <!-- Typography Content (Fade-in Groups) -->
   <text x="56" y="72" class="name fade-item delay-1">Gunti Prasanth Kumar</text>
@@ -68,7 +96,7 @@
   <text x="56" y="126" class="subtitle fade-item delay-3">Information Technology Undergraduate • Aditya University • Class of 2027</text>
   <text x="56" y="172" class="statement fade-item delay-4">Building production-ready AI products that solve real-world problems.</text>
 
-  <!-- Interactive Links (Fade-in Group) -->
+  <!-- Interactive Links -->
   <g class="fade-item delay-5">
     <!-- Link 1: Portfolio -->
     <a href="https://prasanth-future-engine.netlify.app/" target="_blank" class="link">

@@ -1,7 +1,7 @@
 <svg width="800" height="370" viewBox="0 0 800 370" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Styles and keyframe animations -->
   <style>
-    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; transition: stroke 0.3s; }
+    .bg { fill: #0A0A0A; stroke: #27272A; stroke-width: 1; rx: 8px; }
     
     /* Sequential Fade-in Animations */
     .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
@@ -13,30 +13,50 @@
     .project-type { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.1px; }
     .project-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #A1A1AA; }
     
-    /* Tag and Card Styling with Hover Effects */
+    /* Tag Styling */
     .tag-bg { fill: #121212; stroke: #27272A; stroke-width: 1; rx: 5px; transition: stroke 0.3s; }
     .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #EDEDED; text-anchor: middle; }
     
-    .project-card { transition: transform 0.3s; }
-    .project-card:hover .bg { stroke: #3B82F6; }
     .project-card:hover .tag-bg { stroke: #3B82F6; }
 
+    /* Neon Border Light Trails (Perimeter = 1878) */
+    .border-trace-blue {
+      stroke: #3B82F6;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-dasharray: 150 1728;
+      animation: traceCard 6s linear infinite;
+    }
+    .border-trace-green {
+      stroke: #10B981;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-dasharray: 150 1728;
+      animation: traceCard 6s linear infinite 1.5s;
+    }
+
+    /* Background Scanner Bars */
+    .scanner-1 { animation: scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite 3s; }
+    .scanner-2 { animation: scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite 4s; }
+
     /* Animations */
-    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
     .arrow { transform-origin: 743px 27px; animation: arrowBounce 3s ease-in-out infinite; }
-    
-    /* Vector Logo Animations */
     .lens-glow { animation: pulseLens 4s ease-in-out infinite; }
     .globe-pulse { animation: pulseGlobe 4s ease-in-out infinite; }
     .orbit-node { transform-origin: 700px 40px; animation: spinOrbit 8s linear infinite; }
 
     /* Keyframes */
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes traceCard {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -1878; }
     }
-    @keyframes pulseAccent {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.9; }
+    @keyframes scan {
+      0% { transform: translateX(-50px); opacity: 0; }
+      10% { opacity: 0.25; }
+      40% { opacity: 0.25; }
+      50% { transform: translateX(850px); opacity: 0; }
+      100% { transform: translateX(850px); opacity: 0; }
     }
     @keyframes arrowBounce {
       0%, 100% { transform: translate(0, 0); }
@@ -50,18 +70,25 @@
       0%, 100% { filter: drop-shadow(0 0 1px #10B981); stroke: #10B981; }
       50% { filter: drop-shadow(0 0 6px #10B981); stroke: #34D399; }
     }
-    @keyframes spinOrbit {
-      100% { transform: rotate(360deg); }
-    }
+    @keyframes spinOrbit { 100% { transform: rotate(360deg); } }
   </style>
 
-  <!-- Defs -->
+  <!-- Defs & Patterns -->
   <defs>
-    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0A0A0A"/>
-      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#0A0A0A"/>
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16161D" stroke-width="0.7" />
+    </pattern>
+    <!-- Scanner Gradients -->
+    <linearGradient id="scan-grad-blue" x1="0" y1="0" x2="4" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="scan-grad-green" x1="0" y1="0" x2="4" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10B981" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#10B981" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#10B981" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
@@ -71,9 +98,17 @@
   <!-- PROJECT 1: AI Forensic Analyzer -->
   <a href="https://github.com/GuntiPrasanthKumar/AI-ForensicLab" target="_blank" class="project-card fade-item delay-1">
     <g transform="translate(0, 48)">
-      <!-- Background and Top Border -->
+      <!-- Background Base -->
       <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
-      <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
+      
+      <!-- Grid Pattern -->
+      <rect x="1" y="1" width="798" height="138" fill="url(#grid)" rx="8" />
+
+      <!-- Scanner Bar -->
+      <rect x="0" y="1" width="4" height="138" fill="url(#scan-grad-blue)" class="scanner-1" />
+
+      <!-- Neon Border Trail -->
+      <rect x="0.5" y="0.5" width="799" height="139" fill="none" class="border-trace-blue" rx="8" />
       
       <!-- Content -->
       <text x="56" y="36" class="project-title">AI Forensic Analyzer</text>
@@ -83,7 +118,7 @@
       <!-- Bouncing Arrow Link Indicator -->
       <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       
-      <!-- Custom Lens Vector (Right balanced) -->
+      <!-- Custom Lens Vector -->
       <g>
         <circle cx="700" cy="40" r="10" stroke="#3B82F6" stroke-width="1.5" fill="none" class="lens-glow" />
         <line x1="707" y1="47" x2="717" y2="57" stroke="#71717A" stroke-width="2" stroke-linecap="round" />
@@ -111,9 +146,17 @@
   <!-- PROJECT 2: ClimateSCOMC -->
   <a href="https://github.com/GuntiPrasanthKumar/SCOMC" target="_blank" class="project-card fade-item delay-2">
     <g transform="translate(0, 212)">
-      <!-- Background and Top Border -->
+      <!-- Background Base -->
       <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
-      <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
+      
+      <!-- Grid Pattern -->
+      <rect x="1" y="1" width="798" height="138" fill="url(#grid)" rx="8" />
+
+      <!-- Scanner Bar -->
+      <rect x="0" y="1" width="4" height="138" fill="url(#scan-grad-green)" class="scanner-2" />
+
+      <!-- Neon Border Trail -->
+      <rect x="0.5" y="0.5" width="799" height="139" fill="none" class="border-trace-green" rx="8" />
       
       <!-- Content -->
       <text x="56" y="36" class="project-title">ClimateSCOMC</text>
@@ -123,7 +166,7 @@
       <!-- Bouncing Arrow Link Indicator -->
       <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       
-      <!-- Custom Globe Vector (Right balanced) -->
+      <!-- Custom Globe Vector -->
       <g>
         <circle cx="700" cy="40" r="11" stroke="#10B981" stroke-width="1.5" fill="none" class="globe-pulse" />
         <!-- Tilted Axis -->

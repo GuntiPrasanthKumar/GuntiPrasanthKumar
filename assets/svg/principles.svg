@@ -1,7 +1,7 @@
 <svg width="800" height="230" viewBox="0 0 800 230" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Styles and keyframe animations -->
   <style>
-    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .bg { fill: #0A0A0A; stroke: #27272A; stroke-width: 1; rx: 8px; }
     
     /* Sequential Fade-in Animations */
     .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
@@ -16,9 +16,20 @@
     .principle-group { transition: transform 0.2s; cursor: pointer; }
     .principle-group:hover { transform: translateX(6px); }
     .principle-group:hover .highlight { fill: #3B82F6; }
-    
-    /* Animations */
-    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
+
+    /* Neon Border Light Trail Animation (Perimeter = 1958) */
+    .border-trace {
+      stroke: #3B82F6;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-dasharray: 150 1808;
+      animation: tracePrinciples 7s linear infinite;
+    }
+
+    /* Background Scanner Bar */
+    .scanner {
+      animation: scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite 3s;
+    }
     
     /* Diamond Pulse Animations */
     .diamond-1 { transform-origin: 36px 84px; animation: diamondPulse 4s ease-in-out infinite; }
@@ -27,37 +38,52 @@
     .diamond-4 { transform-origin: 36px 174px; animation: diamondPulse 4s ease-in-out infinite 3s; }
 
     /* Keyframes */
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes tracePrinciples {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -1958; }
     }
-    @keyframes pulseAccent {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.9; }
+    @keyframes scan {
+      0% { transform: translateX(-50px); opacity: 0; }
+      10% { opacity: 0.25; }
+      40% { opacity: 0.25; }
+      50% { transform: translateX(850px); opacity: 0; }
+      100% { transform: translateX(850px); opacity: 0; }
     }
     @keyframes diamondPulse {
       0%, 100% { transform: scale(1); opacity: 0.5; fill: #3B82F6; }
-      50% { transform: scale(1.35); opacity: 1; fill: #10B981; }
+      50% { transform: scale(1.35); opacity: 1; fill: #10B981; filter: drop-shadow(0 0 3px #10B981); }
     }
   </style>
 
-  <!-- Defs -->
+  <!-- Defs & Patterns -->
   <defs>
-    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0A0A0A"/>
-      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#0A0A0A"/>
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16161D" stroke-width="0.7" />
+    </pattern>
+    <!-- Vertical Scanner Gradient -->
+    <linearGradient id="scan-grad" x1="0" y1="0" x2="4" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
   <!-- Section Label -->
   <text x="56" y="36" class="label-header">ENGINEERING PRINCIPLES</text>
 
-  <!-- Card Background -->
+  <!-- Card Background Base -->
   <rect x="0.5" y="48.5" width="799" height="179" class="bg"/>
 
-  <!-- Subtle Top Gradient Border (Animated Pulse) -->
-  <path d="M 0 49 L 800 49" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
+  <!-- Scanning Grid Pattern -->
+  <rect x="1" y="49" width="798" height="178" fill="url(#grid)" rx="8" />
+
+  <!-- Animated Scanner Bar -->
+  <rect x="0" y="49" width="4" height="178" fill="url(#scan-grad)" class="scanner" />
+
+  <!-- Glowing Border Light Trail (Perimeter = 1958) -->
+  <rect x="0.5" y="48.5" width="799" height="179" fill="none" class="border-trace" rx="8" />
 
   <!-- Principles List with Interactive Groups & Custom Vector Diamonds -->
   <g class="fade-item delay-2">

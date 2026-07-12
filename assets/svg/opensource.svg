@@ -1,156 +1,93 @@
 <svg width="1600" height="950" viewBox="0 0 1600 950" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Radial Glow -->
-    <radialGradient id="glow" cx="80%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.25" />
-      <stop offset="40%" stop-color="#0F172A" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#050505" stop-opacity="0" />
-      <animate attributeName="cx" values="80%;85%;75%;80%" dur="24s" repeatCount="indefinite" />
-      <animate attributeName="cy" values="50%;45%;55%;50%" dur="24s" repeatCount="indefinite" />
+    <radialGradient id="bg-glow" cx="78%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0.18"/>
+      <stop offset="45%" stop-color="#1E3A8A" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+      <animate attributeName="cx" values="78%;84%;72%;78%" dur="25s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="48%;43%;53%;48%" dur="25s" repeatCount="indefinite"/>
     </radialGradient>
-
-    <!-- Grid Shimmer Mask -->
-    <radialGradient id="grid-mask" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75" />
-      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
-      <animate attributeName="cx" values="30%;70%;30%" dur="28s" repeatCount="indefinite" />
-      <animate attributeName="cy" values="30%;70%;30%" dur="28s" repeatCount="indefinite" />
+    <radialGradient id="grid-fade" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <animate attributeName="cx" values="35%;65%;35%" dur="30s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="35%;65%;35%" dur="30s" repeatCount="indefinite"/>
     </radialGradient>
-
-    <!-- Noise / Grain Filter -->
-    <filter id="noise-filter" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise">
-        <animate attributeName="seed" values="0;80;0" dur="20s" repeatCount="indefinite" />
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" result="n">
+        <animate attributeName="seed" values="3;88;3" dur="20s" repeatCount="indefinite"/>
       </feTurbulence>
-      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" />
-      <feComposite in="SourceGraphic" in2="noise" operator="over" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0"/>
+      <feComposite in="SourceGraphic" operator="over"/>
     </filter>
-
-    <!-- Mask Reference -->
-    <mask id="grid-mask-ref">
-      <rect width="1600" height="950" fill="url(#grid-mask)" />
+    <mask id="gm">
+      <rect width="1600" height="950" fill="url(#grid-fade)"/>
     </mask>
   </defs>
 
-  <style>
-    .bg { fill: #050505; }
-    .border { stroke: #222222; stroke-width: 1; fill: none; }
-    .card-bg { fill: #0B0B0B; stroke: #222222; stroke-width: 1; rx: 16px; }
-    .card-placeholder { fill: #08080A; stroke: #222222; stroke-width: 1.5; stroke-dasharray: 6 6; rx: 16px; }
-    
-    /* Typography */
-    .protocol { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 13px; font-weight: 700; fill: #52525B; letter-spacing: 5px; }
-    .title-large { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 38px; font-weight: 800; fill: #FFFFFF; letter-spacing: -1px; }
-    .desc { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 15px; font-weight: 400; fill: #B7B7B7; line-height: 1.6; }
-    
-    .placeholder-title { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
-    .placeholder-subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 11px; font-weight: 700; fill: #52525B; letter-spacing: 1px; text-anchor: middle; }
+  <rect width="1600" height="950" fill="#050505"/>
+  <rect width="1600" height="950" fill="url(#bg-glow)"/>
 
-    /* Values Section */
-    .val-header { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 15px; font-weight: 700; fill: #FFFFFF; }
-    .val-desc { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 13px; font-weight: 400; fill: #B7B7B7; line-height: 1.5; }
-
-    /* Animation Styles */
-    @keyframes pulse-border {
-      0%, 100% { stroke: #222222; }
-      50% { stroke: #3B82F6; }
-    }
-    .alive-border { animation: pulse-border 12s infinite ease-in-out; }
-  </style>
-
-  <!-- Canvas Base -->
-  <rect width="1600" height="950" class="bg"/>
-  
-  <!-- Atmospheric Glow Layer -->
-  <rect width="1600" height="950" fill="url(#glow)" />
-
-  <!-- Subtle Engineering Grid -->
-  <g mask="url(#grid-mask-ref)">
-    <path d="M 80,0 V 950 M 160,0 V 950 M 240,0 V 950 M 320,0 V 950 M 400,0 V 950 M 480,0 V 950 M 560,0 V 950 M 640,0 V 950 M 720,0 V 950 M 800,0 V 950 M 880,0 V 950 M 960,0 V 950 M 1040,0 V 950 M 1120,0 V 950 M 1200,0 V 950 M 1280,0 V 950 M 1360,0 V 950 M 1440,0 V 950 M 1520,0 V 950" stroke="#1C1C1E" stroke-width="0.5" />
-    <path d="M 0,80 H 1600 M 0,160 H 1600 M 0,240 H 1600 M 0,320 H 1600 M 0,400 H 1600 M 0,480 H 1600 M 0,560 H 1600 M 0,640 H 1600 M 0,720 H 1600 M 0,800 H 1600 M 0,880 H 1600" stroke="#1C1C1E" stroke-width="0.5" />
+  <!-- Grid -->
+  <g mask="url(#gm)">
+    <path d="M80,0 V950 M160,0 V950 M240,0 V950 M320,0 V950 M400,0 V950 M480,0 V950 M560,0 V950 M640,0 V950 M720,0 V950 M800,0 V950 M880,0 V950 M960,0 V950 M1040,0 V950 M1120,0 V950 M1200,0 V950 M1280,0 V950 M1360,0 V950 M1440,0 V950 M1520,0 V950" stroke="#1C1C1E" stroke-width="0.5"/>
+    <path d="M0,80 H1600 M0,160 H1600 M0,240 H1600 M0,320 H1600 M0,400 H1600 M0,480 H1600 M0,560 H1600 M0,640 H1600 M0,720 H1600 M0,800 H1600 M0,880 H1600" stroke="#1C1C1E" stroke-width="0.5"/>
   </g>
 
-  <!-- Left Symmetrical Accent Line -->
-  <line x1="80" y1="40" x2="80" y2="910" stroke="#222222" stroke-width="1.5" />
-  <circle cx="80" cy="40" r="3.5" fill="#3B82F6" />
+  <!-- Left anchor -->
+  <line x1="80" y1="40" x2="80" y2="910" stroke="#222222" stroke-width="1.5"/>
+  <circle cx="80" cy="40" r="3.5" fill="#3B82F6"/>
 
-  <!-- ================= HEADER PANEL ================= -->
-  <g>
-    <!-- Section Label -->
-    <text x="120" y="75" class="protocol">OPEN SOURCE</text>
-    
-    <!-- Section Title -->
-    <text x="120" y="140" class="title-large">Engineering Activity</text>
-    
-    <!-- Description -->
-    <text x="120" y="185" class="desc">Every commit represents learning. Every project improves craftsmanship.</text>
-    <text x="120" y="208" class="desc">Consistency compounds into expertise.</text>
-  </g>
+  <!-- Header -->
+  <text x="120" y="74" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="12" font-weight="700" fill="#3D3D45" letter-spacing="5">OPEN SOURCE</text>
+  <text x="120" y="144" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="42" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Engineering Activity</text>
+  <text x="120" y="192" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="400" fill="#9A9A9A">Every commit represents learning. Every project improves craftsmanship.</text>
+  <text x="120" y="216" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="400" fill="#9A9A9A">Consistency compounds into expertise.</text>
 
-  <!-- ================= PLACEHOLDER CONTAINERS ================= -->
   <!-- Container A: GitHub Stats -->
-  <g>
-    <rect x="80" y="250" width="708" height="190" class="card-placeholder alive-border" />
-    <text x="434" y="340" class="placeholder-title">GitHub Statistics</text>
-    <text x="434" y="370" class="placeholder-subtitle">RESERVED FOR GITHUB-README-STATS</text>
-  </g>
+  <rect x="80" y="262" width="712" height="200" rx="16" fill="#08080A" stroke="#222222" stroke-width="1.5" stroke-dasharray="6 6">
+    <animate attributeName="stroke" values="#222222;#3B82F6;#222222" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text x="436" y="352" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">GitHub Statistics</text>
+  <text x="436" y="382" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="1" text-anchor="middle">RESERVED FOR GITHUB-README-STATS</text>
 
   <!-- Container B: Contribution Streak -->
-  <g>
-    <rect x="812" y="250" width="708" height="190" class="card-placeholder" />
-    <text x="1166" y="340" class="placeholder-title">Contribution Streak</text>
-    <text x="1166" y="370" class="placeholder-subtitle">RESERVED FOR STREAK-STATS</text>
-  </g>
+  <rect x="808" y="262" width="712" height="200" rx="16" fill="#08080A" stroke="#222222" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <text x="1164" y="352" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Contribution Streak</text>
+  <text x="1164" y="382" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="1" text-anchor="middle">RESERVED FOR STREAK-STATS</text>
 
   <!-- Container C: Top Languages -->
-  <g>
-    <rect x="80" y="464" width="1440" height="170" class="card-placeholder" />
-    <text x="800" y="540" class="placeholder-title">Top Languages</text>
-    <text x="800" y="570" class="placeholder-subtitle">RESERVED FOR TOP-LANGS</text>
-  </g>
+  <rect x="80" y="482" width="1440" height="180" rx="16" fill="#08080A" stroke="#222222" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <text x="800" y="562" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Top Languages</text>
+  <text x="800" y="592" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="1" text-anchor="middle">RESERVED FOR TOP-LANGS</text>
 
-  <!-- ================= BOTTOM PANEL: ENGINEERING VALUES ================= -->
-  <g transform="translate(0, 670)">
-    <rect x="80" y="0" width="1440" height="170" rx="16" class="card-bg" stroke="#222222" />
-    <text x="120" y="45" class="protocol">ENGINEERING VALUES</text>
+  <!-- Engineering Values -->
+  <rect x="80" y="694" width="1440" height="180" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="122" y="740" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">ENGINEERING VALUES</text>
+  <!-- Col 1 -->
+  <circle cx="128" cy="790" r="2.5" fill="#3B82F6"/>
+  <text x="142" y="795" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Problem Solving</text>
+  <text x="142" y="818" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Building systems that solve</text>
+  <text x="142" y="838" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">real-world problems.</text>
+  <!-- Col 2 -->
+  <circle cx="468" cy="790" r="2.5" fill="#3B82F6"/>
+  <text x="482" y="795" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Continuous Learning</text>
+  <text x="482" y="818" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Every week I learn something that</text>
+  <text x="482" y="838" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">makes me a better engineer.</text>
+  <!-- Col 3 -->
+  <circle cx="808" cy="790" r="2.5" fill="#3B82F6"/>
+  <text x="822" y="795" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Production Mindset</text>
+  <text x="822" y="818" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Building software for users is more</text>
+  <text x="822" y="838" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">important than writing demo code.</text>
+  <!-- Col 4 -->
+  <circle cx="1148" cy="790" r="2.5" fill="#3B82F6"/>
+  <text x="1162" y="795" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Long-Term Vision</text>
+  <text x="1162" y="818" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Engineering autonomous AI systems</text>
+  <text x="1162" y="838" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">that create real impact.</text>
 
-    <!-- Column 1: Problem Solving -->
-    <g transform="translate(120, 75)">
-      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
-      <text x="20" y="16" class="val-header">Problem Solving</text>
-      <text x="20" y="40" class="val-desc">I enjoy building systems that</text>
-      <text x="20" y="58" class="val-desc">solve meaningful real-world problems.</text>
-    </g>
-
-    <!-- Column 2: Continuous Learning -->
-    <g transform="translate(460, 75)">
-      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
-      <text x="20" y="16" class="val-header">Continuous Learning</text>
-      <text x="20" y="40" class="val-desc">Every week I learn something</text>
-      <text x="20" y="58" class="val-desc">that makes me a better engineer.</text>
-    </g>
-
-    <!-- Column 3: Production Mindset -->
-    <g transform="translate(800, 75)">
-      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
-      <text x="20" y="16" class="val-header">Production Mindset</text>
-      <text x="20" y="40" class="val-desc">Building software for users is</text>
-      <text x="20" y="58" class="val-desc">more important than writing demo code.</text>
-    </g>
-
-    <!-- Column 4: Long-Term Vision -->
-    <g transform="translate(1140, 75)">
-      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
-      <text x="20" y="16" class="val-header">Long-Term Vision</text>
-      <text x="20" y="40" class="val-desc">Engineering autonomous AI</text>
-      <text x="20" y="58" class="val-desc">systems that create real impact.</text>
-    </g>
-  </g>
-
-  <!-- Fine Film Grain Overlay -->
-  <rect width="1600" height="950" fill="transparent" filter="url(#noise-filter)" pointer-events="none" />
-
-  <!-- Outer Border Container Shell -->
+  <!-- Grain overlay -->
+  <rect width="1600" height="950" fill="transparent" filter="url(#grain)" pointer-events="none"/>
+  <!-- Border -->
   <rect x="0.5" y="0.5" width="1599" height="949" rx="16" stroke="#222222" stroke-width="1" fill="none"/>
 </svg>

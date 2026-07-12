@@ -1,331 +1,208 @@
 <svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Radial Glow -->
-    <radialGradient id="glow" cx="20%" cy="80%" r="60%">
-      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.2" />
-      <stop offset="50%" stop-color="#0F172A" stop-opacity="0.05" />
-      <stop offset="100%" stop-color="#050505" stop-opacity="0" />
-      <animate attributeName="cx" values="20%;25%;15%;20%" dur="24s" repeatCount="indefinite" />
-      <animate attributeName="cy" values="80%;75%;85%;80%" dur="24s" repeatCount="indefinite" />
+    <radialGradient id="bg-glow" cx="20%" cy="75%" r="60%">
+      <stop offset="0%" stop-color="#1D4ED8" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#1E3A8A" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+      <animate attributeName="cx" values="20%;26%;14%;20%" dur="26s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="75%;70%;80%;75%" dur="26s" repeatCount="indefinite"/>
     </radialGradient>
-
-    <!-- Grid Shimmer Mask -->
-    <radialGradient id="grid-mask" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75" />
-      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
-      <animate attributeName="cx" values="70%;30%;70%" dur="28s" repeatCount="indefinite" />
-      <animate attributeName="cy" values="70%;30%;70%" dur="28s" repeatCount="indefinite" />
+    <radialGradient id="grid-fade" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <animate attributeName="cx" values="65%;35%;65%" dur="32s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="65%;35%;65%" dur="32s" repeatCount="indefinite"/>
     </radialGradient>
-
-    <!-- Noise / Grain Filter -->
-    <filter id="noise-filter" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise">
-        <animate attributeName="seed" values="0;80;0" dur="20s" repeatCount="indefinite" />
+    <filter id="blue-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" result="n">
+        <animate attributeName="seed" values="2;85;2" dur="19s" repeatCount="indefinite"/>
       </feTurbulence>
-      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" />
-      <feComposite in="SourceGraphic" in2="noise" operator="over" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0"/>
+      <feComposite in="SourceGraphic" operator="over"/>
     </filter>
-
-    <!-- Glow Filter for active path -->
-    <filter id="blue-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-
-    <!-- Mask Reference -->
-    <mask id="grid-mask-ref">
-      <rect width="1600" height="1200" fill="url(#grid-mask)" />
+    <mask id="gm">
+      <rect width="1600" height="1200" fill="url(#grid-fade)"/>
     </mask>
   </defs>
 
-  <style>
-    .bg { fill: #050505; }
-    .border { stroke: #222222; stroke-width: 1; fill: none; }
-    .card-bg { fill: #0B0B0B; stroke: #222222; stroke-width: 1; rx: 16px; }
-    
-    /* Typography */
-    .protocol { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 13px; font-weight: 700; fill: #52525B; letter-spacing: 5px; }
-    .heading-large { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 34px; font-weight: 800; fill: #FFFFFF; letter-spacing: -1px; }
-    .heading-medium { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 30px; font-weight: 800; fill: #FFFFFF; letter-spacing: -0.5px; }
-    .heading-small { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 18px; font-weight: 700; fill: #FFFFFF; }
-    .desc { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 14px; font-weight: 400; fill: #B7B7B7; line-height: 1.6; }
-    
-    /* Stack Column Headers */
-    .stack-col-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 12px; font-weight: 700; fill: #71717A; letter-spacing: 2px; }
-    .stack-item { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 14px; font-weight: 600; fill: #FFFFFF; }
-    
-    /* Focus Tags */
-    .tag-rect { fill: #0E0E0E; stroke: #222222; stroke-width: 1; rx: 8px; }
-    .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 13px; font-weight: 600; fill: #FFFFFF; text-anchor: middle; }
-    
-    /* Status indicator */
-    .status-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 11px; font-weight: 700; fill: #10B981; letter-spacing: 1.5px; }
-    
-    /* Links */
-    .meta-label { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 13px; font-weight: 500; fill: #52525B; }
-    .meta-value { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 13px; font-weight: 600; fill: #B7B7B7; }
+  <rect width="1600" height="1200" fill="#050505"/>
+  <rect width="1600" height="1200" fill="url(#bg-glow)"/>
 
-    /* Journey Timeline */
-    .timeline-label { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 13px; font-weight: 500; fill: #52525B; }
-    .timeline-label-active { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 13px; font-weight: 700; fill: #3B82F6; }
-
-    /* Animation Styles */
-    @keyframes pulse-border {
-      0%, 100% { stroke: #222222; }
-      50% { stroke: #3B82F6; }
-    }
-    .alive-border { animation: pulse-border 12s infinite ease-in-out; }
-  </style>
-
-  <!-- Canvas Base -->
-  <rect width="1600" height="1200" class="bg"/>
-  
-  <!-- Subtle Radial Glow Background -->
-  <rect width="1600" height="1200" fill="url(#glow)" />
-
-  <!-- Grid Overlay (Aligned with Hero) -->
-  <g mask="url(#grid-mask-ref)">
-    <path d="M 80,0 V 1200 M 160,0 V 1200 M 240,0 V 1200 M 320,0 V 1200 M 400,0 V 1200 M 480,0 V 1200 M 560,0 V 1200 M 640,0 V 1200 M 720,0 V 1200 M 800,0 V 1200 M 880,0 V 1200 M 960,0 V 1200 M 1040,0 V 1200 M 1120,0 V 1200 M 1200,0 V 1200 M 1280,0 V 1200 M 1360,0 V 1200 M 1440,0 V 1200 M 1520,0 V 1200" stroke="#1C1C1E" stroke-width="0.5" />
-    <path d="M 0,80 H 1600 M 0,160 H 1600 M 0,240 H 1600 M 0,320 H 1600 M 0,400 H 1600 M 0,480 H 1600 M 0,560 H 1600 M 0,640 H 1600 M 0,720 H 1600 M 0,800 H 1600 M 0,880 H 1600 M 0,960 H 1600 M 0,1040 H 1600 M 0,1120 H 1600" stroke="#1C1C1E" stroke-width="0.5" />
+  <!-- Grid -->
+  <g mask="url(#gm)">
+    <path d="M80,0 V1200 M160,0 V1200 M240,0 V1200 M320,0 V1200 M400,0 V1200 M480,0 V1200 M560,0 V1200 M640,0 V1200 M720,0 V1200 M800,0 V1200 M880,0 V1200 M960,0 V1200 M1040,0 V1200 M1120,0 V1200 M1200,0 V1200 M1280,0 V1200 M1360,0 V1200 M1440,0 V1200 M1520,0 V1200" stroke="#1C1C1E" stroke-width="0.5"/>
+    <path d="M0,80 H1600 M0,160 H1600 M0,240 H1600 M0,320 H1600 M0,400 H1600 M0,480 H1600 M0,560 H1600 M0,640 H1600 M0,720 H1600 M0,800 H1600 M0,880 H1600 M0,960 H1600 M0,1040 H1600 M0,1120 H1600" stroke="#1C1C1E" stroke-width="0.5"/>
   </g>
 
-  <!-- Left Symmetrical Accent Line -->
-  <line x1="80" y1="40" x2="80" y2="1160" stroke="#222222" stroke-width="1.5" />
-  <circle cx="80" cy="40" r="3.5" fill="#3B82F6" />
+  <!-- Left anchor -->
+  <line x1="80" y1="40" x2="80" y2="1160" stroke="#222222" stroke-width="1.5"/>
+  <circle cx="80" cy="40" r="3.5" fill="#3B82F6"/>
 
-  <!-- Section Label -->
-  <text x="120" y="65" class="protocol">AI OPERATING SYSTEM</text>
+  <!-- Section label -->
+  <text x="120" y="68" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="12" font-weight="700" fill="#3D3D45" letter-spacing="5">AI OPERATING SYSTEM</text>
 
-  <!-- ================= CARD 1: CURRENT BUILD (Largest) ================= -->
-  <g>
-    <rect x="80" y="80" width="540" height="380" rx="16" class="card-bg alive-border" />
-    <text x="120" y="130" class="protocol">CURRENT BUILD</text>
-    
-    <!-- Active Development Indicator -->
-    <g>
-      <circle cx="126" cy="166" r="4.5" fill="#10B981" />
-      <circle cx="126" cy="166" r="4.5" fill="none" stroke="#10B981" stroke-width="1.5">
-        <animate attributeName="r" values="4.5;11;4.5" dur="3s" repeatCount="indefinite" />
-        <animate attributeName="stroke-opacity" values="1;0;1" dur="3s" repeatCount="indefinite" />
-      </circle>
-      <text x="144" y="170" class="status-text">ACTIVE DEVELOPMENT</text>
-    </g>
+  <!-- ===== CARD 1: CURRENT BUILD (flagship — large) ===== -->
+  <rect x="80" y="86" width="548" height="388" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1">
+    <animate attributeName="stroke" values="#222222;#3B82F6;#222222" dur="14s" repeatCount="indefinite"/>
+  </rect>
+  <text x="122" y="134" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">CURRENT BUILD</text>
+  <!-- Active pulse -->
+  <circle cx="128" cy="167" r="4.5" fill="#10B981"/>
+  <circle cx="128" cy="167" r="4.5" fill="none" stroke="#10B981" stroke-width="1.5">
+    <animate attributeName="r" values="4.5;12;4.5" dur="3.2s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="1;0;1" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="146" y="171" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#10B981" letter-spacing="1.5">ACTIVE DEVELOPMENT</text>
+  <text x="122" y="222" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" letter-spacing="-1">SkillTrove</text>
+  <text x="122" y="266" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="400" fill="#9A9A9A">An AI-powered education ecosystem featuring adaptive</text>
+  <text x="122" y="288" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="400" fill="#9A9A9A">learning, Bloom's Taxonomy question generation, coding</text>
+  <text x="122" y="310" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="400" fill="#9A9A9A">practice, proctoring with face recognition, analytics</text>
+  <text x="122" y="332" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="400" fill="#9A9A9A">and personalized learning paths.</text>
+  <text x="122" y="400" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="500" fill="#3D3D45">Repository</text>
+  <text x="208" y="400" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#9A9A9A">SKILLTROVEMAX</text>
+  <text x="350" y="400" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="500" fill="#3D3D45">Live</text>
+  <text x="384" y="400" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#3D3D45">Coming Soon</text>
 
-    <text x="120" y="215" class="heading-large">SkillTrove</text>
-    <text x="120" y="255" class="desc">An AI-powered learning and assessment platform that</text>
-    <text x="120" y="277" class="desc">combines adaptive learning, Bloom's Taxonomy based</text>
-    <text x="120" y="299" class="desc">question generation, coding practice, AI-powered exam</text>
-    <text x="120" y="321" class="desc">proctoring with face recognition, analytics and paths.</text>
+  <!-- ===== CARD 2: MISSION ===== -->
+  <rect x="648" y="86" width="464" height="388" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="690" y="134" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">MISSION</text>
+  <text x="690" y="210" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="32" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">Building</text>
+  <text x="690" y="248" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="32" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">production-ready</text>
+  <text x="690" y="286" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="32" font-weight="800" fill="#FFFFFF" letter-spacing="-0.5">AI systems that</text>
+  <text x="690" y="324" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="32" font-weight="800" fill="#3B82F6" letter-spacing="-0.5">solve real-world</text>
+  <text x="690" y="362" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="32" font-weight="800" fill="#3B82F6" letter-spacing="-0.5">problems.</text>
 
-    <!-- Bottom Meta info -->
-    <text x="120" y="405" class="meta-label">Repository</text>
-    <text x="210" y="405" class="meta-value">SKILLTROVEMAX</text>
-    
-    <text x="340" y="405" class="meta-label">Live</text>
-    <text x="380" y="405" class="meta-value" fill="#52525B">Coming Soon</text>
-  </g>
+  <!-- ===== CARD 3: CURRENT FOCUS ===== -->
+  <rect x="1132" y="86" width="388" height="388" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="1172" y="134" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">CURRENT FOCUS</text>
+  <!-- Tags -->
+  <rect x="1172" y="162" width="192" height="30" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="1268" y="181" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Artificial Intelligence</text>
+  <rect x="1172" y="210" width="168" height="30" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="1256" y="229" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Machine Learning</text>
+  <rect x="1172" y="258" width="218" height="30" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="1281" y="277" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Large Language Models</text>
+  <rect x="1172" y="306" width="128" height="30" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="1236" y="325" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Agentic AI</text>
+  <rect x="1172" y="354" width="154" height="30" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="1249" y="373" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Prompt Engineering</text>
 
-  <!-- ================= CARD 2: MISSION ================= -->
-  <g>
-    <rect x="644" y="80" width="460" height="380" rx="16" class="card-bg" />
-    <text x="684" y="130" class="protocol">MISSION</text>
-    
-    <text x="684" y="200" class="heading-medium">Building</text>
-    <text x="684" y="240" class="heading-medium">production-ready</text>
-    <text x="684" y="280" class="heading-medium">AI systems that solve</text>
-    <text x="684" y="320" class="heading-medium" fill="#3B82F6">real-world problems.</text>
-  </g>
+  <!-- ===== CARD 4: ENGINEERING STACK ===== -->
+  <rect x="80" y="498" width="548" height="422" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="122" y="548" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">ENGINEERING STACK</text>
+  <!-- AI column -->
+  <text x="122" y="588" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="2">AI</text>
+  <text x="122" y="618" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Python</text>
+  <text x="122" y="644" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">LLMs</text>
+  <text x="122" y="670" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Prompt Engineering</text>
+  <text x="122" y="696" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">RAG</text>
+  <text x="122" y="722" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">LangChain</text>
+  <text x="122" y="748" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">LangGraph</text>
+  <!-- Backend column -->
+  <text x="276" y="588" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="2">BACKEND</text>
+  <text x="276" y="618" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">FastAPI</text>
+  <text x="276" y="644" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Node.js</text>
+  <text x="276" y="670" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Express</text>
+  <text x="276" y="696" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">MongoDB</text>
+  <text x="276" y="722" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">REST APIs</text>
+  <!-- Frontend column -->
+  <text x="416" y="588" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="2">FRONTEND</text>
+  <text x="416" y="618" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">React</text>
+  <text x="416" y="644" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Tailwind CSS</text>
+  <text x="416" y="670" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Vite</text>
+  <text x="416" y="696" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">JavaScript</text>
+  <text x="416" y="722" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Responsive UI</text>
 
-  <!-- ================= CARD 3: CURRENT FOCUS ================= -->
-  <g>
-    <rect x="1128" y="80" width="392" height="380" rx="16" class="card-bg" />
-    <text x="1168" y="130" class="protocol">CURRENT FOCUS</text>
+  <!-- ===== CARD 5: ENGINEERING PRINCIPLES ===== -->
+  <rect x="648" y="498" width="464" height="422" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="690" y="548" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">ENGINEERING PRINCIPLES</text>
+  <line x1="690" y1="605" x2="706" y2="605" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="718" y="610" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Solve Real Problems</text>
+  <line x1="690" y1="665" x2="706" y2="665" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="718" y="670" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Build Production Software</text>
+  <line x1="690" y1="725" x2="706" y2="725" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="718" y="730" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Keep Designs Minimal</text>
+  <line x1="690" y1="785" x2="706" y2="785" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="718" y="790" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Ship Consistently</text>
 
-    <!-- Tag 1: Artificial Intelligence -->
-    <g transform="translate(1168, 160)">
-      <rect width="180" height="32" class="tag-rect" />
-      <text x="90" y="20" class="tag-text">Artificial Intelligence</text>
-    </g>
-    <!-- Tag 2: Machine Learning -->
-    <g transform="translate(1168, 210)">
-      <rect width="160" height="32" class="tag-rect" />
-      <text x="80" y="20" class="tag-text">Machine Learning</text>
-    </g>
-    <!-- Tag 3: Large Language Models -->
-    <g transform="translate(1168, 260)">
-      <rect width="210" height="32" class="tag-rect" />
-      <text x="105" y="20" class="tag-text">Large Language Models</text>
-    </g>
-    <!-- Tag 4: Agentic AI -->
-    <g transform="translate(1168, 310)">
-      <rect width="120" height="32" class="tag-rect" />
-      <text x="60" y="20" class="tag-text">Agentic AI</text>
-    </g>
-  </g>
+  <!-- ===== CARD 6: CURRENT ROADMAP ===== -->
+  <rect x="1132" y="498" width="388" height="622" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="1172" y="548" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">CURRENT ROADMAP</text>
+  <!-- Timeline track -->
+  <line x1="1326" y1="568" x2="1326" y2="988" stroke="#1A1A1D" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <!-- Signal flow -->
+  <line x1="1326" y1="568" x2="1326" y2="988" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="20 140" opacity="0.7">
+    <animate attributeName="stroke-dashoffset" values="160;0" dur="8s" repeatCount="indefinite"/>
+  </line>
+  <!-- Nodes -->
+  <circle cx="1326" cy="578" r="3" fill="#27272A"/>
+  <text x="1308" y="582" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="12" font-weight="500" fill="#3D3D45" text-anchor="end">Machine Learning</text>
+  <circle cx="1326" cy="618" r="3" fill="#27272A"/>
+  <text x="1344" y="622" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="12" font-weight="500" fill="#3D3D45" text-anchor="start">Deep Learning</text>
+  <!-- Active: LLMs -->
+  <circle cx="1326" cy="658" r="5" fill="#3B82F6" filter="url(#blue-glow)"/>
+  <circle cx="1326" cy="658" r="5" fill="none" stroke="#3B82F6" stroke-width="1.5">
+    <animate attributeName="r" values="5;13;5" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <text x="1308" y="662" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="12" font-weight="700" fill="#3B82F6" text-anchor="end">Large Language Models</text>
+  <!-- Active: Prompt Engineering -->
+  <circle cx="1326" cy="698" r="5" fill="#3B82F6" filter="url(#blue-glow)"/>
+  <circle cx="1326" cy="698" r="5" fill="none" stroke="#3B82F6" stroke-width="1.5">
+    <animate attributeName="r" values="5;13;5" dur="3.4s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="1;0;1" dur="3.4s" repeatCount="indefinite"/>
+  </circle>
+  <text x="1344" y="702" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="12" font-weight="700" fill="#3B82F6" text-anchor="start">Prompt Engineering</text>
+  <circle cx="1326" cy="738" r="3" fill="#27272A"/>
+  <text x="1308" y="742" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="12" font-weight="500" fill="#3D3D45" text-anchor="end">RAG</text>
+  <circle cx="1326" cy="778" r="3" fill="#27272A"/>
+  <text x="1344" y="782" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="12" font-weight="500" fill="#3D3D45" text-anchor="start">LangChain / LangGraph</text>
+  <circle cx="1326" cy="818" r="3" fill="#27272A"/>
+  <text x="1308" y="822" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="12" font-weight="500" fill="#3D3D45" text-anchor="end">MCP</text>
+  <circle cx="1326" cy="858" r="3" fill="#27272A"/>
+  <text x="1344" y="862" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="12" font-weight="500" fill="#3D3D45" text-anchor="start">Multi-Agent Systems</text>
+  <!-- Destination -->
+  <circle cx="1326" cy="920" r="5" fill="#3B82F6"/>
+  <circle cx="1326" cy="920" r="5" fill="none" stroke="#3B82F6" stroke-width="1">
+    <animate attributeName="r" values="5;20;5" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <rect x="1246" y="938" width="160" height="32" rx="8" fill="#080808" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="1326" y="958" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="13" font-weight="800" fill="#3B82F6" text-anchor="middle">Agentic AI</text>
 
-  <!-- ================= CARD 4: ENGINEERING STACK ================= -->
-  <g>
-    <rect x="80" y="504" width="540" height="412" rx="16" class="card-bg" />
-    <text x="120" y="554" class="protocol">ENGINEERING STACK</text>
-    
-    <!-- AI Column -->
-    <g transform="translate(120, 590)">
-      <text x="0" y="0" class="stack-col-header">AI</text>
-      <text x="0" y="30" class="stack-item">Python</text>
-      <text x="0" y="60" class="stack-item">LLMs</text>
-      <text x="0" y="90" class="stack-item">Prompt Eng</text>
-      <text x="0" y="120" class="stack-item">RAG</text>
-      <text x="0" y="150" class="stack-item">LangChain</text>
-      <text x="0" y="180" class="stack-item">LangGraph</text>
-    </g>
-    <!-- Backend Column -->
-    <g transform="translate(270, 590)">
-      <text x="0" y="0" class="stack-col-header">BACKEND</text>
-      <text x="0" y="30" class="stack-item">FastAPI</text>
-      <text x="0" y="60" class="stack-item">Node.js</text>
-      <text x="0" y="90" class="stack-item">Express</text>
-      <text x="0" y="120" class="stack-item">MongoDB</text>
-      <text x="0" y="150" class="stack-item">REST APIs</text>
-    </g>
-    <!-- Frontend Column -->
-    <g transform="translate(410, 590)">
-      <text x="0" y="0" class="stack-col-header">FRONTEND</text>
-      <text x="0" y="30" class="stack-item">React</text>
-      <text x="0" y="60" class="stack-item">Tailwind CSS</text>
-      <text x="0" y="90" class="stack-item">Vite</text>
-      <text x="0" y="120" class="stack-item">JavaScript</text>
-      <text x="0" y="150" class="stack-item">Responsive UI</text>
-    </g>
-  </g>
+  <!-- ===== CARD 7: AVAILABLE FOR ===== -->
+  <rect x="80" y="944" width="548" height="190" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="122" y="986" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">AVAILABLE FOR</text>
+  <circle cx="128" cy="1024" r="2.5" fill="#3B82F6"/>
+  <text x="142" y="1029" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">AI Engineering</text>
+  <circle cx="340" cy="1024" r="2.5" fill="#3B82F6"/>
+  <text x="354" y="1029" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Full Stack Development</text>
+  <circle cx="128" cy="1062" r="2.5" fill="#3B82F6"/>
+  <text x="142" y="1067" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Software Development</text>
+  <circle cx="340" cy="1062" r="2.5" fill="#3B82F6"/>
+  <text x="354" y="1067" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Remote Opportunities</text>
+  <circle cx="128" cy="1100" r="2.5" fill="#3B82F6"/>
+  <text x="142" y="1105" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Open Source Collaboration</text>
 
-  <!-- ================= CARD 6: ENGINEERING PRINCIPLES ================= -->
-  <g>
-    <rect x="644" y="504" width="460" height="412" rx="16" class="card-bg" />
-    <text x="684" y="554" class="protocol">ENGINEERING PRINCIPLES</text>
+  <!-- ===== CARD 8: CURRENTLY LEARNING ===== -->
+  <rect x="648" y="944" width="464" height="190" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="690" y="986" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">CURRENTLY LEARNING</text>
+  <circle cx="696" cy="1024" r="2.5" fill="#3B82F6"/>
+  <text x="710" y="1029" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Agentic AI</text>
+  <circle cx="858" cy="1024" r="2.5" fill="#3B82F6"/>
+  <text x="872" y="1029" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Model Context Protocol</text>
+  <circle cx="696" cy="1062" r="2.5" fill="#3B82F6"/>
+  <text x="710" y="1067" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">AI Agents</text>
+  <circle cx="858" cy="1062" r="2.5" fill="#3B82F6"/>
+  <text x="872" y="1067" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Production AI Systems</text>
 
-    <!-- Principle 1 -->
-    <g transform="translate(684, 610)">
-      <line x1="0" y1="0" x2="15" y2="0" stroke="#3B82F6" stroke-width="2.5" />
-      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Solve Real Problems</text>
-    </g>
-    <!-- Principle 2 -->
-    <g transform="translate(684, 670)">
-      <line x1="0" y1="0" x2="15" y2="0" stroke="#3B82F6" stroke-width="2.5" />
-      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Build Production Software</text>
-    </g>
-    <!-- Principle 3 -->
-    <g transform="translate(684, 730)">
-      <line x1="0" y1="0" x2="15" y2="0" stroke="#3B82F6" stroke-width="2.5" />
-      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Keep Designs Minimal</text>
-    </g>
-    <!-- Principle 4 -->
-    <g transform="translate(684, 790)">
-      <line x1="0" y1="0" x2="15" y2="0" stroke="#3B82F6" stroke-width="2.5" />
-      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Ship Consistently</text>
-    </g>
-  </g>
-
-  <!-- ================= CARD 7: AVAILABLE FOR ================= -->
-  <g>
-    <rect x="80" y="940" width="540" height="180" rx="16" class="card-bg" />
-    <text x="120" y="980" class="protocol">AVAILABLE FOR</text>
-    
-    <g transform="translate(120, 1005)">
-      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
-      <text x="20" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">AI Engineering</text>
-      
-      <circle cx="286" cy="11" r="2.5" fill="#3B82F6" />
-      <text x="300" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Full Stack Development</text>
-
-      <circle cx="6" cy="47" r="2.5" fill="#3B82F6" />
-      <text x="20" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Software Development</text>
-
-      <circle cx="286" cy="47" r="2.5" fill="#3B82F6" />
-      <text x="300" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Remote Opportunities</text>
-
-      <circle cx="6" cy="83" r="2.5" fill="#3B82F6" />
-      <text x="20" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Open Source Collaboration</text>
-    </g>
-  </g>
-
-  <!-- ================= CARD 8: NOW LEARNING ================= -->
-  <g>
-    <rect x="644" y="940" width="460" height="180" rx="16" class="card-bg" />
-    <text x="684" y="980" class="protocol">CURRENTLY LEARNING</text>
-    
-    <g transform="translate(684, 1005)">
-      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
-      <text x="20" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Agentic AI</text>
-      
-      <circle cx="206" cy="11" r="2.5" fill="#3B82F6" />
-      <text x="220" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Model Context Protocol</text>
-
-      <circle cx="6" cy="47" r="2.5" fill="#3B82F6" />
-      <text x="20" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">AI Agents</text>
-
-      <circle cx="206" cy="47" r="2.5" fill="#3B82F6" />
-      <text x="220" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Production AI Systems</text>
-    </g>
-  </g>
-
-  <!-- ================= CARD 5: CURRENT ROADMAP ================= -->
-  <g>
-    <rect x="1128" y="504" width="392" height="616" rx="16" class="card-bg" />
-    <text x="1168" y="554" class="protocol">CURRENT ROADMAP</text>
-
-    <!-- Center Timeline Track inside card -->
-    <line x1="1324" y1="585" x2="1324" y2="990" stroke="#1C1C1E" stroke-width="1.5" stroke-dasharray="3 3" />
-
-    <!-- Timeline Nodes -->
-    <!-- ML -->
-    <circle cx="1324" cy="595" r="3" fill="#27272A" />
-    <text x="1304" y="599" class="timeline-label" text-anchor="end">Machine Learning</text>
-
-    <!-- DL -->
-    <circle cx="1324" cy="635" r="3" fill="#27272A" />
-    <text x="1344" y="639" class="timeline-label" text-anchor="start">Deep Learning</text>
-
-    <!-- LLMs (Active Position - Glowing) -->
-    <circle cx="1324" cy="675" r="4.5" fill="#3B82F6" filter="url(#blue-glow)" />
-    <text x="1304" y="679" class="timeline-label-active" text-anchor="end" filter="url(#blue-glow)">Large Language Models</text>
-
-    <!-- Prompt Engineering (Active Position - Glowing) -->
-    <circle cx="1324" cy="715" r="4.5" fill="#3B82F6" filter="url(#blue-glow)" />
-    <text x="1344" y="719" class="timeline-label-active" text-anchor="start" filter="url(#blue-glow)">Prompt Engineering</text>
-
-    <!-- RAG -->
-    <circle cx="1324" cy="755" r="3" fill="#27272A" />
-    <text x="1304" y="759" class="timeline-label" text-anchor="end">RAG</text>
-
-    <!-- LangChain -->
-    <circle cx="1324" cy="795" r="3" fill="#27272A" />
-    <text x="1344" y="799" class="timeline-label" text-anchor="start">LangChain</text>
-
-    <!-- LangGraph -->
-    <circle cx="1324" cy="835" r="3" fill="#27272A" />
-    <text x="1304" y="839" class="timeline-label" text-anchor="end">LangGraph</text>
-
-    <!-- MCP -->
-    <circle cx="1324" cy="875" r="3" fill="#27272A" />
-    <text x="1344" y="879" class="timeline-label" text-anchor="start">MCP</text>
-
-    <!-- Multi-Agent Systems -->
-    <circle cx="1324" cy="915" r="3" fill="#27272A" />
-    <text x="1304" y="919" class="timeline-label" text-anchor="end">Multi-Agent Systems</text>
-
-    <!-- Target Node (Agentic AI) -->
-    <circle cx="1324" cy="965" r="5" fill="#3B82F6" />
-    <!-- Destination Capsule -->
-    <g transform="translate(1324, 995)">
-      <rect x="-60" y="0" width="120" height="26" rx="6" fill="#0A0A0C" stroke="#3B82F6" stroke-width="1.2" />
-      <text x="0" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12" font-weight="700" fill="#3B82F6" text-anchor="middle">Agentic AI</text>
-    </g>
-  </g>
-
-  <!-- Fine Film Grain Overlay -->
-  <rect width="1600" height="1200" fill="transparent" filter="url(#noise-filter)" pointer-events="none" />
-
-  <!-- Outer Border Shell -->
+  <!-- Grain overlay -->
+  <rect width="1600" height="1200" fill="transparent" filter="url(#grain)" pointer-events="none"/>
+  <!-- Border -->
   <rect x="0.5" y="0.5" width="1599" height="1199" rx="16" stroke="#222222" stroke-width="1" fill="none"/>
 </svg>

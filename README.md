@@ -1,58 +1,53 @@
 <div align="center">
-  <img src="./assets/svg/hero.svg?v=2" alt="System Initialized - Gunti Prasanth Kumar" width="100%" />
-</div>
-
-<br /><br />
-
-<div align="center">
-  <img src="./assets/svg/dashboard.svg?v=2" alt="AI Operating System Dashboard" width="100%" />
-</div>
-
-<br /><br />
-
-<div align="center">
-  <img src="./assets/svg/products.svg?v=2" alt="Featured Products" width="100%" />
-</div>
-
-<br /><br />
-
-<div align="center">
-  <img src="./assets/svg/journey.svg?v=2" alt="Engineering Journey" width="100%" />
-</div>
-
-<br /><br />
-
-<div align="center">
-  <img src="./assets/svg/opensource.svg?v=2" alt="Open Source Activity" width="100%" />
-</div>
-
-<br /><br />
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=GuntiPrasanthKumar&amp;show_icons=true&amp;theme=dark&amp;bg_color=050505&amp;hide_border=true&amp;title_color=ffffff&amp;text_color=b7b7b7&amp;icon_color=3b82f6" alt="Gunti Prasanth Kumar's GitHub Stats" height="195" />
-  &nbsp;&nbsp;
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=GuntiPrasanthKumar&amp;theme=dark&amp;background=050505&amp;hide_border=true&amp;ring=3b82f6&amp;fire=3b82f6&amp;currStreakNum=3b82f6&amp;sideNums=b7b7b7&amp;sideLabels=b7b7b7" alt="Gunti Prasanth Kumar's Contribution Streak" height="195" />
+  <img src="./assets/svg/hero.svg" alt="Gunti Prasanth Kumar — AI Engineer" width="100%" />
 </div>
 
 <br />
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&amp;layout=compact&amp;theme=dark&amp;bg_color=050505&amp;hide_border=true&amp;title_color=ffffff&amp;text_color=b7b7b7" alt="Gunti Prasanth Kumar's Top Languages" width="600" />
+  <img src="./assets/svg/dashboard.svg" alt="AI Operating System — Mission Control" width="100%" />
+</div>
+
+<br />
+
+<div align="center">
+  <img src="./assets/svg/products.svg" alt="Featured Products — Building AI That Solves Real Problems" width="100%" />
+</div>
+
+<br />
+
+<div align="center">
+  <img src="./assets/svg/journey.svg" alt="Engineering Journey — The Road to Autonomous Intelligence" width="100%" />
+</div>
+
+<br />
+
+<div align="center">
+  <img src="./assets/svg/opensource.svg" alt="Open Source — Engineering Activity" width="100%" />
+</div>
+
+<br />
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=GuntiPrasanthKumar&show_icons=true&theme=dark&bg_color=050505&hide_border=true&title_color=ffffff&text_color=b7b7b7&icon_color=3b82f6&rank_icon=github" alt="GitHub Stats" height="195" />
+  &nbsp;&nbsp;
+  <img src="https://streak-stats.demolab.com/?user=GuntiPrasanthKumar&theme=dark&background=050505&hide_border=true&ring=3b82f6&fire=3b82f6&currStreakNum=3b82f6&sideNums=b7b7b7&sideLabels=b7b7b7&dates=3D3D45" alt="Contribution Streak" height="195" />
+</div>
+
+<br />
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&layout=compact&theme=dark&bg_color=050505&hide_border=true&title_color=ffffff&text_color=b7b7b7&langs_count=8" alt="Top Languages" width="600" />
 </div>
 
 <br /><br />
 
 <div align="center">
-  <hr style="border: 0; border-top: 1px solid #222222; margin: 40px 0;" />
-  <font color="#52525B">
-    <a href="https://prasanth-future-engine.netlify.app/" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">Portfolio ↗</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://github.com/GuntiPrasanthKumar" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">GitHub ↗</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://www.linkedin.com/in/gunti-prasanth-kumar-68207027a/" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">LinkedIn ↗</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="mailto:prasanthgunti07@gmail.com" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">Email ↗</a>
-  </font>
-  <br /><br />
-  <font size="2" color="#52525B" style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 13px;">Designed &amp; Engineered by Gunti Prasanth Kumar &copy; 2026</font>
+
+---
+
+[Portfolio ↗](https://prasanth-future-engine.netlify.app/) &nbsp;&nbsp;·&nbsp;&nbsp; [GitHub ↗](https://github.com/GuntiPrasanthKumar) &nbsp;&nbsp;·&nbsp;&nbsp; [LinkedIn ↗](https://www.linkedin.com/in/gunti-prasanth-kumar-68207027a/) &nbsp;&nbsp;·&nbsp;&nbsp; [Email ↗](mailto:prasanthgunti07@gmail.com)
+
+<sub>Designed &amp; Engineered by Gunti Prasanth Kumar &copy; 2026</sub>
+
 </div>

@@ -29,15 +29,7 @@
 <br />
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=GuntiPrasanthKumar&show_icons=true&theme=dark&bg_color=050505&hide_border=true&title_color=ffffff&text_color=b7b7b7&icon_color=3b82f6" alt="GitHub Stats" height="195" />
-  &nbsp;&nbsp;
-  <img src="https://streak-stats.demolab.com/?user=GuntiPrasanthKumar&theme=dark&background=050505&hide_border=true&ring=3b82f6&fire=3b82f6&currStreakNum=3b82f6&sideNums=b7b7b7&sideLabels=b7b7b7" alt="Contribution Streak" height="195" />
-</div>
-
-<br />
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&layout=compact&theme=dark&bg_color=050505&hide_border=true&title_color=ffffff&text_color=b7b7b7&langs_count=8" alt="Top Languages" width="600" />
+  <img src="https://streak-stats.demolab.com/?user=GuntiPrasanthKumar&theme=dark&background=050505&hide_border=true&ring=3b82f6&fire=3b82f6&currStreakNum=3b82f6&sideNums=b7b7b7&sideLabels=b7b7b7&dates=3D3D45&stroke=222222" alt="Contribution Streak" />
 </div>
 
 <br /><br />

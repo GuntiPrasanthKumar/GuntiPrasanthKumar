@@ -4,7 +4,7 @@
 
 <br><br>
 
-<img src="./assets/svg/overview.svg" alt="Gunti Prasanth Kumar - Overview" width="1000" />
+<img src="./assets/svg/dashboard.svg" alt="Gunti Prasanth Kumar - AI Dashboard" width="1000" />
 
 <br><br>
 
@@ -12,13 +12,17 @@
 
 <br><br>
 
-<img src="https://github-stats-extended.vercel.app/api?username=GuntiPrasanthKumar&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=000000&title_color=3B82F6&text_color=A1A1AA&icon_color=3B82F6" alt="GitHub Stats" width="490" />
-&nbsp;&nbsp;
-<img src="https://streak-stats.demolab.com?user=GuntiPrasanthKumar&background=000000&hide_border=true&stroke=1C1C1E&ring=3B82F6&fire=3B82F6&currStreakNum=EDEDED&currStreakLabel=3B82F6&sideNums=A1A1AA&sideLabels=A1A1AA&dates=71717A" alt="GitHub Streak" width="490" />
+<img src="./assets/svg/journey.svg" alt="Gunti Prasanth Kumar - Journey" width="1000" />
 
 <br><br>
 
-<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&layout=compact&hide_border=true&langs_count=8&bg_color=000000&title_color=3B82F6&text_color=A1A1AA" alt="Top Languages" width="1000" />
+<img src="https://github-stats-extended.vercel.app/api?username=GuntiPrasanthKumar&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;hide_border=true&amp;bg_color=000000&amp;title_color=3B82F6&amp;text_color=A1A1AA&amp;icon_color=3B82F6" alt="GitHub Stats" width="490" />
+&nbsp;&nbsp;
+<img src="https://streak-stats.demolab.com?user=GuntiPrasanthKumar&amp;background=000000&amp;hide_border=true&amp;stroke=1C1C1E&amp;ring=3B82F6&amp;fire=3B82F6&amp;currStreakNum=EDEDED&amp;currStreakLabel=3B82F6&amp;sideNums=A1A1AA&amp;sideLabels=A1A1AA&amp;dates=71717A" alt="GitHub Streak" width="490" />
+
+<br><br>
+
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&amp;layout=compact&amp;hide_border=true&amp;langs_count=8&amp;bg_color=000000&amp;title_color=3B82F6&amp;text_color=A1A1AA" alt="Top Languages" width="1000" />
 
 <br><br>
 

@@ -31,14 +31,19 @@
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=GuntiPrasanthKumar&amp;show_icons=true&amp;theme=dark&amp;bg_color=050505&amp;hide_border=true&amp;title_color=ffffff&amp;text_color=b7b7b7&amp;icon_color=3b82f6" alt="Gunti Prasanth Kumar's GitHub Stats" height="195" />
   &nbsp;&nbsp;
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=GuntiPrasanthKumar&amp;theme=dark&amp;background=050505&amp;hide_border=true&amp;ring=3b82f6&amp;fire=3b82f6&amp;currStreakNum=3b82f6&amp;sideNums=b7b7b7" alt="Gunti Prasanth Kumar's Contribution Streak" height="195" />
-  &nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&amp;layout=compact&amp;theme=dark&amp;bg_color=050505&amp;hide_border=true&amp;title_color=ffffff&amp;text_color=b7b7b7" alt="Gunti Prasanth Kumar's Top Languages" height="195" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=GuntiPrasanthKumar&amp;theme=dark&amp;background=050505&amp;hide_border=true&amp;ring=3b82f6&amp;fire=3b82f6&amp;currStreakNum=3b82f6&amp;sideNums=b7b7b7&amp;sideLabels=b7b7b7" alt="Gunti Prasanth Kumar's Contribution Streak" height="195" />
+</div>
+
+<br />
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&amp;layout=compact&amp;theme=dark&amp;bg_color=050505&amp;hide_border=true&amp;title_color=ffffff&amp;text_color=b7b7b7" alt="Gunti Prasanth Kumar's Top Languages" width="600" />
 </div>
 
 <br /><br />
 
 <div align="center">
+  <hr style="border: 0; border-top: 1px solid #222222; margin: 40px 0;" />
   <font color="#52525B">
     <a href="https://prasanth-future-engine.netlify.app/" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">Portfolio ↗</a>
     &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;

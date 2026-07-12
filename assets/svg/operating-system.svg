@@ -1,0 +1,137 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Canvas -->
+  <rect width="1600" height="1200" fill="#000000"/>
+  <rect x="0.5" y="0.5" width="1599" height="1199" rx="16" stroke="#1C1C1E" stroke-width="1" fill="none"/>
+
+  <!-- ================= ROW 1 ================= -->
+  <!-- Card 1: SYSTEM STATUS -->
+  <g>
+    <rect x="80" y="80" width="600" height="300" rx="16" fill="#0A0A0C" stroke="#1C1C1E" stroke-width="1" />
+    <text x="120" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="13" font-weight="700" fill="#52525B" letter-spacing="4px">SYSTEM STATUS</text>
+    
+    <!-- Active status circle indicator -->
+    <circle cx="126" cy="166" r="4.5" fill="#10B981" />
+    <circle cx="126" cy="166" r="4.5" fill="none" stroke="#10B981" stroke-width="1.5">
+      <animate attributeName="r" values="4.5;12;4.5" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-opacity" values="1;0;1" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="144" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="12" font-weight="700" fill="#10B981" letter-spacing="1.5px">ACTIVE</text>
+    
+    <text x="120" y="212" font-family="-apple-system, BlinkMacSystemFont, 'Outfit', 'Segoe UI', sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" letter-spacing="-0.5px">Build: SkillTrove</text>
+    
+    <text x="120" y="248" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="400" fill="#A1A1AA" line-height="1.5">AI-powered learning and assessment platform focused on</text>
+    <text x="120" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="400" fill="#A1A1AA" line-height="1.5">intelligent education, adaptive evaluation and secure</text>
+    <text x="120" y="292" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="400" fill="#A1A1AA" line-height="1.5">online examinations.</text>
+  </g>
+
+  <!-- Card 2: MISSION -->
+  <g>
+    <rect x="700" y="80" width="820" height="300" rx="16" fill="#0A0A0C" stroke="#1C1C1E" stroke-width="1" />
+    <text x="740" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="13" font-weight="700" fill="#52525B" letter-spacing="4px">MISSION</text>
+    
+    <text x="740" y="185" font-family="-apple-system, BlinkMacSystemFont, 'Outfit', 'Segoe UI', sans-serif" font-size="34" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5px">Building production-ready AI products</text>
+    <text x="740" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Outfit', 'Segoe UI', sans-serif" font-size="34" font-weight="800" fill="#FFFFFF" letter-spacing="-1.5px">that solve real-world problems.</text>
+  </g>
+
+  <!-- ================= ROW 2 ================= -->
+  <!-- Card 3: CURRENT FOCUS -->
+  <g>
+    <rect x="80" y="400" width="400" height="360" rx="16" fill="#0A0A0C" stroke="#1C1C1E" stroke-width="1" />
+    <text x="120" y="445" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="13" font-weight="700" fill="#52525B" letter-spacing="4px">CURRENT FOCUS</text>
+    
+    <circle cx="124" cy="491" r="2.5" fill="#3B82F6" />
+    <text x="140" y="496" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#EDEDED">Artificial Intelligence</text>
+    
+    <circle cx="124" cy="531" r="2.5" fill="#3B82F6" />
+    <text x="140" y="536" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#EDEDED">Machine Learning</text>
+    
+    <circle cx="124" cy="571" r="2.5" fill="#3B82F6" />
+    <text x="140" y="576" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#EDEDED">Large Language Models</text>
+    
+    <circle cx="124" cy="611" r="2.5" fill="#3B82F6" />
+    <text x="140" y="616" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#EDEDED">Agentic AI Systems</text>
+  </g>
+
+  <!-- Card 4: LEARNING PATH -->
+  <g>
+    <rect x="500" y="400" width="600" height="360" rx="16" fill="#0A0A0C" stroke="#1C1C1E" stroke-width="1" />
+    <text x="540" y="445" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="13" font-weight="700" fill="#52525B" letter-spacing="4px">LEARNING PATH</text>
+    
+    <!-- Vertical timeline track -->
+    <line x1="800" y1="480" x2="800" y2="670" stroke="#1C1C1E" stroke-width="1.5" stroke-dasharray="4 4" />
+    
+    <!-- Timeline Nodes -->
+    <circle cx="800" cy="490" r="3" fill="#27272A" />
+    <text x="780" y="495" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#A1A1AA" text-anchor="end">Machine Learning</text>
+
+    <circle cx="800" cy="525" r="3" fill="#27272A" />
+    <text x="820" y="530" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#A1A1AA" text-anchor="start">Deep Learning</text>
+
+    <circle cx="800" cy="560" r="3" fill="#27272A" />
+    <text x="780" y="565" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#A1A1AA" text-anchor="end">LLMs</text>
+
+    <circle cx="800" cy="595" r="3" fill="#27272A" />
+    <text x="820" y="600" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#A1A1AA" text-anchor="start">RAG</text>
+
+    <circle cx="800" cy="630" r="3" fill="#27272A" />
+    <text x="780" y="635" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#A1A1AA" text-anchor="end">LangGraph</text>
+
+    <circle cx="800" cy="665" r="3" fill="#27272A" />
+    <text x="820" y="670" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#A1A1AA" text-anchor="start">MCP</text>
+
+    <!-- Highlighted Target Node -->
+    <circle cx="800" cy="700" r="4.5" fill="#3B82F6" />
+    <rect x="740" y="718" width="120" height="26" rx="6" fill="#0A0A0C" stroke="#3B82F6" stroke-width="1.2" />
+    <text x="800" y="735" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#3B82F6" text-anchor="middle">Agentic AI</text>
+  </g>
+
+  <!-- Card 6: CURRENT GOAL -->
+  <g>
+    <rect x="1120" y="400" width="400" height="360" rx="16" fill="#0A0A0C" stroke="#1C1C1E" stroke-width="1" />
+    <text x="1160" y="445" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="13" font-weight="700" fill="#52525B" letter-spacing="4px">CURRENT GOAL</text>
+    
+    <!-- Accent callout divider -->
+    <line x1="1160" y1="490" x2="1160" y2="600" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" />
+    <text x="1178" y="510" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#EDEDED">Developing next-generation</text>
+    <text x="1178" y="534" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#EDEDED">autonomous AI systems</text>
+    <text x="1178" y="558" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#EDEDED">that solve real-world</text>
+    <text x="1178" y="582" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="14" font-weight="600" fill="#EDEDED">problems.</text>
+  </g>
+
+  <!-- ================= ROW 3 ================= -->
+  <!-- Card 5: ENGINEERING STACK -->
+  <g>
+    <rect x="80" y="780" width="1440" height="340" rx="16" fill="#0A0A0C" stroke="#1C1C1E" stroke-width="1" />
+    <text x="120" y="825" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="13" font-weight="700" fill="#52525B" letter-spacing="4px">ENGINEERING STACK</text>
+    
+    <!-- Grid Column lines -->
+    <line x1="530" y1="850" x2="530" y2="1080" stroke="#1C1C1E" stroke-width="1" />
+    <line x1="980" y1="850" x2="980" y2="1080" stroke="#1C1C1E" stroke-width="1" />
+    
+    <!-- Column 1: AI -->
+    <g>
+      <text x="120" y="870" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="12" font-weight="700" fill="#71717A" letter-spacing="2px">AI</text>
+      <text x="120" y="910" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Python</text>
+      <text x="120" y="945" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">LLMs</text>
+      <text x="120" y="980" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">OpenAI</text>
+      <text x="120" y="1015" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Gemini</text>
+    </g>
+
+    <!-- Column 2: Backend -->
+    <g>
+      <text x="570" y="870" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="12" font-weight="700" fill="#71717A" letter-spacing="2px">BACKEND</text>
+      <text x="570" y="910" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">FastAPI</text>
+      <text x="570" y="945" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Node.js</text>
+      <text x="570" y="980" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Express</text>
+      <text x="570" y="1015" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">MongoDB</text>
+    </g>
+
+    <!-- Column 3: Frontend -->
+    <g>
+      <text x="1020" y="870" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="12" font-weight="700" fill="#71717A" letter-spacing="2px">FRONTEND</text>
+      <text x="1020" y="910" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">React</text>
+      <text x="1020" y="945" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Tailwind</text>
+      <text x="1020" y="980" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Vite</text>
+    </g>
+  </g>
+</svg>

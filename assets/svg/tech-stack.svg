@@ -121,7 +121,7 @@
       <!-- Gemini Sparkle Vector -->
       <path d="M12 4L14.5 9.5L20 12L14.5 14.5L12 20L9.5 14.5L4 12L9.5 9.5L12 4Z" fill="#3B82F6" filter="url(#glow-blue)">
         <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
-      </g>
+      </path>
     </g>
     <text x="36" y="14" class="item">Gemini API</text>
   </g>
@@ -132,7 +132,7 @@
       <!-- OpenAI Spiral Vector -->
       <path d="M12 6A6 6 0 0118 12M12 6A6 6 0 006 12M12 6V18M6 12A6 6 0 0012 18M18 12A6 6 0 0112 18" stroke="#EDEDED" stroke-width="2" stroke-linecap="round">
         <animate attributeName="stroke" values="#10B981;#EDEDED;#10B981" dur="4s" repeatCount="indefinite" />
-      </g>
+      </path>
     </g>
     <text x="36" y="14" class="item">OpenAI API</text>
   </g>

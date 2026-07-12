@@ -24,6 +24,11 @@
     <mask id="gm">
       <rect width="1600" height="950" fill="url(#grid-fade)"/>
     </mask>
+    <!-- Commit bar gradient -->
+    <linearGradient id="bar-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.9"/>
+    </linearGradient>
   </defs>
 
   <rect width="1600" height="950" fill="#050505"/>
@@ -39,52 +44,169 @@
   <line x1="80" y1="40" x2="80" y2="910" stroke="#222222" stroke-width="1.5"/>
   <circle cx="80" cy="40" r="3.5" fill="#3B82F6"/>
 
-  <!-- Header -->
+  <!-- ====== HEADER ====== -->
   <text x="120" y="74" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="12" font-weight="700" fill="#3D3D45" letter-spacing="5">OPEN SOURCE</text>
   <text x="120" y="144" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="42" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Engineering Activity</text>
   <text x="120" y="192" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="400" fill="#9A9A9A">Every commit represents learning. Every project improves craftsmanship.</text>
-  <text x="120" y="216" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="400" fill="#9A9A9A">Consistency compounds into expertise.</text>
+  <text x="120" y="218" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="400" fill="#9A9A9A">Consistency compounds into expertise.</text>
 
-  <!-- Container A: GitHub Stats -->
-  <rect x="80" y="262" width="712" height="200" rx="16" fill="#08080A" stroke="#222222" stroke-width="1.5" stroke-dasharray="6 6">
-    <animate attributeName="stroke" values="#222222;#3B82F6;#222222" dur="14s" repeatCount="indefinite"/>
+  <!-- ====== STATS ROW — 4 editorial metric cards ====== -->
+  <!-- Card: Repositories -->
+  <rect x="80" y="262" width="330" height="160" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="120" y="310" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">REPOSITORIES</text>
+  <text x="120" y="374" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="54" font-weight="800" fill="#FFFFFF" letter-spacing="-2">10+</text>
+  <text x="120" y="404" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#3D3D45">Public Projects</text>
+
+  <!-- Card: Languages -->
+  <rect x="430" y="262" width="330" height="160" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="470" y="310" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">LANGUAGES</text>
+  <text x="470" y="374" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="54" font-weight="800" fill="#FFFFFF" letter-spacing="-2">6+</text>
+  <text x="470" y="404" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#3D3D45">Technologies Mastered</text>
+
+  <!-- Card: Streak -->
+  <rect x="780" y="262" width="330" height="160" rx="16" fill="#0B0B0B" stroke="#3B82F6" stroke-width="1">
+    <animate attributeName="stroke" values="#3B82F6;#222222;#3B82F6" dur="8s" repeatCount="indefinite"/>
   </rect>
-  <text x="436" y="352" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">GitHub Statistics</text>
-  <text x="436" y="382" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="1" text-anchor="middle">RESERVED FOR GITHUB-README-STATS</text>
+  <text x="820" y="310" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">CURRENTLY</text>
+  <text x="820" y="374" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="54" font-weight="800" fill="#3B82F6" letter-spacing="-2">Active</text>
+  <text x="820" y="404" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#3D3D45">Building &amp; Shipping</text>
 
-  <!-- Container B: Contribution Streak -->
-  <rect x="808" y="262" width="712" height="200" rx="16" fill="#08080A" stroke="#222222" stroke-width="1.5" stroke-dasharray="6 6"/>
-  <text x="1164" y="352" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Contribution Streak</text>
-  <text x="1164" y="382" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="1" text-anchor="middle">RESERVED FOR STREAK-STATS</text>
+  <!-- Card: Focus -->
+  <rect x="1130" y="262" width="390" height="160" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="1170" y="310" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">PRIMARY FOCUS</text>
+  <text x="1170" y="374" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" letter-spacing="-1">AI Systems</text>
+  <text x="1170" y="404" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#3D3D45">Production-Grade Engineering</text>
 
-  <!-- Container C: Top Languages -->
-  <rect x="80" y="482" width="1440" height="180" rx="16" fill="#08080A" stroke="#222222" stroke-width="1.5" stroke-dasharray="6 6"/>
-  <text x="800" y="562" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">Top Languages</text>
-  <text x="800" y="592" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="1" text-anchor="middle">RESERVED FOR TOP-LANGS</text>
+  <!-- ====== ACTIVITY VISUALIZATION — Abstract commit heatmap bars ====== -->
+  <rect x="80" y="458" width="1440" height="196" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="122" y="500" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">ENGINEERING MOMENTUM</text>
 
-  <!-- Engineering Values -->
-  <rect x="80" y="694" width="1440" height="180" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
-  <text x="122" y="740" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">ENGINEERING VALUES</text>
+  <!-- Month labels -->
+  <text x="152" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">JAN</text>
+  <text x="268" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">FEB</text>
+  <text x="384" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">MAR</text>
+  <text x="500" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">APR</text>
+  <text x="616" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">MAY</text>
+  <text x="732" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">JUN</text>
+  <text x="848" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">JUL</text>
+  <text x="964" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">AUG</text>
+  <text x="1080" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">SEP</text>
+  <text x="1196" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">OCT</text>
+  <text x="1312" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">NOV</text>
+  <text x="1428" y="528" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#27272A" text-anchor="middle">DEC</text>
+
+  <!-- Activity bars — representational pattern, rising intensity -->
+  <!-- Each group = one month, bars = weeks -->
+  <!-- Jan - low activity -->
+  <rect x="120" y="620" width="18" height="14" rx="3" fill="#1A1A1D"/>
+  <rect x="144" y="610" width="18" height="24" rx="3" fill="#1E2A3D"/>
+  <rect x="168" y="615" width="18" height="19" rx="3" fill="#1A1A1D"/>
+  <rect x="192" y="606" width="18" height="28" rx="3" fill="#1E2A3D"/>
+  <!-- Feb -->
+  <rect x="236" y="605" width="18" height="29" rx="3" fill="#1E2A3D"/>
+  <rect x="260" y="595" width="18" height="39" rx="3" fill="#243352"/>
+  <rect x="284" y="600" width="18" height="34" rx="3" fill="#1E2A3D"/>
+  <rect x="308" y="590" width="18" height="44" rx="3" fill="#243352"/>
+  <!-- Mar - ramp up -->
+  <rect x="352" y="580" width="18" height="54" rx="3" fill="#2A3E63"/>
+  <rect x="376" y="570" width="18" height="64" rx="3" fill="#2E4470"/>
+  <rect x="400" y="575" width="18" height="59" rx="3" fill="#2A3E63"/>
+  <rect x="424" y="565" width="18" height="69" rx="3" fill="#33497D"/>
+  <!-- Apr -->
+  <rect x="468" y="560" width="18" height="74" rx="3" fill="#33497D"/>
+  <rect x="492" y="548" width="18" height="86" rx="3" fill="#3B52A0"/>
+  <rect x="516" y="555" width="18" height="79" rx="3" fill="#33497D"/>
+  <rect x="540" y="542" width="18" height="92" rx="3" fill="#3B52A0"/>
+  <!-- May - high activity -->
+  <rect x="584" y="530" width="18" height="104" rx="3" fill="#3B52A0"/>
+  <rect x="608" y="518" width="18" height="116" rx="3" fill="url(#bar-grad)"/>
+  <rect x="632" y="525" width="18" height="109" rx="3" fill="#3B52A0"/>
+  <rect x="656" y="512" width="18" height="122" rx="3" fill="url(#bar-grad)"/>
+  <!-- Jun -->
+  <rect x="700" y="520" width="18" height="114" rx="3" fill="url(#bar-grad)"/>
+  <rect x="724" y="508" width="18" height="126" rx="3" fill="url(#bar-grad)" opacity="0.9"/>
+  <rect x="748" y="515" width="18" height="119" rx="3" fill="url(#bar-grad)"/>
+  <rect x="772" y="504" width="18" height="130" rx="3" fill="url(#bar-grad)">
+    <animate attributeName="height" values="130;140;130" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="504;494;504" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Jul - peak (current, animated) -->
+  <rect x="816" y="496" width="18" height="138" rx="3" fill="url(#bar-grad)">
+    <animate attributeName="height" values="138;152;138" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="496;482;496" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="840" y="484" width="18" height="150" rx="3" fill="url(#bar-grad)">
+    <animate attributeName="height" values="150;164;150" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="484;470;484" dur="3.5s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="864" y="490" width="18" height="144" rx="3" fill="url(#bar-grad)">
+    <animate attributeName="height" values="144;158;144" dur="2.8s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="490;476;490" dur="2.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="888" y="478" width="18" height="156" rx="3" fill="url(#bar-grad)" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.5">
+    <animate attributeName="height" values="156;170;156" dur="4.2s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="478;464;478" dur="4.2s" repeatCount="indefinite"/>
+  </rect>
+  <!-- Aug-Dec: future / projected (muted) -->
+  <rect x="932" y="564" width="18" height="70" rx="3" fill="#1A1A1D" opacity="0.6"/>
+  <rect x="956" y="558" width="18" height="76" rx="3" fill="#1A1A1D" opacity="0.5"/>
+  <rect x="980" y="562" width="18" height="72" rx="3" fill="#1A1A1D" opacity="0.55"/>
+  <rect x="1004" y="554" width="18" height="80" rx="3" fill="#1A1A1D" opacity="0.5"/>
+  <rect x="1048" y="566" width="18" height="68" rx="3" fill="#1A1A1D" opacity="0.4"/>
+  <rect x="1072" y="560" width="18" height="74" rx="3" fill="#1A1A1D" opacity="0.38"/>
+  <rect x="1096" y="564" width="18" height="70" rx="3" fill="#1A1A1D" opacity="0.4"/>
+  <rect x="1120" y="557" width="18" height="77" rx="3" fill="#1A1A1D" opacity="0.38"/>
+  <rect x="1164" y="570" width="18" height="64" rx="3" fill="#1A1A1D" opacity="0.3"/>
+  <rect x="1188" y="565" width="18" height="69" rx="3" fill="#1A1A1D" opacity="0.28"/>
+  <rect x="1212" y="568" width="18" height="66" rx="3" fill="#1A1A1D" opacity="0.3"/>
+  <rect x="1236" y="562" width="18" height="72" rx="3" fill="#1A1A1D" opacity="0.28"/>
+  <rect x="1280" y="575" width="18" height="59" rx="3" fill="#1A1A1D" opacity="0.22"/>
+  <rect x="1304" y="570" width="18" height="64" rx="3" fill="#1A1A1D" opacity="0.2"/>
+  <rect x="1328" y="573" width="18" height="61" rx="3" fill="#1A1A1D" opacity="0.22"/>
+  <rect x="1352" y="567" width="18" height="67" rx="3" fill="#1A1A1D" opacity="0.2"/>
+  <rect x="1396" y="580" width="18" height="54" rx="3" fill="#1A1A1D" opacity="0.15"/>
+  <rect x="1420" y="576" width="18" height="58" rx="3" fill="#1A1A1D" opacity="0.14"/>
+  <rect x="1444" y="579" width="18" height="55" rx="3" fill="#1A1A1D" opacity="0.15"/>
+  <rect x="1468" y="573" width="18" height="61" rx="3" fill="#1A1A1D" opacity="0.14"/>
+
+  <!-- Baseline -->
+  <line x1="120" y1="634" x2="1490" y2="634" stroke="#1A1A1D" stroke-width="1"/>
+
+  <!-- "CURRENT" label on peak -->
+  <line x1="878" y1="474" x2="878" y2="454" stroke="#3B82F6" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="878" y="448" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#3B82F6" letter-spacing="1" text-anchor="middle">NOW</text>
+
+  <!-- ====== ENGINEERING VALUES ====== -->
+  <rect x="80" y="694" width="1440" height="186" rx="16" fill="#0B0B0B" stroke="#222222" stroke-width="1"/>
+  <text x="122" y="738" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">ENGINEERING VALUES</text>
+
   <!-- Col 1 -->
-  <circle cx="128" cy="790" r="2.5" fill="#3B82F6"/>
-  <text x="142" y="795" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Problem Solving</text>
-  <text x="142" y="818" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Building systems that solve</text>
-  <text x="142" y="838" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">real-world problems.</text>
+  <line x1="122" y1="772" x2="140" y2="772" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="150" y="777" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Problem Solving</text>
+  <text x="150" y="800" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Building systems that solve</text>
+  <text x="150" y="820" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">meaningful real-world problems.</text>
+  <text x="150" y="848" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Not demo code. Real products.</text>
+
   <!-- Col 2 -->
-  <circle cx="468" cy="790" r="2.5" fill="#3B82F6"/>
-  <text x="482" y="795" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Continuous Learning</text>
-  <text x="482" y="818" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Every week I learn something that</text>
-  <text x="482" y="838" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">makes me a better engineer.</text>
+  <line x1="462" y1="772" x2="480" y2="772" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="490" y="777" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Continuous Learning</text>
+  <text x="490" y="800" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Every week I learn something that</text>
+  <text x="490" y="820" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">makes me a better engineer.</text>
+  <text x="490" y="848" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Learning compounds over time.</text>
+
   <!-- Col 3 -->
-  <circle cx="808" cy="790" r="2.5" fill="#3B82F6"/>
-  <text x="822" y="795" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Production Mindset</text>
-  <text x="822" y="818" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Building software for users is more</text>
-  <text x="822" y="838" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">important than writing demo code.</text>
+  <line x1="802" y1="772" x2="820" y2="772" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="830" y="777" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Production Mindset</text>
+  <text x="830" y="800" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Software built for users matters</text>
+  <text x="830" y="820" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">more than code written for demos.</text>
+  <text x="830" y="848" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Ship. Measure. Improve.</text>
+
   <!-- Col 4 -->
-  <circle cx="1148" cy="790" r="2.5" fill="#3B82F6"/>
-  <text x="1162" y="795" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Long-Term Vision</text>
-  <text x="1162" y="818" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Engineering autonomous AI systems</text>
-  <text x="1162" y="838" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">that create real impact.</text>
+  <line x1="1142" y1="772" x2="1160" y2="772" stroke="#3B82F6" stroke-width="2.5"/>
+  <text x="1170" y="777" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">Long-Term Vision</text>
+  <text x="1170" y="800" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">Engineering autonomous AI systems</text>
+  <text x="1170" y="820" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">that create meaningful real-world</text>
+  <text x="1170" y="848" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#9A9A9A">impact at scale.</text>
 
   <!-- Grain overlay -->
   <rect width="1600" height="950" fill="transparent" filter="url(#grain)" pointer-events="none"/>

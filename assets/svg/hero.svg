@@ -34,6 +34,12 @@
       <feComposite in="SourceGraphic" in2="noise" operator="over" />
     </filter>
 
+    <!-- Glow Filter for active path -->
+    <filter id="blue-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
     <!-- Mask Reference -->
     <mask id="grid-mask-ref">
       <rect width="1600" height="720" fill="url(#grid-mask)" />

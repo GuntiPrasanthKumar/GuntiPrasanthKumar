@@ -84,11 +84,6 @@
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
-    
-    <!-- Background Grid Pattern -->
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16161D" stroke-width="0.7" />
-    </pattern>
   </defs>
 
   <!-- Section Label -->
@@ -98,7 +93,7 @@
   <a href="https://github.com/GuntiPrasanthKumar/AI-ForensicLab" target="_blank" class="project-card fade-item delay-1">
     <g transform="translate(0, 48)">
       <!-- Background Base -->
-      <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
+      <rect x="0.5" y="0.5" width="799" height="139" class="bg" rx="8"/>
       
       <!-- ================= 3D CYBER-GRID BACKGROUND (BLUE) ================= -->
       <g opacity="0.3">
@@ -129,7 +124,7 @@
       <!-- Bouncing Arrow Link Indicator -->
       <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       
-      <!-- Custom Lens Vector (Breathes and glows natively) -->
+      <!-- Custom Lens Vector -->
       <g transform="translate(700, 40)">
         <circle cx="0" cy="0" r="10" stroke="#3B82F6" stroke-width="1.5" fill="none" filter="url(#glow-blue)">
           <animate attributeName="stroke" values="#3B82F6;#60A5FA;#3B82F6" dur="4s" repeatCount="indefinite" />
@@ -141,15 +136,15 @@
       <!-- Tags -->
       <g transform="translate(56, 98)">
         <g>
-          <rect width="56" height="24" class="tag-bg" />
+          <rect width="56" height="24" class="tag-bg" rx="5" />
           <text x="28" y="16" class="tag-text">Python</text>
         </g>
         <g transform="translate(64, 0)">
-          <rect width="60" height="24" class="tag-bg" />
+          <rect width="60" height="24" class="tag-bg" rx="5" />
           <text x="30" y="16" class="tag-text">FastAPI</text>
         </g>
         <g transform="translate(132, 0)">
-          <rect width="84" height="24" class="tag-bg" />
+          <rect width="84" height="24" class="tag-bg" rx="5" />
           <text x="42" y="16" class="tag-text">Gemini API</text>
         </g>
       </g>
@@ -160,7 +155,7 @@
   <a href="https://github.com/GuntiPrasanthKumar/SCOMC" target="_blank" class="project-card fade-item delay-2">
     <g transform="translate(0, 212)">
       <!-- Background Base -->
-      <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
+      <rect x="0.5" y="0.5" width="799" height="139" class="bg" rx="8"/>
       
       <!-- ================= 3D CYBER-GRID BACKGROUND (GREEN) ================= -->
       <g opacity="0.3">
@@ -191,7 +186,7 @@
       <!-- Bouncing Arrow Link Indicator -->
       <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       
-      <!-- Custom Globe Vector (3D rotation around local center) -->
+      <!-- Custom Globe Vector -->
       <g transform="translate(700, 40)">
         <circle cx="0" cy="0" r="11" stroke="#10B981" stroke-width="1.5" fill="none" filter="url(#glow-green)">
           <animate attributeName="stroke" values="#10B981;#34D399;#10B981" dur="4s" repeatCount="indefinite" />
@@ -199,7 +194,7 @@
         <!-- Tilted Axis -->
         <line x1="0" y1="-14" x2="0" y2="14" stroke="#71717A" stroke-width="1" transform="rotate(23.5)" />
         
-        <!-- Rotating Orbital Node (Using local origin) -->
+        <!-- Rotating Orbital Node -->
         <g>
           <circle cx="8" cy="-6" r="2.5" fill="#3B82F6" filter="url(#glow-blue)"/>
           <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite" />
@@ -209,15 +204,15 @@
       <!-- Tags -->
       <g transform="translate(56, 98)">
         <g>
-          <rect width="56" height="24" class="tag-bg" />
+          <rect width="56" height="24" class="tag-bg" rx="5" />
           <text x="28" y="16" class="tag-text">Python</text>
         </g>
         <g transform="translate(64, 0)">
-          <rect width="84" height="24" class="tag-bg" />
+          <rect width="84" height="24" class="tag-bg" rx="5" />
           <text x="42" y="16" class="tag-text">ML Libraries</text>
         </g>
         <g transform="translate(156, 0)">
-          <rect width="70" height="24" class="tag-bg" />
+          <rect width="70" height="24" class="tag-bg" rx="5" />
           <text x="35" y="16" class="tag-text">Data Viz</text>
         </g>
       </g>

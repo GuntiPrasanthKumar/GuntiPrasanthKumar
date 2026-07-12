@@ -17,24 +17,23 @@
       animation: traceTech 6s linear infinite;
     }
 
-    /* 3D Grid Horizontals Scroll */
-    .grid-line { stroke: #14141A; stroke-width: 1; }
-    .horiz-1 { animation: horizScroll 4s linear infinite; }
-    .horiz-2 { animation: horizScroll 4s linear infinite 1s; }
-    .horiz-3 { animation: horizScroll 4s linear infinite 2s; }
-    .horiz-4 { animation: horizScroll 4s linear infinite 3s; }
+    /* Vector Icon Animations */
+    .spin-react { transform-origin: 324px 74px; animation: spin 12s linear infinite; }
+    .glow-py { animation: glowBlue 4s ease-in-out infinite; }
+    .pulse-fastapi { animation: flicker 3s ease-in-out infinite; }
+    .pulse-gemini { transform-origin: 68px 154px; animation: heartbeat 2.5s ease-in-out infinite; }
+    .rotate-docker { transform-origin: 580px 194px; animation: floatDocker 5s ease-in-out infinite; }
 
     /* Keyframes */
+    @keyframes spin { 100% { transform: rotate(360deg); } }
     @keyframes traceTech {
       0% { stroke-dashoffset: 0; }
       100% { stroke-dashoffset: -2180; }
     }
-    @keyframes horizScroll {
-      0% { transform: translateY(0); opacity: 0.1; }
-      20% { opacity: 0.4; }
-      80% { opacity: 0.4; }
-      100% { transform: translateY(280px); opacity: 0; }
-    }
+    @keyframes glowBlue { 0%, 100% { filter: drop-shadow(0 0 1px rgba(59,130,246,0.3)); } 50% { filter: drop-shadow(0 0 5px rgba(59,130,246,0.8)); stroke: #60A5FA; } }
+    @keyframes flicker { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; fill: #10B981; } }
+    @keyframes heartbeat { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.25); opacity: 1; fill: #60A5FA; } }
+    @keyframes floatDocker { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
   </style>
 
   <!-- Defs & Hardware Accelerated Filters -->
@@ -56,32 +55,13 @@
   <!-- Section Label -->
   <text x="56" y="36" class="label-header">SKILL SET</text>
 
-  <!-- Background Base -->
-  <rect x="0.5" y="48.5" width="799" height="290" class="bg"/>
+  <!-- Background Base (Explicit rx="8") -->
+  <rect x="0.5" y="48.5" width="799" height="290" class="bg" rx="8"/>
 
-  <!-- ================= 3D CYBER-GRID BACKGROUND (BLUE) ================= -->
-  <g opacity="0.3">
-    <!-- Perspective lines originating from center horizon (400, 120) to bottom -->
-    <line x1="400" y1="120" x2="-200" y2="338" class="grid-line" />
-    <line x1="400" y1="120" x2="0" y2="338" class="grid-line" />
-    <line x1="400" y1="120" x2="150" y2="338" class="grid-line" />
-    <line x1="400" y1="120" x2="300" y2="338" class="grid-line" />
-    <line x1="400" y1="120" x2="400" y2="338" class="grid-line" stroke-width="1.5" />
-    <line x1="400" y1="120" x2="500" y2="338" class="grid-line" />
-    <line x1="400" y1="120" x2="650" y2="338" class="grid-line" />
-    <line x1="400" y1="120" x2="800" y2="338" class="grid-line" />
-    <line x1="400" y1="120" x2="1000" y2="338" class="grid-line" />
+  <!-- Grid Pattern (Explicit rx="8") -->
+  <rect x="1" y="49" width="798" height="289" fill="url(#grid)" rx="8" />
 
-    <!-- Moving horizontal lines scrolled via Y translation -->
-    <g transform="translate(0, 120)">
-      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-1" />
-      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-2" />
-      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-3" />
-      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-4" />
-    </g>
-  </g>
-
-  <!-- Glowing Border Light Trail (Perimeter = 2180) -->
+  <!-- Glowing Border Light Trail (Perimeter = 2180) (Explicit rx="8") -->
   <rect x="0.5" y="48.5" width="799" height="290" fill="none" class="border-trace" rx="8" filter="url(#glow-blue)" />
 
   <!-- Column Dividers -->

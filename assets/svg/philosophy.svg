@@ -1,13 +1,12 @@
 <svg width="800" height="150" viewBox="0 0 800 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles and keyframe animations -->
+  <!-- Styles and native animations -->
   <style>
-    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .bg { fill: #0A0A0A; stroke: #27272A; stroke-width: 1; rx: 8px; }
     
     /* Fade-in animations */
     .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
     .delay-1 { animation-delay: 0.1s; }
     .delay-2 { animation-delay: 0.3s; }
-    .delay-3 { animation-delay: 0.5s; }
 
     .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
     .philosophy-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 400; fill: #EDEDED; line-height: 1.6; }
@@ -16,21 +15,22 @@
     .highlight { fill: #3B82F6; font-weight: 600; animation: textGlow 4s ease-in-out infinite; }
     
     /* Animations */
-    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
     .left-bar { animation: barPulse 4s ease-in-out infinite; }
-    
-    /* Geometric Wireframe Animations */
-    .geo-ring-1 { transform-origin: 700px 96px; animation: ringSwell 6s ease-in-out infinite; }
-    .geo-ring-2 { transform-origin: 700px 96px; animation: ringSwell 6s ease-in-out infinite 2s; }
-    .geo-ring-3 { transform-origin: 700px 96px; animation: ringSwell 6s ease-in-out infinite 4s; }
+
+    /* Seamless Glowing Blue Border Trace (Perimeter = 1900) */
+    .border-trace {
+      stroke: #3B82F6;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-dasharray: 150 1750;
+      animation: tracePhilosophy 6s linear infinite;
+    }
 
     /* Keyframes */
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    @keyframes pulseAccent {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.9; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes tracePhilosophy {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -1900; }
     }
     @keyframes barPulse {
       0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 1px #3B82F6); }
@@ -40,27 +40,32 @@
       0%, 100% { fill: #3B82F6; }
       50% { fill: #60A5FA; }
     }
-    @keyframes ringSwell {
-      0%, 100% { transform: scale(1); opacity: 0.4; stroke: #27272A; }
-      50% { transform: scale(1.15); opacity: 0.9; stroke: #3B82F6; }
-    }
   </style>
 
-  <!-- Defs -->
+  <!-- Defs & Hardware Accelerated Filters -->
   <defs>
-    <linearGradient id="top-border" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0A0A0A"/>
-      <stop offset="0.3" stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="0.7" stop-color="#3B82F6" stop-opacity="0.6"/>
-      <stop offset="1" stop-color="#0A0A0A"/>
-    </linearGradient>
+    <!-- Blue Neon Glow Filter -->
+    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <!-- Background Grid Pattern -->
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16161D" stroke-width="0.7" />
+    </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect x="0.5" y="0.5" width="799" height="149" class="bg"/>
+  <!-- Background Base -->
+  <rect x="0.5" y="0.5" width="799" height="149" class="bg" rx="8"/>
 
-  <!-- Subtle Top Gradient Border (Animated Pulse) -->
-  <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
+  <!-- Grid Pattern -->
+  <rect x="1" y="1" width="798" height="148" fill="url(#grid)" rx="8" />
+
+  <!-- Glowing Border Light Trail (Perimeter = 1900) -->
+  <rect x="0.5" y="0.5" width="799" height="149" fill="none" class="border-trace" rx="8" filter="url(#glow-blue)" />
 
   <!-- Section Label -->
   <text x="56" y="48" class="label-header fade-item delay-1">ENGINEERING PHILOSOPHY</text>
@@ -79,16 +84,5 @@
     <text x="56" y="122" class="philosophy-text">
       next-generation <tspan class="highlight">autonomous AI systems</tspan> that solve complex computational problems at scale.
     </text>
-  </g>
-
-  <!-- Balanced Geometric Wireframe Atom (Right Side) -->
-  <g class="fade-item delay-3">
-    <!-- Concentric Ellipses simulating a 3D orbit -->
-    <ellipse cx="700" cy="96" rx="28" ry="10" transform="rotate(30 700 96)" stroke="#27272A" stroke-width="1.2" fill="none" class="geo-ring-1" />
-    <ellipse cx="700" cy="96" rx="28" ry="10" transform="rotate(90 700 96)" stroke="#27272A" stroke-width="1.2" fill="none" class="geo-ring-2" />
-    <ellipse cx="700" cy="96" rx="28" ry="10" transform="rotate(150 700 96)" stroke="#27272A" stroke-width="1.2" fill="none" class="geo-ring-3" />
-    
-    <!-- Central Node -->
-    <circle cx="700" cy="96" r="3.5" fill="#EDEDED" />
   </g>
 </svg>

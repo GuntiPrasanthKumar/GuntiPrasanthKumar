@@ -32,19 +32,6 @@
     .horiz-2 { animation: horizScroll 4s linear infinite 1s; }
     .horiz-3 { animation: horizScroll 4s linear infinite 2s; }
     .horiz-4 { animation: horizScroll 4s linear infinite 3s; }
-
-    /* Keyframes */
-    @keyframes fadeIn { to { opacity: 1; } }
-    @keyframes traceJourney {
-      0% { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: -2460; }
-    }
-    @keyframes horizScroll {
-      0% { transform: translateY(0); opacity: 0.1; }
-      20% { opacity: 0.35; }
-      80% { opacity: 0.35; }
-      100% { transform: translateY(420px); opacity: 0; }
-    }
   </style>
 
   <!-- Defs & Hardware Accelerated Filters -->
@@ -57,20 +44,13 @@
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
-    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
   </defs>
 
   <!-- Section Label -->
   <text x="56" y="36" class="label-header">CURRENT JOURNEY</text>
 
   <!-- Card Background Base -->
-  <rect x="0.5" y="48.5" width="799" height="430" class="bg"/>
+  <rect x="0.5" y="48.5" width="799" height="430" class="bg" rx="8"/>
 
   <!-- ================= 3D CYBER-GRID BACKGROUND ================= -->
   <g opacity="0.3">
@@ -155,10 +135,10 @@
 
     <!-- Agentic AI (Highlight Glowing Capsule) -->
     <g>
-      <rect x="330" y="420" width="140" height="32" class="tag" filter="url(#glow-blue)">
+      <rect x="330" y="420" width="140" height="32" class="tag" filter="url(#glow-blue)" rx="6">
         <animate attributeName="stroke" values="#3B82F6;#10B981;#3B82F6" dur="4s" repeatCount="indefinite" />
       </rect>
-      <text x="400" y="441" class="item-highlight">Agentic AI">
+      <text x="400" y="441" class="item-highlight">Agentic AI
         <animate attributeName="fill" values="#3B82F6;#10B981;#3B82F6" dur="4s" repeatCount="indefinite" />
       </text>
     </g>

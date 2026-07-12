@@ -32,19 +32,6 @@
     .horiz-2 { animation: horizScroll 4s linear infinite 1s; }
     .horiz-3 { animation: horizScroll 4s linear infinite 2s; }
     .horiz-4 { animation: horizScroll 4s linear infinite 3s; }
-
-    /* Keyframes */
-    @keyframes fadeIn { to { opacity: 1; } }
-    @keyframes tracePrinciples {
-      0% { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: -1958; }
-    }
-    @keyframes horizScroll {
-      0% { transform: translateY(0); opacity: 0.1; }
-      20% { opacity: 0.35; }
-      80% { opacity: 0.35; }
-      100% { transform: translateY(170px); opacity: 0; }
-    }
   </style>
 
   <!-- Defs & Hardware Accelerated Filters -->
@@ -67,7 +54,7 @@
   <text x="56" y="36" class="label-header">ENGINEERING PRINCIPLES</text>
 
   <!-- Card Background Base -->
-  <rect x="0.5" y="48.5" width="799" height="179" class="bg"/>
+  <rect x="0.5" y="48.5" width="799" height="179" class="bg" rx="8"/>
 
   <!-- ================= 3D CYBER-GRID BACKGROUND ================= -->
   <g opacity="0.3">
@@ -98,7 +85,7 @@
   <g class="fade-item delay-2">
     <!-- Principle 1 -->
     <g class="principle-group">
-      <!-- Native scale and glow diamond (using local centers to avoid browser origin wobble) -->
+      <!-- Native scale and glow diamond -->
       <g transform="translate(36, 84)">
         <polygon points="0,-4 4,0 0,4 -4,0" fill="#3B82F6" filter="url(#glow-blue)">
           <animate attributeName="fill" values="#3B82F6;#10B981;#3B82F6" dur="4s" repeatCount="indefinite" />

@@ -37,9 +37,7 @@
     .horiz-4 { animation: horizScroll 4s linear infinite 3s; }
 
     /* Keyframes */
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+    @keyframes fadeIn { to { opacity: 1; } }
     @keyframes trace {
       0% { stroke-dashoffset: 0; }
       100% { stroke-dashoffset: -2136; }
@@ -65,10 +63,9 @@
   </defs>
 
   <!-- Background Base -->
-  <rect x="0.5" y="0.5" width="799" height="269" class="bg"/>
+  <rect x="0.5" y="0.5" width="799" height="269" class="bg" rx="8"/>
 
   <!-- ================= 3D CYBER-GRID BACKGROUND ================= -->
-  <!-- Vanishing point grid converging lines -->
   <g opacity="0.3">
     <!-- Perspective lines originating from center horizon (400, 100) to bottom -->
     <line x1="400" y1="100" x2="-200" y2="270" class="grid-line" />
@@ -129,7 +126,7 @@
       <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite" />
     </g>
 
-    <!-- 3D Intersecting Lines (Constantly morphing using stroke-dashoffset) -->
+    <!-- 3D Intersecting Lines -->
     <g stroke="#27272A" stroke-width="1">
       <line x1="0" y1="0" x2="-25" y2="-20" />
       <line x1="0" y1="0" x2="25" y2="-15" />
@@ -145,7 +142,7 @@
       <animate attributeName="stroke-opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite" />
     </circle>
 
-    <!-- Satellite Nodes (Scaling natively at their local offset) -->
+    <!-- Satellite Nodes -->
     <g transform="translate(-25, -20)">
       <circle cx="0" cy="0" r="4.5" fill="#71717A">
         <animate attributeName="fill" values="#71717A;#3B82F6;#71717A" dur="3s" repeatCount="indefinite" />

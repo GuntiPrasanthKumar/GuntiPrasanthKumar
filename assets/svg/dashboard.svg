@@ -81,7 +81,7 @@
   <!-- Canvas Base -->
   <rect width="1600" height="1200" class="bg"/>
   
-  <!-- Subtle Radial Glow Background (Bottom Left Connect) -->
+  <!-- Subtle Radial Glow Background -->
   <rect width="1600" height="1200" fill="url(#glow)" />
 
   <!-- Grid Overlay (Aligned with Hero) -->
@@ -114,9 +114,9 @@
 
     <text x="120" y="215" class="heading-large">SkillTrove</text>
     <text x="120" y="255" class="desc">An AI-powered learning and assessment platform that</text>
-    <text x="120" y="277" class="desc">combines adaptive learning, Bloom's Taxonomy question</text>
-    <text x="120" y="299" class="desc">generation, coding practice, AI proctoring with face</text>
-    <text x="120" y="321" class="desc">recognition, analytics and personalized experiences.</text>
+    <text x="120" y="277" class="desc">combines adaptive learning, Bloom's Taxonomy based</text>
+    <text x="120" y="299" class="desc">question generation, coding practice, AI-powered exam</text>
+    <text x="120" y="321" class="desc">proctoring with face recognition, analytics and paths.</text>
 
     <!-- Bottom Meta info -->
     <text x="120" y="405" class="meta-label">Repository</text>
@@ -184,7 +184,7 @@
       <text x="0" y="0" class="stack-col-header">BACKEND</text>
       <text x="0" y="30" class="stack-item">FastAPI</text>
       <text x="0" y="60" class="stack-item">Node.js</text>
-      <text x="0" y="90" class="stack-item">Express.js</text>
+      <text x="0" y="90" class="stack-item">Express</text>
       <text x="0" y="120" class="stack-item">MongoDB</text>
       <text x="0" y="150" class="stack-item">REST APIs</text>
     </g>
@@ -195,7 +195,7 @@
       <text x="0" y="60" class="stack-item">Tailwind CSS</text>
       <text x="0" y="90" class="stack-item">Vite</text>
       <text x="0" y="120" class="stack-item">JavaScript</text>
-      <text x="0" y="150" class="stack-item">Responsive</text>
+      <text x="0" y="150" class="stack-item">Responsive UI</text>
     </g>
   </g>
 
@@ -212,17 +212,17 @@
     <!-- Principle 2 -->
     <g transform="translate(684, 670)">
       <line x1="0" y1="0" x2="15" y2="0" stroke="#3B82F6" stroke-width="2.5" />
-      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Build for Scale</text>
+      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Build Production Software</text>
     </g>
     <!-- Principle 3 -->
     <g transform="translate(684, 730)">
       <line x1="0" y1="0" x2="15" y2="0" stroke="#3B82F6" stroke-width="2.5" />
-      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Keep It Simple</text>
+      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Keep Designs Minimal</text>
     </g>
     <!-- Principle 4 -->
     <g transform="translate(684, 790)">
       <line x1="0" y1="0" x2="15" y2="0" stroke="#3B82F6" stroke-width="2.5" />
-      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Ship Continuously</text>
+      <text x="25" y="5" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">Ship Consistently</text>
     </g>
   </g>
 
@@ -239,7 +239,7 @@
       <text x="300" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Full Stack Development</text>
 
       <circle cx="6" cy="47" r="2.5" fill="#3B82F6" />
-      <text x="20" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Software Engineering</text>
+      <text x="20" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Software Development</text>
 
       <circle cx="286" cy="47" r="2.5" fill="#3B82F6" />
       <text x="300" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Remote Opportunities</text>
@@ -269,10 +269,10 @@
     </g>
   </g>
 
-  <!-- ================= CARD 5: CURRENT JOURNEY ================= -->
+  <!-- ================= CARD 5: CURRENT ROADMAP ================= -->
   <g>
     <rect x="1128" y="504" width="392" height="616" rx="16" class="card-bg" />
-    <text x="1168" y="554" class="protocol">CURRENT JOURNEY</text>
+    <text x="1168" y="554" class="protocol">CURRENT ROADMAP</text>
 
     <!-- Center Timeline Track inside card -->
     <line x1="1324" y1="585" x2="1324" y2="990" stroke="#1C1C1E" stroke-width="1.5" stroke-dasharray="3 3" />
@@ -308,7 +308,7 @@
 
     <!-- MCP -->
     <circle cx="1324" cy="875" r="3" fill="#27272A" />
-    <text x="1344" y="879" class="timeline-label" text-anchor="start">Model Context Protocol</text>
+    <text x="1344" y="879" class="timeline-label" text-anchor="start">MCP</text>
 
     <!-- Multi-Agent Systems -->
     <circle cx="1324" cy="915" r="3" fill="#27272A" />
@@ -323,7 +323,7 @@
     </g>
   </g>
 
-  <!-- Fine Film Grain Overlay (Apple / OpenAI style depth) -->
+  <!-- Fine Film Grain Overlay -->
   <rect width="1600" height="1200" fill="transparent" filter="url(#noise-filter)" pointer-events="none" />
 
   <!-- Outer Border Shell -->

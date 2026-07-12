@@ -1,221 +1,155 @@
-<svg width="800" height="370" viewBox="0 0 800 370" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles and native animations -->
+<svg width="1600" height="1680" viewBox="0 0 1600 1680" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg { fill: #0A0A0A; stroke: #27272A; stroke-width: 1; rx: 8px; }
+    .bg { fill: #000000; }
+    .border { stroke: #1C1C1E; stroke-width: 1; fill: none; }
+    .accent-dot { fill: #3B82F6; }
+    .accent-line { stroke: #1C1C1E; stroke-width: 1.5; }
     
-    /* Sequential Fade-in Animations */
-    .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.4s; }
-
-    .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
-    .project-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 700; fill: #F3F4F6; letter-spacing: -0.4px; }
-    .project-type { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.1px; }
-    .project-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #A1A1AA; }
+    /* Layout Dividers */
+    .divider { stroke: #1C1C1E; stroke-width: 1; }
+    
+    /* Typography Styles */
+    .protocol { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 13px; font-weight: 700; fill: #52525B; letter-spacing: 4px; }
+    .project-title { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 26px; font-weight: 700; fill: #FFFFFF; letter-spacing: -0.5px; }
+    .project-type { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 14px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.2px; }
+    .desc { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 15px; font-weight: 400; fill: #A1A1AA; line-height: 1.6; }
     
     /* Tag Styling */
-    .tag-bg { fill: #121212; stroke: #27272A; stroke-width: 1; rx: 5px; transition: stroke 0.3s; }
-    .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #EDEDED; text-anchor: middle; }
-    .project-card:hover .tag-bg { stroke: #3B82F6; }
+    .tag-bg { fill: #0A0A0A; stroke: #1C1C1E; stroke-width: 1; rx: 6px; }
+    .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 12px; font-weight: 600; fill: #EDEDED; text-anchor: middle; }
 
-    /* Neon Border Light Trails (Perimeter = 1878) */
-    .border-trace-blue {
-      stroke: #3B82F6;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-dasharray: 150 1728;
-      animation: traceCard 6s linear infinite;
-    }
-    .border-trace-green {
-      stroke: #10B981;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-dasharray: 150 1728;
-      animation: traceCard 6s linear infinite 1.5s;
-    }
+    /* Principles Typography */
+    .principle-title { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 18px; font-weight: 700; fill: #FFFFFF; }
+    
+    /* Timeline Typography */
+    .timeline-label { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 14px; font-weight: 500; fill: #A1A1AA; }
+    .timeline-highlight-bg { fill: #0A0A0A; stroke: #3B82F6; stroke-width: 1.5; rx: 8px; }
+    .timeline-highlight-text { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 14px; font-weight: 700; fill: #3B82F6; text-anchor: middle; }
 
-    /* 3D Cyber-Grid Scrolling Horizontals */
-    .grid-line-blue { stroke: #14141A; stroke-width: 0.8; }
-    .grid-line-green { stroke: #141A14; stroke-width: 0.8; }
-    .horiz-blue { animation: horizScrollBlue 4s linear infinite; }
-    .horiz-green { animation: horizScrollGreen 4s linear infinite 1.5s; }
-
-    /* General Animations */
-    .arrow { transform-origin: 743px 27px; animation: arrowBounce 3s ease-in-out infinite; }
-
-    /* Keyframes */
-    @keyframes fadeIn { to { opacity: 1; } }
-    @keyframes traceCard {
-      0% { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: -1878; }
-    }
-    @keyframes horizScrollBlue {
-      0% { transform: translateY(0); opacity: 0.1; }
-      20% { opacity: 0.35; }
-      80% { opacity: 0.35; }
-      100% { transform: translateY(130px); opacity: 0; }
-    }
-    @keyframes horizScrollGreen {
-      0% { transform: translateY(0); opacity: 0.1; }
-      20% { opacity: 0.35; }
-      80% { opacity: 0.35; }
-      100% { transform: translateY(130px); opacity: 0; }
-    }
-    @keyframes arrowBounce {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(3px, -3px); }
-    }
+    /* Interactive Link Transitions */
+    .card-link { text-decoration: none; cursor: pointer; }
+    .card-link:hover .project-title { fill: #3B82F6; transition: fill 0.25s ease; }
   </style>
 
-  <!-- Defs & Hardware Accelerated Filters -->
-  <defs>
-    <!-- Glow Filters -->
-    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-  </defs>
+  <!-- Background Canvas -->
+  <rect width="1600" height="1680" class="bg"/>
+  <rect x="0.5" y="0.5" width="1599" height="1679" rx="16" class="border"/>
 
-  <!-- Section Label -->
-  <text x="56" y="36" class="label-header">FEATURED PROJECTS</text>
+  <!-- Left Symmetrical Anchor Line -->
+  <line x1="112" y1="64" x2="112" y2="1616" class="accent-line" />
+  <circle cx="112" cy="64" r="3" class="accent-dot" />
 
-  <!-- PROJECT 1: AI Forensic Analyzer -->
-  <a href="https://github.com/GuntiPrasanthKumar/AI-ForensicLab" target="_blank" class="project-card fade-item delay-1">
-    <g transform="translate(0, 48)">
-      <!-- Background Base -->
-      <rect x="0.5" y="0.5" width="799" height="139" class="bg" rx="8"/>
-      
-      <!-- ================= 3D CYBER-GRID BACKGROUND (BLUE) ================= -->
-      <g opacity="0.3">
-        <!-- Converging perspective lines from horizon center (400, 40) -->
-        <line x1="400" y1="40" x2="-200" y2="138" class="grid-line-blue" />
-        <line x1="400" y1="40" x2="100" y2="138" class="grid-line-blue" />
-        <line x1="400" y1="40" x2="300" y2="138" class="grid-line-blue" />
-        <line x1="400" y1="40" x2="400" y2="138" class="grid-line-blue" stroke-width="1.2" />
-        <line x1="400" y1="40" x2="500" y2="138" class="grid-line-blue" />
-        <line x1="400" y1="40" x2="700" y2="138" class="grid-line-blue" />
-        <line x1="400" y1="40" x2="1000" y2="138" class="grid-line-blue" />
-        
-        <!-- Moving horizontal lines scrolled via translation -->
-        <g transform="translate(0, 40)">
-          <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line-blue horiz-blue" />
-          <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line-blue horiz-blue" />
+  <!-- ================= SECTION 01: FEATURED PROJECTS ================= -->
+  <g>
+    <text x="160" y="80" class="protocol">FEATURED PROJECTS</text>
+
+    <!-- Project 1: AI Forensic Analyzer -->
+    <a href="https://github.com/GuntiPrasanthKumar/AI-ForensicLab" target="_blank" class="card-link">
+      <g>
+        <text x="160" y="130" class="project-title">AI Forensic Analyzer ↗</text>
+        <text x="160" y="156" class="project-type">Machine Learning / NLP Application</text>
+        <text x="160" y="188" class="desc">Leveraging natural language processing and the Gemini API for advanced data analysis and forensic insights.</text>
+        <!-- Tags -->
+        <g transform="translate(160, 210)">
+          <rect width="80" height="26" class="tag-bg" />
+          <text x="40" y="17" class="tag-text">Python</text>
+          
+          <rect x="92" width="80" height="26" class="tag-bg" />
+          <text x="132" y="17" class="tag-text">FastAPI</text>
+          
+          <rect x="184" width="110" height="26" class="tag-bg" />
+          <text x="239" y="17" class="tag-text">Gemini API</text>
         </g>
       </g>
+    </a>
 
-      <!-- Neon Border Trail -->
-      <rect x="0.5" y="0.5" width="799" height="139" fill="none" class="border-trace-blue" rx="8" filter="url(#glow-blue)" />
-      
-      <!-- Content -->
-      <text x="56" y="36" class="project-title">AI Forensic Analyzer</text>
-      <text x="56" y="56" class="project-type">Machine Learning / NLP Application</text>
-      <text x="56" y="80" class="project-desc">Leveraging natural language processing and the Gemini API for advanced data analysis and forensic insights.</text>
-      
-      <!-- Bouncing Arrow Link Indicator -->
-      <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      
-      <!-- Custom Lens Vector -->
-      <g transform="translate(700, 40)">
-        <circle cx="0" cy="0" r="10" stroke="#3B82F6" stroke-width="1.5" fill="none" filter="url(#glow-blue)">
-          <animate attributeName="stroke" values="#3B82F6;#60A5FA;#3B82F6" dur="4s" repeatCount="indefinite" />
-        </circle>
-        <line x1="7" y1="7" x2="17" y2="17" stroke="#71717A" stroke-width="2" stroke-linecap="round" />
-        <line x1="-4" y1="-4" x2="4" y2="4" stroke="#27272A" stroke-width="1" />
-      </g>
-
-      <!-- Tags -->
-      <g transform="translate(56, 98)">
-        <g>
-          <rect width="56" height="24" class="tag-bg" rx="5" />
-          <text x="28" y="16" class="tag-text">Python</text>
-        </g>
-        <g transform="translate(64, 0)">
-          <rect width="60" height="24" class="tag-bg" rx="5" />
-          <text x="30" y="16" class="tag-text">FastAPI</text>
-        </g>
-        <g transform="translate(132, 0)">
-          <rect width="84" height="24" class="tag-bg" rx="5" />
-          <text x="42" y="16" class="tag-text">Gemini API</text>
+    <!-- Project 2: ClimateSCOMC -->
+    <a href="https://github.com/GuntiPrasanthKumar/SCOMC" target="_blank" class="card-link">
+      <g transform="translate(0, 180)">
+        <text x="160" y="130" class="project-title">ClimateSCOMC ↗</text>
+        <text x="160" y="156" class="project-type">AI-powered Climate Intelligence Platform</text>
+        <text x="160" y="188" class="desc">A predictive modeling and data visualization platform built to provide actionable climate intelligence.</text>
+        <!-- Tags -->
+        <g transform="translate(160, 210)">
+          <rect width="80" height="26" class="tag-bg" />
+          <text x="40" y="17" class="tag-text">Python</text>
+          
+          <rect x="92" width="110" height="26" class="tag-bg" />
+          <text x="147" y="17" class="tag-text">ML Libraries</text>
+          
+          <rect x="214" width="90" height="26" class="tag-bg" />
+          <text x="259" y="17" class="tag-text">Data Viz</text>
         </g>
       </g>
+    </a>
+  </g>
+
+  <line x1="160" y1="490" x2="1440" y2="490" class="divider" />
+
+  <!-- ================= SECTION 02: ENGINEERING PRINCIPLES ================= -->
+  <g>
+    <text x="160" y="540" class="protocol">ENGINEERING PRINCIPLES</text>
+
+    <!-- 2x2 Grid -->
+    <!-- Row 1 -->
+    <g>
+      <text x="160" y="590" class="principle-title">1. Solve Real Problems.</text>
+      <text x="160" y="612" class="desc">Focus on utility and impact, not on unnecessary complexity.</text>
     </g>
-  </a>
-
-  <!-- PROJECT 2: ClimateSCOMC -->
-  <a href="https://github.com/GuntiPrasanthKumar/SCOMC" target="_blank" class="project-card fade-item delay-2">
-    <g transform="translate(0, 212)">
-      <!-- Background Base -->
-      <rect x="0.5" y="0.5" width="799" height="139" class="bg" rx="8"/>
-      
-      <!-- ================= 3D CYBER-GRID BACKGROUND (GREEN) ================= -->
-      <g opacity="0.3">
-        <!-- Converging perspective lines from horizon center (400, 40) -->
-        <line x1="400" y1="40" x2="-200" y2="138" class="grid-line-green" />
-        <line x1="400" y1="40" x2="100" y2="138" class="grid-line-green" />
-        <line x1="400" y1="40" x2="300" y2="138" class="grid-line-green" />
-        <line x1="400" y1="40" x2="400" y2="138" class="grid-line-green" stroke-width="1.2" />
-        <line x1="400" y1="40" x2="500" y2="138" class="grid-line-green" />
-        <line x1="400" y1="40" x2="700" y2="138" class="grid-line-green" />
-        <line x1="400" y1="40" x2="1000" y2="138" class="grid-line-green" />
-        
-        <!-- Moving horizontal lines scrolled via translation -->
-        <g transform="translate(0, 40)">
-          <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line-green horiz-green" />
-          <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line-green horiz-green" />
-        </g>
-      </g>
-
-      <!-- Neon Border Trail -->
-      <rect x="0.5" y="0.5" width="799" height="139" fill="none" class="border-trace-green" rx="8" filter="url(#glow-green)" />
-      
-      <!-- Content -->
-      <text x="56" y="36" class="project-title">ClimateSCOMC</text>
-      <text x="56" y="56" class="project-type">AI-powered Climate Intelligence Platform</text>
-      <text x="56" y="80" class="project-desc">A predictive modeling and data visualization platform built to provide actionable climate intelligence.</text>
-      
-      <!-- Bouncing Arrow Link Indicator -->
-      <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      
-      <!-- Custom Globe Vector -->
-      <g transform="translate(700, 40)">
-        <circle cx="0" cy="0" r="11" stroke="#10B981" stroke-width="1.5" fill="none" filter="url(#glow-green)">
-          <animate attributeName="stroke" values="#10B981;#34D399;#10B981" dur="4s" repeatCount="indefinite" />
-        </circle>
-        <!-- Tilted Axis -->
-        <line x1="0" y1="-14" x2="0" y2="14" stroke="#71717A" stroke-width="1" transform="rotate(23.5)" />
-        
-        <!-- Rotating Orbital Node -->
-        <g>
-          <circle cx="8" cy="-6" r="2.5" fill="#3B82F6" filter="url(#glow-blue)"/>
-          <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite" />
-        </g>
-      </g>
-
-      <!-- Tags -->
-      <g transform="translate(56, 98)">
-        <g>
-          <rect width="56" height="24" class="tag-bg" rx="5" />
-          <text x="28" y="16" class="tag-text">Python</text>
-        </g>
-        <g transform="translate(64, 0)">
-          <rect width="84" height="24" class="tag-bg" rx="5" />
-          <text x="42" y="16" class="tag-text">ML Libraries</text>
-        </g>
-        <g transform="translate(156, 0)">
-          <rect width="70" height="24" class="tag-bg" rx="5" />
-          <text x="35" y="16" class="tag-text">Data Viz</text>
-        </g>
-      </g>
+    <g>
+      <text x="800" y="590" class="principle-title">2. Simplicity Scales.</text>
+      <text x="800" y="612" class="desc">Build robust, readable, and maintainable systems from day one.</text>
     </g>
-  </a>
+    <!-- Row 2 -->
+    <g transform="translate(0, 80)">
+      <text x="160" y="590" class="principle-title">3. User-Centric Design.</text>
+      <text x="160" y="612" class="desc">Build with the end-user in mind, optimizing for efficiency.</text>
+    </g>
+    <g transform="translate(0, 80)">
+      <text x="800" y="590" class="principle-title">4. Ship and Iterate.</text>
+      <text x="800" y="612" class="desc">Execution and rapid feedback are the absolute metrics of success.</text>
+    </g>
+  </g>
+
+  <line x1="160" y1="790" x2="1440" y2="790" class="divider" />
+
+  <!-- ================= SECTION 03: CURRENT JOURNEY ================= -->
+  <g>
+    <text x="160" y="840" class="protocol">CURRENT JOURNEY</text>
+
+    <!-- Center Timeline Track -->
+    <line x1="800" y1="890" x2="800" y2="1320" stroke="#1C1C1E" stroke-width="2" stroke-dasharray="4 4" />
+
+    <!-- Timeline Nodes -->
+    <!-- Node 1: ML -->
+    <circle cx="800" cy="920" r="4" fill="#27272A" />
+    <text x="770" y="925" class="timeline-label" text-anchor="end">Machine Learning</text>
+
+    <!-- Node 2: DL -->
+    <circle cx="800" cy="980" r="4" fill="#27272A" />
+    <text x="830" y="985" class="timeline-label" text-anchor="start">Deep Learning</text>
+
+    <!-- Node 3: LLMs -->
+    <circle cx="800" cy="1040" r="4" fill="#27272A" />
+    <text x="770" y="1045" class="timeline-label" text-anchor="end">Large Language Models (LLMs)</text>
+
+    <!-- Node 4: RAG -->
+    <circle cx="800" cy="1100" r="4" fill="#27272A" />
+    <text x="830" y="1105" class="timeline-label" text-anchor="start">Retrieval-Augmented Generation (RAG)</text>
+
+    <!-- Node 5: LangGraph -->
+    <circle cx="800" cy="1160" r="4" fill="#27272A" />
+    <text x="770" y="1165" class="timeline-label" text-anchor="end">LangGraph Agent Workflows</text>
+
+    <!-- Node 6: MCP -->
+    <circle cx="800" cy="1220" r="4" fill="#27272A" />
+    <text x="830" y="1225" class="timeline-label" text-anchor="start">Model Context Protocol (MCP)</text>
+
+    <!-- Node 7: Agentic AI (Highlight Capsule) -->
+    <circle cx="800" cy="1280" r="5" fill="#3B82F6" />
+    <g transform="translate(800, 1310)">
+      <rect x="-90" y="0" width="180" height="36" class="timeline-highlight-bg" />
+      <text x="0" y="22" class="timeline-highlight-text">Agentic AI</text>
+    </g>
+  </g>
 </svg>

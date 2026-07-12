@@ -14,13 +14,11 @@
       <animate attributeName="cx" values="40%;65%;40%" dur="30s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="35%;65%;35%" dur="30s" repeatCount="indefinite"/>
     </radialGradient>
-    <!-- Signal flow gradient — horizontal -->
     <linearGradient id="sig-h" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
       <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
     </linearGradient>
-    <!-- Signal flow gradient — diagonal -->
     <linearGradient id="sig-d" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
       <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.8"/>
@@ -56,17 +54,13 @@
     <path d="M0,80 H1600 M0,160 H1600 M0,240 H1600 M0,320 H1600 M0,400 H1600 M0,480 H1600 M0,560 H1600 M0,640 H1600" stroke="#1C1C1E" stroke-width="0.5"/>
   </g>
 
-  <!-- Divider between left and right panels -->
+  <!-- Panel divider -->
   <line x1="680" y1="80" x2="680" y2="640" stroke="#1A1A1D" stroke-width="1"/>
 
   <!-- Particles -->
   <circle cx="310" cy="200" r="1.5" fill="#3B82F6" opacity="0.35">
     <animate attributeName="cy" values="200;175;200" dur="11s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.35;0.7;0.35" dur="11s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="540" cy="440" r="1" fill="#ffffff" opacity="0.2">
-    <animate attributeName="cy" values="440;465;440" dur="14s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="14s" repeatCount="indefinite"/>
   </circle>
   <circle cx="1520" cy="120" r="1.5" fill="#3B82F6" opacity="0.3">
     <animate attributeName="cy" values="120;95;120" dur="9s" repeatCount="indefinite"/>
@@ -77,200 +71,221 @@
   <line x1="80" y1="80" x2="80" y2="640" stroke="#222222" stroke-width="1.5"/>
   <circle cx="80" cy="80" r="3.5" fill="#3B82F6"/>
 
+  <!-- ===================== LEFT PANEL ===================== -->
+
   <!-- System label -->
   <text x="120" y="108" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="12" font-weight="700" fill="#3D3D45" letter-spacing="5">SYSTEM INITIALIZED</text>
 
   <!-- Name -->
-  <text x="120" y="210" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="100" font-weight="800" fill="#FFFFFF" letter-spacing="-4">GUNTI</text>
-  <text x="120" y="312" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="100" font-weight="800" fill="#FFFFFF" letter-spacing="-4">PRASANTH</text>
-  <text x="120" y="414" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="100" font-weight="800" fill="#FFFFFF" letter-spacing="-4">KUMAR</text>
+  <text x="120" y="196" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="90" font-weight="800" fill="#FFFFFF" letter-spacing="-3.5">GUNTI</text>
+  <text x="120" y="286" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="90" font-weight="800" fill="#FFFFFF" letter-spacing="-3.5">PRASANTH</text>
+  <text x="120" y="376" font-family="-apple-system,BlinkMacSystemFont,'Outfit','Segoe UI',sans-serif" font-size="90" font-weight="800" fill="#FFFFFF" letter-spacing="-3.5">KUMAR</text>
 
   <!-- Role -->
-  <text x="122" y="462" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="19" font-weight="600" fill="#3B82F6" letter-spacing="-0.3">AI Engineer  ·  Full Stack Developer</text>
+  <text x="122" y="420" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="17" font-weight="600" fill="#3B82F6" letter-spacing="-0.3">AI Engineer  ·  Full Stack Developer</text>
 
   <!-- Mission -->
-  <text x="122" y="506" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="16" font-weight="400" fill="#9A9A9A">Building production-ready AI systems that solve real-world problems.</text>
+  <text x="122" y="456" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="400" fill="#9A9A9A">Building production-ready AI systems that solve real-world problems.</text>
 
   <!-- Education -->
-  <text x="122" y="553" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="400" fill="#3D3D45">Information Technology Undergraduate</text>
-  <text x="122" y="574" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="14" font-weight="400" fill="#3D3D45">Aditya University  ·  Class of 2027</text>
+  <text x="122" y="494" font-family="-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif" font-size="13" font-weight="400" fill="#3D3D45">Information Technology Undergraduate  ·  Aditya University  ·  2027</text>
+
+  <!-- ── TECH STACK PILLS ── -->
+  <!-- Row 1 -->
+  <rect x="122" y="516" width="78" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="161" y="532" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">Python</text>
+
+  <rect x="210" y="516" width="84" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="252" y="532" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">LangChain</text>
+
+  <rect x="304" y="516" width="64" height="24" rx="6" fill="#0E0E10" stroke="#3B82F6" stroke-width="1"/>
+  <text x="336" y="532" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#3B82F6" text-anchor="middle">Agents</text>
+
+  <rect x="378" y="516" width="60" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="408" y="532" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">RAG</text>
+
+  <rect x="448" y="516" width="72" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="484" y="532" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">FastAPI</text>
+
+  <rect x="530" y="516" width="62" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="561" y="532" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">React</text>
+
+  <!-- Row 2 -->
+  <rect x="122" y="550" width="56" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="150" y="566" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">LLMs</text>
+
+  <rect x="188" y="550" width="70" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="223" y="566" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">MongoDB</text>
+
+  <rect x="268" y="550" width="86" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="311" y="566" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">LangGraph</text>
+
+  <rect x="364" y="550" width="58" height="24" rx="6" fill="#0E0E10" stroke="#222222" stroke-width="1"/>
+  <text x="393" y="566" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#9A9A9A" text-anchor="middle">MCP</text>
+
+  <rect x="432" y="550" width="78" height="24" rx="6" fill="#0E0E10" stroke="#3B82F6" stroke-width="1"/>
+  <text x="471" y="566" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#3B82F6" text-anchor="middle">Agentic AI</text>
 
   <!-- Nav links -->
   <a href="https://prasanth-future-engine.netlify.app/" target="_blank">
-    <text x="122" y="641" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#6B6B75">Portfolio ↗</text>
+    <text x="122" y="620" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#6B6B75">Portfolio ↗</text>
   </a>
   <a href="https://github.com/GuntiPrasanthKumar" target="_blank">
-    <text x="248" y="641" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#6B6B75">GitHub ↗</text>
+    <text x="248" y="620" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#6B6B75">GitHub ↗</text>
   </a>
   <a href="https://www.linkedin.com/in/gunti-prasanth-kumar-68207027a/" target="_blank">
-    <text x="350" y="641" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#6B6B75">LinkedIn ↗</text>
+    <text x="350" y="620" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#6B6B75">LinkedIn ↗</text>
   </a>
   <a href="mailto:prasanthgunti07@gmail.com" target="_blank">
-    <text x="464" y="641" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#6B6B75">Email ↗</text>
+    <text x="464" y="620" font-family="-apple-system,BlinkMacSystemFont,'Inter',sans-serif" font-size="14" font-weight="600" fill="#6B6B75">Email ↗</text>
   </a>
 
-  <!-- ========================================================= -->
-  <!-- RIGHT PANEL: LAYERED NEURAL NETWORK ARCHITECTURE DIAGRAM  -->
-  <!-- ========================================================= -->
+  <!-- ===================== RIGHT PANEL: NEURAL NETWORK ===================== -->
 
   <!-- Panel label -->
   <text x="730" y="108" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="11" font-weight="700" fill="#3D3D45" letter-spacing="4">AI ARCHITECTURE</text>
 
   <!-- Layer labels -->
-  <text x="800" y="155" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#27272A" letter-spacing="2" text-anchor="middle">INPUT</text>
-  <text x="980" y="155" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#27272A" letter-spacing="2" text-anchor="middle">REASONING</text>
-  <text x="1160" y="155" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#27272A" letter-spacing="2" text-anchor="middle">PROCESSING</text>
-  <text x="1360" y="155" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#27272A" letter-spacing="2" text-anchor="middle">OUTPUT</text>
+  <text x="800" y="148" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#27272A" letter-spacing="2" text-anchor="middle">INPUT</text>
+  <text x="975" y="148" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#27272A" letter-spacing="2" text-anchor="middle">REASONING</text>
+  <text x="1160" y="148" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#27272A" letter-spacing="2" text-anchor="middle">PROCESSING</text>
+  <text x="1360" y="148" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="10" font-weight="700" fill="#27272A" letter-spacing="2" text-anchor="middle">OUTPUT</text>
 
-  <!-- Layer vertical dividers (faint) -->
-  <line x1="890" y1="170" x2="890" y2="610" stroke="#161618" stroke-width="1"/>
-  <line x1="1070" y1="170" x2="1070" y2="610" stroke="#161618" stroke-width="1"/>
-  <line x1="1260" y1="170" x2="1260" y2="610" stroke="#161618" stroke-width="1"/>
+  <!-- Layer dividers -->
+  <line x1="887" y1="162" x2="887" y2="610" stroke="#161618" stroke-width="1"/>
+  <line x1="1067" y1="162" x2="1067" y2="610" stroke="#161618" stroke-width="1"/>
+  <line x1="1255" y1="162" x2="1255" y2="610" stroke="#161618" stroke-width="1"/>
 
-  <!-- ===== LAYER 1: INPUT NODES (x=800) ===== -->
-  <!-- Node: Data -->
-  <circle cx="800" cy="230" r="18" fill="#0A0A0C" stroke="#27272A" stroke-width="1.5"/>
-  <circle cx="800" cy="230" r="6" fill="#3D3D45"/>
-  <text x="800" y="264" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3D3D45" letter-spacing="1" text-anchor="middle">DATA</text>
+  <!-- ===== LAYER 1: INPUT (x=800) ===== -->
+  <circle cx="800" cy="222" r="16" fill="#0A0A0C" stroke="#27272A" stroke-width="1.5"/>
+  <circle cx="800" cy="222" r="5.5" fill="#3D3D45"/>
+  <text x="800" y="252" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3D3D45" letter-spacing="1" text-anchor="middle">DATA</text>
 
-  <!-- Node: Context -->
-  <circle cx="800" cy="360" r="18" fill="#0A0A0C" stroke="#27272A" stroke-width="1.5"/>
-  <circle cx="800" cy="360" r="6" fill="#3D3D45"/>
-  <text x="800" y="394" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3D3D45" letter-spacing="1" text-anchor="middle">CONTEXT</text>
+  <circle cx="800" cy="355" r="16" fill="#0A0A0C" stroke="#27272A" stroke-width="1.5"/>
+  <circle cx="800" cy="355" r="5.5" fill="#3D3D45"/>
+  <text x="800" y="385" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3D3D45" letter-spacing="1" text-anchor="middle">CONTEXT</text>
 
-  <!-- Node: Query -->
-  <circle cx="800" cy="490" r="18" fill="#0A0A0C" stroke="#27272A" stroke-width="1.5"/>
-  <circle cx="800" cy="490" r="6" fill="#3D3D45"/>
-  <text x="800" y="524" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3D3D45" letter-spacing="1" text-anchor="middle">QUERY</text>
+  <circle cx="800" cy="488" r="16" fill="#0A0A0C" stroke="#27272A" stroke-width="1.5"/>
+  <circle cx="800" cy="488" r="5.5" fill="#3D3D45"/>
+  <text x="800" y="518" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3D3D45" letter-spacing="1" text-anchor="middle">QUERY</text>
 
-  <!-- ===== LAYER 2: REASONING NODES (x=980) ===== -->
-  <!-- Node: NLP -->
-  <circle cx="980" cy="195" r="20" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
-  <circle cx="980" cy="195" r="6" fill="#52525B"/>
-  <text x="980" y="228" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">NLP</text>
+  <!-- ===== LAYER 2: REASONING (x=975) ===== -->
+  <circle cx="975" cy="192" r="18" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
+  <circle cx="975" cy="192" r="5.5" fill="#52525B"/>
+  <text x="975" y="224" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">NLP</text>
 
-  <!-- Node: Embeddings -->
-  <circle cx="980" cy="310" r="20" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
-  <circle cx="980" cy="310" r="6" fill="#52525B"/>
-  <text x="980" y="343" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">EMBED</text>
+  <circle cx="975" cy="305" r="18" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
+  <circle cx="975" cy="305" r="5.5" fill="#52525B"/>
+  <text x="975" y="337" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">EMBED</text>
 
-  <!-- Node: Memory (Active) -->
-  <circle cx="980" cy="425" r="22" fill="#0A0A0D" stroke="#3B82F6" stroke-width="1.5" filter="url(#soft-glow)"/>
-  <circle cx="980" cy="425" r="7" fill="#3B82F6" filter="url(#node-glow)"/>
-  <circle cx="980" cy="425" r="7" fill="none" stroke="#3B82F6" stroke-width="1">
-    <animate attributeName="r" values="7;18;7" dur="3.5s" repeatCount="indefinite"/>
+  <!-- MEMORY — active -->
+  <circle cx="975" cy="420" r="20" fill="#0A0A0D" stroke="#3B82F6" stroke-width="1.5" filter="url(#soft-glow)"/>
+  <circle cx="975" cy="420" r="6.5" fill="#3B82F6" filter="url(#node-glow)"/>
+  <circle cx="975" cy="420" r="6.5" fill="none" stroke="#3B82F6" stroke-width="1">
+    <animate attributeName="r" values="6.5;17;6.5" dur="3.5s" repeatCount="indefinite"/>
     <animate attributeName="stroke-opacity" values="0.8;0;0.8" dur="3.5s" repeatCount="indefinite"/>
   </circle>
-  <text x="980" y="460" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3B82F6" letter-spacing="1" text-anchor="middle">MEMORY</text>
+  <text x="975" y="454" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3B82F6" letter-spacing="1" text-anchor="middle">MEMORY</text>
 
-  <!-- Node: Retrieval -->
-  <circle cx="980" cy="540" r="20" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
-  <circle cx="980" cy="540" r="6" fill="#52525B"/>
-  <text x="980" y="573" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">RETRIEVAL</text>
+  <circle cx="975" cy="535" r="18" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
+  <circle cx="975" cy="535" r="5.5" fill="#52525B"/>
+  <text x="975" y="567" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">RETRIEVAL</text>
 
-  <!-- ===== LAYER 3: PROCESSING NODES (x=1160) ===== -->
-  <!-- Node: LLM (Active) -->
-  <circle cx="1160" cy="230" r="24" fill="#0A0A0D" stroke="#3B82F6" stroke-width="2" filter="url(#soft-glow)"/>
-  <circle cx="1160" cy="230" r="8" fill="#3B82F6" filter="url(#node-glow)"/>
-  <circle cx="1160" cy="230" r="8" fill="none" stroke="#3B82F6" stroke-width="1.5">
+  <!-- ===== LAYER 3: PROCESSING (x=1160) ===== -->
+  <!-- LLM — active -->
+  <circle cx="1160" cy="228" r="22" fill="#0A0A0D" stroke="#3B82F6" stroke-width="2" filter="url(#soft-glow)"/>
+  <circle cx="1160" cy="228" r="8" fill="#3B82F6" filter="url(#node-glow)"/>
+  <circle cx="1160" cy="228" r="8" fill="none" stroke="#3B82F6" stroke-width="1.5">
     <animate attributeName="r" values="8;22;8" dur="4s" repeatCount="indefinite"/>
     <animate attributeName="stroke-opacity" values="0.8;0;0.8" dur="4s" repeatCount="indefinite"/>
   </circle>
-  <text x="1160" y="268" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3B82F6" letter-spacing="1" text-anchor="middle">LLM</text>
+  <text x="1160" y="264" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3B82F6" letter-spacing="1" text-anchor="middle">LLM</text>
 
-  <!-- Node: Reasoning -->
-  <circle cx="1160" cy="370" r="20" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
-  <circle cx="1160" cy="370" r="6" fill="#52525B"/>
-  <text x="1160" y="403" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">REASON</text>
+  <circle cx="1160" cy="368" r="18" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
+  <circle cx="1160" cy="368" r="5.5" fill="#52525B"/>
+  <text x="1160" y="400" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">REASON</text>
 
-  <!-- Node: Planning (Active) -->
-  <circle cx="1160" cy="490" r="22" fill="#0A0A0D" stroke="#3B82F6" stroke-width="1.5" filter="url(#soft-glow)"/>
-  <circle cx="1160" cy="490" r="7" fill="#3B82F6" filter="url(#node-glow)"/>
-  <circle cx="1160" cy="490" r="7" fill="none" stroke="#3B82F6" stroke-width="1">
-    <animate attributeName="r" values="7;18;7" dur="3.2s" repeatCount="indefinite"/>
+  <!-- PLANNING — active -->
+  <circle cx="1160" cy="488" r="20" fill="#0A0A0D" stroke="#3B82F6" stroke-width="1.5" filter="url(#soft-glow)"/>
+  <circle cx="1160" cy="488" r="6.5" fill="#3B82F6" filter="url(#node-glow)"/>
+  <circle cx="1160" cy="488" r="6.5" fill="none" stroke="#3B82F6" stroke-width="1">
+    <animate attributeName="r" values="6.5;17;6.5" dur="3.2s" repeatCount="indefinite"/>
     <animate attributeName="stroke-opacity" values="0.8;0;0.8" dur="3.2s" repeatCount="indefinite"/>
   </circle>
-  <text x="1160" y="525" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3B82F6" letter-spacing="1" text-anchor="middle">PLANNING</text>
+  <text x="1160" y="522" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3B82F6" letter-spacing="1" text-anchor="middle">PLANNING</text>
 
-  <!-- ===== LAYER 4: OUTPUT NODES (x=1360) ===== -->
-  <!-- Node: Actions -->
-  <circle cx="1360" cy="270" r="20" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
-  <circle cx="1360" cy="270" r="6" fill="#52525B"/>
-  <text x="1360" y="303" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">ACTIONS</text>
+  <!-- ===== LAYER 4: OUTPUT (x=1360) ===== -->
+  <circle cx="1360" cy="268" r="18" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
+  <circle cx="1360" cy="268" r="5.5" fill="#52525B"/>
+  <text x="1360" y="300" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">ACTIONS</text>
 
-  <!-- Node: Agents (Active — destination) -->
-  <circle cx="1360" cy="420" r="28" fill="#080810" stroke="#3B82F6" stroke-width="2" filter="url(#soft-glow)"/>
-  <circle cx="1360" cy="420" r="10" fill="#3B82F6" filter="url(#node-glow)"/>
-  <circle cx="1360" cy="420" r="10" fill="none" stroke="#3B82F6" stroke-width="1.5">
-    <animate attributeName="r" values="10;28;10" dur="5s" repeatCount="indefinite"/>
+  <!-- AGENTS — destination, active -->
+  <circle cx="1360" cy="415" r="26" fill="#080810" stroke="#3B82F6" stroke-width="2" filter="url(#soft-glow)"/>
+  <circle cx="1360" cy="415" r="9" fill="#3B82F6" filter="url(#node-glow)"/>
+  <circle cx="1360" cy="415" r="9" fill="none" stroke="#3B82F6" stroke-width="1.5">
+    <animate attributeName="r" values="9;26;9" dur="5s" repeatCount="indefinite"/>
     <animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="5s" repeatCount="indefinite"/>
   </circle>
-  <text x="1360" y="462" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3B82F6" letter-spacing="1" text-anchor="middle">AGENTS</text>
+  <text x="1360" y="455" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#3B82F6" letter-spacing="1" text-anchor="middle">AGENTS</text>
 
-  <!-- Node: Decisions -->
-  <circle cx="1360" cy="550" r="20" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
-  <circle cx="1360" cy="550" r="6" fill="#52525B"/>
-  <text x="1360" y="583" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">DECISIONS</text>
+  <circle cx="1360" cy="548" r="18" fill="#0A0A0C" stroke="#3B3B44" stroke-width="1.5"/>
+  <circle cx="1360" cy="548" r="5.5" fill="#52525B"/>
+  <text x="1360" y="580" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-size="9" fill="#52525B" letter-spacing="1" text-anchor="middle">DECISIONS</text>
 
-  <!-- ====================== CONNECTIONS ====================== -->
-  <!-- Layer 1 → Layer 2 (static structural lines) -->
-  <line x1="818" y1="230" x2="960" y2="195" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="230" x2="960" y2="310" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="230" x2="960" y2="425" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="360" x2="960" y2="195" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="360" x2="960" y2="310" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="360" x2="960" y2="425" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="360" x2="960" y2="540" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="490" x2="960" y2="310" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="490" x2="960" y2="425" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="818" y1="490" x2="960" y2="540" stroke="#1A1A1D" stroke-width="1"/>
+  <!-- ===== STRUCTURAL CONNECTIONS (static base) ===== -->
+  <line x1="816" y1="222" x2="957" y2="192" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="222" x2="957" y2="305" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="222" x2="957" y2="420" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="355" x2="957" y2="192" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="355" x2="957" y2="305" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="355" x2="957" y2="420" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="355" x2="957" y2="535" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="488" x2="957" y2="305" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="488" x2="957" y2="420" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="816" y1="488" x2="957" y2="535" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="192" x2="1138" y2="228" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="192" x2="1138" y2="368" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="305" x2="1138" y2="228" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="305" x2="1138" y2="368" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="420" x2="1138" y2="228" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="420" x2="1138" y2="368" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="420" x2="1138" y2="488" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="535" x2="1138" y2="368" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="993" y1="535" x2="1138" y2="488" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="1182" y1="228" x2="1342" y2="268" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="1182" y1="228" x2="1342" y2="415" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="1182" y1="368" x2="1342" y2="268" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="1182" y1="368" x2="1342" y2="415" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="1182" y1="488" x2="1342" y2="415" stroke="#1A1A1D" stroke-width="1"/>
+  <line x1="1182" y1="488" x2="1342" y2="548" stroke="#1A1A1D" stroke-width="1"/>
 
-  <!-- Layer 2 → Layer 3 (static) -->
-  <line x1="1000" y1="195" x2="1140" y2="230" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1000" y1="195" x2="1140" y2="370" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1000" y1="310" x2="1140" y2="230" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1000" y1="310" x2="1140" y2="370" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1000" y1="425" x2="1140" y2="230" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1000" y1="425" x2="1140" y2="370" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1000" y1="425" x2="1140" y2="490" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1000" y1="540" x2="1140" y2="370" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1000" y1="540" x2="1140" y2="490" stroke="#1A1A1D" stroke-width="1"/>
-
-  <!-- Layer 3 → Layer 4 (static) -->
-  <line x1="1184" y1="230" x2="1340" y2="270" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1184" y1="230" x2="1340" y2="420" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1184" y1="370" x2="1340" y2="270" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1184" y1="370" x2="1340" y2="420" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1184" y1="490" x2="1340" y2="420" stroke="#1A1A1D" stroke-width="1"/>
-  <line x1="1184" y1="490" x2="1340" y2="550" stroke="#1A1A1D" stroke-width="1"/>
-
-  <!-- ===== ANIMATED SIGNAL FLOWS (Active paths only) ===== -->
+  <!-- ===== ANIMATED SIGNAL FLOWS ===== -->
   <!-- DATA → MEMORY -->
-  <line x1="818" y1="230" x2="960" y2="425" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="12 80" opacity="0.6">
+  <line x1="816" y1="222" x2="957" y2="420" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="12 80" opacity="0.6">
     <animate attributeName="stroke-dashoffset" values="92;0" dur="3.5s" repeatCount="indefinite"/>
   </line>
   <!-- CONTEXT → MEMORY -->
-  <line x1="818" y1="360" x2="960" y2="425" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="12 50" opacity="0.5">
+  <line x1="816" y1="355" x2="957" y2="420" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="12 50" opacity="0.5">
     <animate attributeName="stroke-dashoffset" values="62;0" dur="2.8s" repeatCount="indefinite"/>
   </line>
+  <!-- RETRIEVAL → PLANNING -->
+  <line x1="993" y1="535" x2="1138" y2="488" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="10 55" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="65;0" dur="2.5s" repeatCount="indefinite"/>
+  </line>
   <!-- MEMORY → LLM -->
-  <line x1="1000" y1="425" x2="1140" y2="230" stroke="#3B82F6" stroke-width="2" stroke-dasharray="14 90" opacity="0.7">
+  <line x1="993" y1="420" x2="1138" y2="228" stroke="#3B82F6" stroke-width="2" stroke-dasharray="14 90" opacity="0.7">
     <animate attributeName="stroke-dashoffset" values="104;0" dur="4s" repeatCount="indefinite"/>
   </line>
   <!-- LLM → AGENTS -->
-  <line x1="1184" y1="230" x2="1340" y2="420" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="16 110" opacity="0.8">
+  <line x1="1182" y1="228" x2="1342" y2="415" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="16 110" opacity="0.8">
     <animate attributeName="stroke-dashoffset" values="126;0" dur="4.5s" repeatCount="indefinite"/>
   </line>
   <!-- PLANNING → AGENTS -->
-  <line x1="1184" y1="490" x2="1340" y2="420" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="12 60" opacity="0.6">
+  <line x1="1182" y1="488" x2="1342" y2="415" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="12 60" opacity="0.6">
     <animate attributeName="stroke-dashoffset" values="72;0" dur="3.2s" repeatCount="indefinite"/>
   </line>
-  <!-- RETRIEVAL → PLANNING -->
-  <line x1="1000" y1="540" x2="1140" y2="490" stroke="#3B82F6" stroke-width="1.5" stroke-dasharray="10 55" opacity="0.5">
-    <animate attributeName="stroke-dashoffset" values="65;0" dur="2.5s" repeatCount="indefinite"/>
-  </line>
 
-  <!-- Grain overlay -->
+  <!-- Grain -->
   <rect width="1600" height="720" fill="transparent" filter="url(#grain)" pointer-events="none"/>
   <!-- Border -->
   <rect x="0.5" y="0.5" width="1599" height="719" rx="16" stroke="#222222" stroke-width="1" fill="none"/>

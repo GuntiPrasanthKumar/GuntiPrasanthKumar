@@ -1,29 +1,29 @@
 <div align="center">
-  <img src="./assets/svg/hero.svg" alt="System Initialized - Gunti Prasanth Kumar" width="100%" />
+  <img src="./assets/svg/hero.svg?v=2" alt="System Initialized - Gunti Prasanth Kumar" width="100%" />
 </div>
 
 <br /><br />
 
 <div align="center">
-  <img src="./assets/svg/dashboard.svg" alt="AI Operating System Dashboard" width="100%" />
+  <img src="./assets/svg/dashboard.svg?v=2" alt="AI Operating System Dashboard" width="100%" />
 </div>
 
 <br /><br />
 
 <div align="center">
-  <img src="./assets/svg/products.svg" alt="Featured Products" width="100%" />
+  <img src="./assets/svg/products.svg?v=2" alt="Featured Products" width="100%" />
 </div>
 
 <br /><br />
 
 <div align="center">
-  <img src="./assets/svg/journey.svg" alt="Engineering Journey" width="100%" />
+  <img src="./assets/svg/journey.svg?v=2" alt="Engineering Journey" width="100%" />
 </div>
 
 <br /><br />
 
 <div align="center">
-  <img src="./assets/svg/opensource.svg" alt="Open Source Activity" width="100%" />
+  <img src="./assets/svg/opensource.svg?v=2" alt="Open Source Activity" width="100%" />
 </div>
 
 <br /><br />

@@ -1,21 +1,21 @@
-<svg width="1600" height="700" viewBox="0 0 1600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Background Radial Glow -->
-    <radialGradient id="glow" cx="80%" cy="50%" r="50%">
+    <radialGradient id="glow" cx="80%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.25" />
       <stop offset="40%" stop-color="#0F172A" stop-opacity="0.08" />
       <stop offset="100%" stop-color="#050505" stop-opacity="0" />
-      <animate attributeName="cx" values="80%;75%;85%;80%" dur="20s" repeatCount="indefinite" />
-      <animate attributeName="cy" values="50%;45%;55%;50%" dur="20s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="80%;75%;85%;80%" dur="24s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="50%;45%;55%;50%" dur="24s" repeatCount="indefinite" />
     </radialGradient>
 
     <!-- Grid Shimmer Mask -->
     <radialGradient id="grid-mask" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8" />
-      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.3" />
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75" />
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.25" />
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
-      <animate attributeName="cx" values="30%;70%;30%" dur="25s" repeatCount="indefinite" />
-      <animate attributeName="cy" values="30%;70%;30%" dur="25s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="30%;70%;30%" dur="28s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="30%;70%;30%" dur="28s" repeatCount="indefinite" />
     </radialGradient>
 
     <!-- Moving Line Glow Gradient -->
@@ -25,162 +25,154 @@
       <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
     </linearGradient>
 
+    <!-- Noise / Grain Filter -->
+    <filter id="noise-filter" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise">
+        <animate attributeName="seed" values="0;80;0" dur="20s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" />
+      <feComposite in="SourceGraphic" in2="noise" operator="over" />
+    </filter>
+
     <!-- Mask Reference -->
     <mask id="grid-mask-ref">
-      <rect width="1600" height="700" fill="url(#grid-mask)" />
+      <rect width="1600" height="720" fill="url(#grid-mask)" />
     </mask>
   </defs>
 
-  <style>
-    .bg { fill: #050505; }
-    .border { stroke: #222222; stroke-width: 1; fill: none; }
-    
-    /* Typography System */
-    .protocol { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 13px; font-weight: 700; fill: #52525B; letter-spacing: 5px; }
-    .name-line { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 96px; font-weight: 800; fill: #FFFFFF; letter-spacing: -3px; line-height: 0.9; }
-    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 20px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.5px; }
-    .mission { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 18px; font-weight: 400; fill: #B7B7B7; line-height: 1.5; }
-    .academic { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 15px; font-weight: 400; fill: #52525B; }
-    
-    .link { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 15px; font-weight: 600; fill: #8A8A93; transition: fill 0.25s ease; cursor: pointer; text-decoration: none; }
-    .link:hover { fill: #FFFFFF; }
-  </style>
-
-  <!-- Canvas Base -->
-  <rect width="1600" height="700" class="bg"/>
+  <!-- Background Base Canvas -->
+  <rect width="1600" height="720" fill="#050505"/>
   
-  <!-- Subtle Radial Glow Background -->
-  <rect width="1600" height="700" fill="url(#glow)" />
+  <!-- Atmospheric Glow Layer -->
+  <rect width="1600" height="720" fill="url(#glow)" />
 
-  <!-- Animated Grid Overlay -->
+  <!-- Subtle Engineering Grid -->
   <g mask="url(#grid-mask-ref)">
-    <!-- Vertical Grid Lines -->
-    <path d="M 80,0 V 700 M 160,0 V 700 M 240,0 V 700 M 320,0 V 700 M 400,0 V 700 M 480,0 V 700 M 560,0 V 700 M 640,0 V 700 M 720,0 V 700 M 800,0 V 700 M 880,0 V 700 M 960,0 V 700 M 1040,0 V 700 M 1120,0 V 700 M 1200,0 V 700 M 1280,0 V 700 M 1360,0 V 700 M 1440,0 V 700 M 1520,0 V 700" stroke="#1C1C1E" stroke-width="0.5" />
-    <!-- Horizontal Grid Lines -->
+    <!-- Vertical Grid Lines (80px spacing) -->
+    <path d="M 80,0 V 720 M 160,0 V 720 M 240,0 V 720 M 320,0 V 720 M 400,0 V 720 M 480,0 V 720 M 560,0 V 720 M 640,0 V 720 M 720,0 V 720 M 800,0 V 720 M 880,0 V 720 M 960,0 V 720 M 1040,0 V 720 M 1120,0 V 720 M 1200,0 V 720 M 1280,0 V 720 M 1360,0 V 720 M 1440,0 V 720 M 1520,0 V 720" stroke="#1C1C1E" stroke-width="0.5" />
+    <!-- Horizontal Grid Lines (80px spacing) -->
     <path d="M 0,80 H 1600 M 0,160 H 1600 M 0,240 H 1600 M 0,320 H 1600 M 0,400 H 1600 M 0,480 H 1600 M 0,560 H 1600 M 0,640 H 1600" stroke="#1C1C1E" stroke-width="0.5" />
   </g>
 
-  <!-- Tiny Floating Particles -->
+  <!-- Floating Starfield Particles (Drifting) -->
   <g>
-    <circle cx="200" cy="180" r="1.5" fill="#3B82F6" opacity="0.3">
-      <animate attributeName="cy" values="180;150;180" dur="8s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="8s" repeatCount="indefinite" />
+    <circle cx="250" cy="190" r="1.5" fill="#3B82F6" opacity="0.3">
+      <animate attributeName="cy" values="190;160;190" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="10s" repeatCount="indefinite" />
     </circle>
-    <circle cx="850" cy="120" r="1.5" fill="#FFFFFF" opacity="0.2">
-      <animate attributeName="cy" values="120;140;120" dur="10s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="10s" repeatCount="indefinite" />
+    <circle cx="820" cy="140" r="1.5" fill="#FFFFFF" opacity="0.25">
+      <animate attributeName="cy" values="140;165;140" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.25;0.6;0.25" dur="12s" repeatCount="indefinite" />
     </circle>
-    <circle cx="1400" cy="220" r="1" fill="#3B82F6" opacity="0.4">
-      <animate attributeName="cy" values="220;190;220" dur="7s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="7s" repeatCount="indefinite" />
+    <circle cx="1380" cy="240" r="1" fill="#3B82F6" opacity="0.4">
+      <animate attributeName="cy" values="240;210;240" dur="9s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="9s" repeatCount="indefinite" />
     </circle>
-    <circle cx="950" cy="550" r="2" fill="#3B82F6" opacity="0.15">
-      <animate attributeName="cy" values="550;530;550" dur="12s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.15;0.4;0.15" dur="12s" repeatCount="indefinite" />
+    <circle cx="920" cy="570" r="2" fill="#3B82F6" opacity="0.15">
+      <animate attributeName="cy" values="570;550;570" dur="14s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.15;0.45;0.15" dur="14s" repeatCount="indefinite" />
     </circle>
   </g>
 
-  <!-- Left Symmetrical Accent Line -->
-  <line x1="80" y1="80" x2="80" y2="620" stroke="#222222" stroke-width="1.5" />
-  <circle cx="80" cy="80" r="3" fill="#3B82F6" />
+  <!-- Left Symmetrical Anchor System -->
+  <line x1="80" y1="80" x2="80" y2="640" stroke="#222222" stroke-width="1.5" />
+  <circle cx="80" cy="80" r="3.5" fill="#3B82F6" />
 
   <!-- ================= LEFT CONTENT PANEL ================= -->
-  <g>
-    <text x="120" y="105" class="protocol">SYSTEM INITIALIZED</text>
-    
-    <text x="120" y="195" class="name-line">GUNTI</text>
-    <text x="120" y="275" class="name-line">PRASANTH</text>
-    <text x="120" y="355" class="name-line">KUMAR</text>
-    
-    <text x="120" y="420" class="subtitle">AI Engineer  •  Full Stack Developer</text>
-    
-    <text x="120" y="465" class="mission">Building production-ready AI systems that solve real-world problems.</text>
-    
-    <text x="120" y="525" class="academic">Information Technology Undergraduate</text>
-    <text x="120" y="550" class="academic">Aditya University</text>
-    <text x="120" y="575" class="academic">Class of 2027</text>
+  <!-- Monospace Protocol label -->
+  <text x="120" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="13" font-weight="700" fill="#52525B" letter-spacing="5px">SYSTEM INITIALIZED</text>
+  
+  <!-- Editorial Typography Title -->
+  <text x="120" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Outfit', 'Segoe UI', sans-serif" font-size="96" font-weight="800" fill="#FFFFFF" letter-spacing="-3px" line-height="0.9">GUNTI</text>
+  <text x="120" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Outfit', 'Segoe UI', sans-serif" font-size="96" font-weight="800" fill="#FFFFFF" letter-spacing="-3px" line-height="0.9">PRASANTH</text>
+  <text x="120" y="355" font-family="-apple-system, BlinkMacSystemFont, 'Outfit', 'Segoe UI', sans-serif" font-size="96" font-weight="800" fill="#FFFFFF" letter-spacing="-3px" line-height="0.9">KUMAR</text>
+  
+  <!-- Subtitle -->
+  <text x="120" y="420" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#3B82F6" letter-spacing="-0.5px">AI Engineer • Full Stack Developer</text>
+  
+  <!-- Mission Statement -->
+  <text x="120" y="465" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="18" font-weight="400" fill="#B7B7B7" line-height="1.5">Building production-ready AI systems that solve real-world problems.</text>
+  
+  <!-- Academic Footnotes -->
+  <text x="120" y="525" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="400" fill="#52525B">Information Technology Undergraduate</text>
+  <text x="120" y="550" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" font-size="15" font-weight="400" fill="#52525B">Aditya University • Class of 2027</text>
 
-    <!-- Bottom Navigation Links -->
-    <g>
-      <a href="https://prasanth-future-engine.netlify.app/" target="_blank">
-        <text x="120" y="640" class="link">Portfolio ↗</text>
-      </a>
-      <a href="https://github.com/GuntiPrasanthKumar" target="_blank">
-        <text x="250" y="640" class="link">GitHub ↗</text>
-      </a>
-      <a href="https://www.linkedin.com/in/gunti-prasanth-kumar-68207027a/" target="_blank">
-        <text x="360" y="640" class="link">LinkedIn ↗</text>
-      </a>
-      <a href="mailto:prasanthgunti07@gmail.com" target="_blank">
-        <text x="480" y="640" class="link">Email ↗</text>
-      </a>
-    </g>
+  <!-- Bottom Navigation Items -->
+  <g>
+    <a href="https://prasanth-future-engine.netlify.app/" target="_blank">
+      <text x="120" y="640" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="600" fill="#8A8A93" cursor="pointer">Portfolio ↗</text>
+    </a>
+    <a href="https://github.com/GuntiPrasanthKumar" target="_blank">
+      <text x="250" y="640" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="600" fill="#8A8A93" cursor="pointer">GitHub ↗</text>
+    </a>
+    <a href="https://www.linkedin.com/in/gunti-prasanth-kumar-68207027a/" target="_blank">
+      <text x="360" y="640" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="600" fill="#8A8A93" cursor="pointer">LinkedIn ↗</text>
+    </a>
+    <a href="mailto:prasanthgunti07@gmail.com" target="_blank">
+      <text x="480" y="640" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="600" fill="#8A8A93" cursor="pointer">Email ↗</text>
+    </a>
   </g>
 
   <!-- ================= RIGHT SIDE: ABSTRACT AI VISUALIZATION ================= -->
-  <g transform="translate(100, 20)">
-    <!-- Passive Connection Lines -->
+  <g transform="translate(100, 30)">
+    <!-- Structural Connection Grid Lines -->
     <path d="M 1000,180 L 1150,130 M 1150,130 L 1320,220 M 1320,220 L 1380,420 M 1380,420 L 1230,520 M 1230,520 L 1080,470 M 1080,470 L 1000,180 M 1080,470 L 1150,130 M 1230,520 L 1150,320 M 1150,320 L 1320,220 M 1000,180 L 1150,320 M 1080,470 L 1150,320 M 1150,320 L 1380,420" stroke="#18181B" stroke-width="1.5" />
 
-    <!-- Animated Glowing Signal Flows -->
+    <!-- Moving Signal Flow Dashes -->
     <line x1="1000" y1="180" x2="1150" y2="130" stroke="url(#line-glow)" stroke-width="2" stroke-dasharray="20 120">
-      <animate attributeName="stroke-dashoffset" values="140;0" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dashoffset" values="140;0" dur="5s" repeatCount="indefinite" />
     </line>
     <line x1="1320" y1="220" x2="1380" y2="420" stroke="url(#line-glow)" stroke-width="2" stroke-dasharray="20 180">
-      <animate attributeName="stroke-dashoffset" values="200;0" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dashoffset" values="200;0" dur="6s" repeatCount="indefinite" />
     </line>
     <line x1="1080" y1="470" x2="1150" y2="320" stroke="url(#line-glow)" stroke-width="2" stroke-dasharray="15 130">
-      <animate attributeName="stroke-dashoffset" values="145;0" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dashoffset" values="145;0" dur="4s" repeatCount="indefinite" />
     </line>
     <line x1="1150" y1="320" x2="1320" y2="220" stroke="url(#line-glow)" stroke-width="2" stroke-dasharray="25 150">
-      <animate attributeName="stroke-dashoffset" values="175;0" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-dashoffset" values="175;0" dur="5.5s" repeatCount="indefinite" />
     </line>
 
-    <!-- Node Points -->
-    <!-- Node 1 -->
+    <!-- Interactive Node Circles -->
     <g>
       <circle cx="1000" cy="180" r="10" fill="none" stroke="#27272A" stroke-width="1" />
       <circle cx="1000" cy="180" r="4.5" fill="#3B82F6" />
     </g>
-    <!-- Node 2 -->
     <g>
       <circle cx="1150" cy="130" r="14" fill="none" stroke="#27272A" stroke-width="1" opacity="0.4">
-        <animate attributeName="r" values="8;20;8" dur="6s" repeatCount="indefinite" />
+        <animate attributeName="r" values="8;20;8" dur="8s" repeatCount="indefinite" />
       </circle>
       <circle cx="1150" cy="130" r="4.5" fill="#FFFFFF" />
     </g>
-    <!-- Node 3 -->
     <g>
       <circle cx="1320" cy="220" r="10" fill="none" stroke="#27272A" stroke-width="1" />
       <circle cx="1320" cy="220" r="4.5" fill="#3B82F6" />
     </g>
-    <!-- Node 4 -->
     <g>
       <circle cx="1380" cy="420" r="12" fill="none" stroke="#27272A" stroke-width="1" />
       <circle cx="1380" cy="420" r="4.5" fill="#FFFFFF" />
     </g>
-    <!-- Node 5 -->
     <g>
       <circle cx="1230" cy="520" r="10" fill="none" stroke="#27272A" stroke-width="1" />
       <circle cx="1230" cy="520" r="4.5" fill="#3B82F6" />
     </g>
-    <!-- Node 6 -->
     <g>
       <circle cx="1080" cy="470" r="16" fill="none" stroke="#27272A" stroke-width="1" opacity="0.4">
-        <animate attributeName="r" values="10;24;10" dur="5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="10;24;10" dur="7s" repeatCount="indefinite" />
       </circle>
       <circle cx="1080" cy="470" r="4.5" fill="#FFFFFF" />
     </g>
-    <!-- Center Hub Node -->
     <g>
       <circle cx="1150" cy="320" r="22" fill="none" stroke="#3B82F6" stroke-width="1" opacity="0.3">
-        <animate attributeName="r" values="14;30;14" dur="4s" repeatCount="indefinite" />
-        <animate attributeName="stroke-opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="r" values="14;30;14" dur="5s" repeatCount="indefinite" />
+        <animate attributeName="stroke-opacity" values="0.3;0;0.3" dur="5s" repeatCount="indefinite" />
       </circle>
       <circle cx="1150" cy="320" r="6" fill="#3B82F6" />
     </g>
   </g>
 
-  <!-- Outer Border Container Shell -->
-  <rect x="0.5" y="0.5" width="1599" height="699" rx="16" class="border"/>
+  <!-- Fine Film Grain Overlay (Apple / OpenAI style depth) -->
+  <rect width="1600" height="720" fill="transparent" filter="url(#noise-filter)" pointer-events="none" />
+
+  <!-- Outer Border Shell -->
+  <rect x="0.5" y="0.5" width="1599" height="719" rx="16" stroke="#222222" stroke-width="1" fill="none"/>
 </svg>

@@ -1,35 +1,53 @@
 <div align="center">
+  <img src="./assets/svg/hero.svg" alt="System Initialized - Gunti Prasanth Kumar" width="100%" />
+</div>
 
-<img src="./assets/svg/hero.svg" alt="Gunti Prasanth Kumar - Hero" width="1000" />
+<br /><br />
 
-<br><br>
+<div align="center">
+  <img src="./assets/svg/dashboard.svg" alt="AI Operating System Dashboard" width="100%" />
+</div>
 
-<img src="./assets/svg/operating-system.svg" alt="Gunti Prasanth Kumar - AI Operating System" width="1000" />
+<br /><br />
 
-<br><br>
+<div align="center">
+  <img src="./assets/svg/products.svg" alt="Featured Products" width="100%" />
+</div>
 
-<img src="./assets/svg/products.svg" alt="Gunti Prasanth Kumar - Product Showcase" width="1000" />
+<br /><br />
 
-<br><br>
+<div align="center">
+  <img src="./assets/svg/journey.svg" alt="Engineering Journey" width="100%" />
+</div>
 
-<img src="./assets/svg/journey.svg" alt="Gunti Prasanth Kumar - Engineering Journey" width="1000" />
+<br /><br />
 
-<br><br>
+<div align="center">
+  <img src="./assets/svg/opensource.svg" alt="Open Source Activity" width="100%" />
+</div>
 
-<img src="./assets/svg/opensource.svg" alt="Gunti Prasanth Kumar - Open Source Activity" width="1000" />
+<br /><br />
 
-<br><br>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=GuntiPrasanthKumar&amp;show_icons=true&amp;theme=dark&amp;bg_color=050505&amp;hide_border=true&amp;title_color=ffffff&amp;text_color=b7b7b7&amp;icon_color=3b82f6" alt="Gunti Prasanth Kumar's GitHub Stats" height="195" />
+  &nbsp;&nbsp;
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=GuntiPrasanthKumar&amp;theme=dark&amp;background=050505&amp;hide_border=true&amp;ring=3b82f6&amp;fire=3b82f6&amp;currStreakNum=3b82f6&amp;sideNums=b7b7b7" alt="Gunti Prasanth Kumar's Contribution Streak" height="195" />
+  &nbsp;&nbsp;
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&amp;layout=compact&amp;theme=dark&amp;bg_color=050505&amp;hide_border=true&amp;title_color=ffffff&amp;text_color=b7b7b7" alt="Gunti Prasanth Kumar's Top Languages" height="195" />
+</div>
 
-<img src="https://github-readme-stats.vercel.app/api?username=GuntiPrasanthKumar&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;hide_border=true&amp;bg_color=000000&amp;title_color=3B82F6&amp;text_color=A1A1AA&amp;icon_color=3B82F6" alt="GitHub Stats" width="490" />
-&nbsp;&nbsp;
-<img src="https://streak-stats.demolab.com?user=GuntiPrasanthKumar&amp;background=000000&amp;hide_border=true&amp;stroke=1C1C1E&amp;ring=3B82F6&amp;fire=3B82F6&amp;currStreakNum=EDEDED&amp;currStreakLabel=3B82F6&amp;sideNums=A1A1AA&amp;sideLabels=A1A1AA&amp;dates=71717A" alt="GitHub Streak" width="490" />
+<br /><br />
 
-<br><br>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GuntiPrasanthKumar&amp;layout=compact&amp;hide_border=true&amp;langs_count=8&amp;bg_color=000000&amp;title_color=3B82F6&amp;text_color=A1A1AA" alt="Top Languages" width="1000" />
-
-<br><br>
-
-<img src="./assets/svg/footer.svg" alt="Gunti Prasanth Kumar - Footer" width="1000" />
-
+<div align="center">
+  <font color="#52525B">
+    <a href="https://prasanth-future-engine.netlify.app/" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">Portfolio ↗</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/GuntiPrasanthKumar" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">GitHub ↗</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/gunti-prasanth-kumar-68207027a/" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">LinkedIn ↗</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="mailto:prasanthgunti07@gmail.com" style="color: #8A8A93; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 15px; font-weight: 600;">Email ↗</a>
+  </font>
+  <br /><br />
+  <font size="2" color="#52525B" style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; font-size: 13px;">Designed &amp; Engineered by Gunti Prasanth Kumar &copy; 2026</font>
 </div>

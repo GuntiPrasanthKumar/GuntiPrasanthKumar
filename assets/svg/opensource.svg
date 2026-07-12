@@ -1,0 +1,159 @@
+<svg width="1600" height="850" viewBox="0 0 1600 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Radial Glow -->
+    <radialGradient id="glow" cx="80%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.25" />
+      <stop offset="40%" stop-color="#0F172A" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#050505" stop-opacity="0" />
+      <animate attributeName="cx" values="80%;85%;75%;80%" dur="24s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="50%;45%;55%;50%" dur="24s" repeatCount="indefinite" />
+    </radialGradient>
+
+    <!-- Grid Shimmer Mask -->
+    <radialGradient id="grid-mask" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75" />
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
+      <animate attributeName="cx" values="30%;70%;30%" dur="28s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="30%;70%;30%" dur="28s" repeatCount="indefinite" />
+    </radialGradient>
+
+    <!-- Noise / Grain Filter -->
+    <filter id="noise-filter" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise">
+        <animate attributeName="seed" values="0;80;0" dur="20s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" />
+      <feComposite in="SourceGraphic" in2="noise" operator="over" />
+    </filter>
+
+    <!-- Mask Reference -->
+    <mask id="grid-mask-ref">
+      <rect width="1600" height="850" fill="url(#grid-mask)" />
+    </mask>
+  </defs>
+
+  <style>
+    .bg { fill: #050505; }
+    .border { stroke: #222222; stroke-width: 1; fill: none; }
+    .card-bg { fill: #0B0B0B; stroke: #222222; stroke-width: 1; rx: 16px; }
+    .card-placeholder { fill: #08080A; stroke: #222222; stroke-width: 1.5; stroke-dasharray: 6 6; rx: 16px; }
+    
+    /* Typography */
+    .protocol { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 13px; font-weight: 700; fill: #52525B; letter-spacing: 5px; }
+    .title-large { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 38px; font-weight: 800; fill: #FFFFFF; letter-spacing: -1px; }
+    .title-medium { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 18px; font-weight: 700; fill: #FFFFFF; }
+    .desc { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 15px; font-weight: 400; fill: #B7B7B7; line-height: 1.6; }
+    .desc-muted { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 14px; font-weight: 400; fill: #52525B; }
+    
+    .placeholder-title { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 16px; font-weight: 700; fill: #FFFFFF; text-anchor: middle; }
+    .placeholder-subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 11px; font-weight: 700; fill: #52525B; letter-spacing: 1px; text-anchor: middle; }
+
+    /* Values Section */
+    .val-header { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 15px; font-weight: 700; fill: #FFFFFF; }
+    .val-desc { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 13px; font-weight: 400; fill: #B7B7B7; line-height: 1.5; }
+
+    /* Animation Styles */
+    @keyframes pulse-border {
+      0%, 100% { stroke: #222222; }
+      50% { stroke: #3B82F6; }
+    }
+    .alive-border { animation: pulse-border 12s infinite ease-in-out; }
+  </style>
+
+  <!-- Canvas Base -->
+  <rect width="1600" height="850" class="bg"/>
+  
+  <!-- Atmospheric Glow Layer -->
+  <rect width="1600" height="850" fill="url(#glow)" />
+
+  <!-- Subtle Engineering Grid -->
+  <g mask="url(#grid-mask-ref)">
+    <path d="M 80,0 V 850 M 160,0 V 850 M 240,0 V 850 M 320,0 V 850 M 400,0 V 850 M 480,0 V 850 M 560,0 V 850 M 640,0 V 850 M 720,0 V 850 M 800,0 V 850 M 880,0 V 850 M 960,0 V 850 M 1040,0 V 850 M 1120,0 V 850 M 1200,0 V 850 M 1280,0 V 850 M 1360,0 V 850 M 1440,0 V 850 M 1520,0 V 850" stroke="#1C1C1E" stroke-width="0.5" />
+    <path d="M 0,80 H 1600 M 0,160 H 1600 M 0,240 H 1600 M 0,320 H 1600 M 0,400 H 1600 M 0,480 H 1600 M 0,560 H 1600 M 0,640 H 1600 M 0,720 H 1600 M 0,800 H 1600" stroke="#1C1C1E" stroke-width="0.5" />
+  </g>
+
+  <!-- Left Symmetrical Accent Line -->
+  <line x1="80" y1="40" x2="80" y2="810" stroke="#222222" stroke-width="1.5" />
+  <circle cx="80" cy="40" r="3.5" fill="#3B82F6" />
+
+  <!-- ================= HEADER PANEL ================= -->
+  <g>
+    <!-- Section Label -->
+    <text x="120" y="65" class="protocol">OPEN SOURCE</text>
+    
+    <!-- Section Title -->
+    <text x="120" y="130" class="title-large">Building in Public</text>
+    
+    <!-- Description -->
+    <text x="120" y="175" class="desc">Every project, experiment and commit contributes to becoming a better engineer.</text>
+    <text x="120" y="198" class="desc">Consistency matters more than intensity.</text>
+  </g>
+
+  <!-- ================= PLACEHOLDER CONTAINERS ================= -->
+  <!-- Container 1: GitHub Stats -->
+  <g>
+    <rect x="80" y="240" width="460" height="320" class="card-placeholder alive-border" />
+    <!-- Visual integration helper layout -->
+    <text x="310" y="380" class="placeholder-title">GitHub Statistics</text>
+    <text x="310" y="410" class="placeholder-subtitle">RESERVED FOR GITHUB-README-STATS</text>
+  </g>
+
+  <!-- Container 2: Contribution Streak -->
+  <g>
+    <rect x="564" y="240" width="460" height="320" class="card-placeholder" />
+    <text x="794" y="380" class="placeholder-title">Contribution Streak</text>
+    <text x="794" y="410" class="placeholder-subtitle">RESERVED FOR STREAK-STATS</text>
+  </g>
+
+  <!-- Container 3: Top Languages -->
+  <g>
+    <rect x="1048" y="240" width="472" height="320" class="card-placeholder" />
+    <text x="1284" y="380" class="placeholder-title">Top Languages</text>
+    <text x="1284" y="410" class="placeholder-subtitle">RESERVED FOR TOP-LANGS</text>
+  </g>
+
+  <!-- ================= BOTTOM PANEL: ENGINEERING VALUES ================= -->
+  <g transform="translate(0, 610)">
+    <rect x="80" y="0" width="1440" height="170" rx="16" class="card-bg" stroke="#222222" />
+    <text x="120" y="45" class="protocol">ENGINEERING VALUES</text>
+
+    <!-- Column 1: Problem Solving -->
+    <g transform="translate(120, 75)">
+      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
+      <text x="20" y="16" class="val-header">Problem Solving</text>
+      <text x="20" y="40" class="val-desc">Building AI systems that</text>
+      <text x="20" y="58" class="val-desc">create meaningful impact.</text>
+    </g>
+
+    <!-- Column 2: Continuous Learning -->
+    <g transform="translate(460, 75)">
+      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
+      <text x="20" y="16" class="val-header">Continuous Learning</text>
+      <text x="20" y="40" class="val-desc">Learning never stops.</text>
+      <text x="20" y="58" class="val-desc">Every day is an iteration.</text>
+    </g>
+
+    <!-- Column 3: Production Mindset -->
+    <g transform="translate(800, 75)">
+      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
+      <text x="20" y="16" class="val-header">Production Mindset</text>
+      <text x="20" y="40" class="val-desc">Build software that</text>
+      <text x="20" y="58" class="val-desc">people can actually use.</text>
+    </g>
+
+    <!-- Column 4: Long-Term Growth -->
+    <g transform="translate(1140, 75)">
+      <circle cx="6" cy="11" r="2.5" fill="#3B82F6" />
+      <text x="20" y="16" class="val-header">Long-Term Growth</text>
+      <text x="20" y="40" class="val-desc">Every project is one step</text>
+      <text x="20" y="58" class="val-desc">toward Agentic AI.</text>
+    </g>
+  </g>
+
+  <!-- Fine Film Grain Overlay -->
+  <rect width="1600" height="850" fill="transparent" filter="url(#noise-filter)" pointer-events="none" />
+
+  <!-- Outer Border Container Shell -->
+  <rect x="0.5" y="0.5" width="1599" height="849" rx="16" stroke="#222222" stroke-width="1" fill="none"/>
+</svg>

@@ -1,0 +1,213 @@
+<svg width="1600" height="1850" viewBox="0 0 1600 1850" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Radial Glow -->
+    <radialGradient id="glow" cx="80%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.25" />
+      <stop offset="40%" stop-color="#0F172A" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#050505" stop-opacity="0" />
+      <animate attributeName="cx" values="80%;85%;75%;80%" dur="26s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="30%;25%;35%;30%" dur="26s" repeatCount="indefinite" />
+    </radialGradient>
+
+    <!-- Grid Shimmer Mask -->
+    <radialGradient id="grid-mask" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75" />
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
+      <animate attributeName="cx" values="30%;70%;30%" dur="30s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="30%;70%;30%" dur="30s" repeatCount="indefinite" />
+    </radialGradient>
+
+    <!-- Noise / Grain Filter -->
+    <filter id="noise-filter" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" result="noise">
+        <animate attributeName="seed" values="0;80;0" dur="20s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" />
+      <feComposite in="SourceGraphic" in2="noise" operator="over" />
+    </filter>
+
+    <!-- Mask Reference -->
+    <mask id="grid-mask-ref">
+      <rect width="1600" height="1850" fill="url(#grid-mask)" />
+    </mask>
+  </defs>
+
+  <style>
+    .bg { fill: #050505; }
+    .border { stroke: #222222; stroke-width: 1; fill: none; }
+    .card-bg { fill: #0B0B0B; stroke: #222222; stroke-width: 1; rx: 16px; }
+    
+    /* Typography */
+    .protocol { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 13px; font-weight: 700; fill: #52525B; letter-spacing: 5px; }
+    .intro-text { font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif; font-size: 18px; font-weight: 400; fill: #B7B7B7; }
+    .title-large { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 48px; font-weight: 800; fill: #FFFFFF; letter-spacing: -2px; }
+    .title-medium { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 34px; font-weight: 800; fill: #FFFFFF; letter-spacing: -1px; }
+    .desc { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 15px; font-weight: 400; fill: #B7B7B7; line-height: 1.6; }
+    
+    .tech-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 11px; font-weight: 700; fill: #52525B; letter-spacing: 2px; }
+    .tech-list { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 14px; font-weight: 600; fill: #FFFFFF; }
+    
+    .link { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 15px; font-weight: 600; fill: #8A8A93; transition: fill 0.25s ease; cursor: pointer; text-decoration: none; }
+    .link:hover { fill: #FFFFFF; }
+    
+    .status-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 11px; font-weight: 700; fill: #10B981; letter-spacing: 1.5px; }
+    
+    .tag-border { fill: #0B0B0B; stroke: #3B82F6; stroke-width: 1.2; rx: 6px; }
+    .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 10px; font-weight: 700; fill: #3B82F6; letter-spacing: 1.5px; text-anchor: middle; }
+    
+    /* Animation Styles */
+    @keyframes pulse-border {
+      0%, 100% { stroke: #222222; }
+      50% { stroke: #3B82F6; }
+    }
+    .alive-border { animation: pulse-border 12s infinite ease-in-out; }
+  </style>
+
+  <!-- Canvas Base -->
+  <rect width="1600" height="1850" class="bg"/>
+  
+  <!-- Subtle Radial Glow Background -->
+  <rect width="1600" height="1850" fill="url(#glow)" />
+
+  <!-- Grid Overlay (Aligned with Hero) -->
+  <g mask="url(#grid-mask-ref)">
+    <path d="M 80,0 V 1850 M 160,0 V 1850 M 240,0 V 1850 M 320,0 V 1850 M 400,0 V 1850 M 480,0 V 1850 M 560,0 V 1850 M 640,0 V 1850 M 720,0 V 1850 M 800,0 V 1850 M 880,0 V 1850 M 960,0 V 1850 M 1040,0 V 1850 M 1120,0 V 1850 M 1200,0 V 1850 M 1280,0 V 1850 M 1360,0 V 1850 M 1440,0 V 1850 M 1520,0 V 1850" stroke="#1C1C1E" stroke-width="0.5" />
+    <path d="M 0,80 H 1600 M 0,160 H 1600 M 0,240 H 1600 M 0,320 H 1600 M 0,400 H 1600 M 0,480 H 1600 M 0,560 H 1600 M 0,640 H 1600 M 0,720 H 1600 M 0,800 H 1600 M 0,880 H 1600 M 0,960 H 1600 M 0,1040 H 1600 M 0,1120 H 1600 M 0,1200 H 1600 M 0,1280 H 1600 M 0,1360 H 1600 M 0,1440 H 1600 M 0,1520 H 1600 M 0,1600 H 1600 M 0,1680 H 1600 M 0,1760 H 1600" stroke="#1C1C1E" stroke-width="0.5" />
+  </g>
+
+  <!-- Left Symmetrical Accent Line -->
+  <line x1="80" y1="40" x2="80" y2="1810" stroke="#222222" stroke-width="1.5" />
+  <circle cx="80" cy="40" r="3.5" fill="#3B82F6" />
+
+  <!-- ================= INTRODUCTION ================= -->
+  <g>
+    <text x="120" y="65" class="protocol">FEATURED PRODUCTS</text>
+    <text x="120" y="115" class="intro-text">Products I've designed and engineered to solve real-world problems using AI and modern software engineering.</text>
+  </g>
+
+  <!-- ================= PRODUCT 01: SkillTrove (FLAGSHIP) ================= -->
+  <g>
+    <rect x="80" y="170" width="1440" height="540" rx="16" class="card-bg alive-border" />
+    <text x="120" y="220" class="protocol">AI LEARNING PLATFORM</text>
+    
+    <!-- Active Status Circle -->
+    <g transform="translate(120, 240)">
+      <circle cx="6" cy="11" r="4.5" fill="#10B981" />
+      <circle cx="6" cy="11" r="4.5" fill="none" stroke="#10B981" stroke-width="1.5">
+        <animate attributeName="r" values="4.5;11;4.5" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="stroke-opacity" values="1;0;1" dur="3s" repeatCount="indefinite" />
+      </circle>
+      <text x="24" y="15" class="status-text">ACTIVE DEVELOPMENT</text>
+    </g>
+
+    <!-- Flagship Badge -->
+    <rect x="360" y="238" width="160" height="26" class="tag-border" />
+    <text x="440" y="255" class="tag-text">FLAGSHIP PROJECT</text>
+    
+    <text x="120" y="325" class="title-large">SkillTrove</text>
+    
+    <text x="120" y="380" class="desc">An intelligent AI-powered learning and assessment platform featuring adaptive learning, Bloom's</text>
+    <text x="120" y="404" class="desc">Taxonomy question generation, coding practice, AI-based exam proctoring with face recognition,</text>
+    <text x="120" y="428" class="desc">analytics, personalized learning and secure online examinations.</text>
+
+    <!-- Technology -->
+    <text x="120" y="500" class="tech-header">TECHNOLOGY</text>
+    <text x="120" y="525" class="tech-list">React  •  Node.js  •  MongoDB  •  Gemini API  •  TensorFlow.js  •  FastAPI</text>
+
+    <!-- Links -->
+    <g>
+      <a href="https://github.com/GuntiPrasanthKumar/SKILLTROVEMAX" target="_blank">
+        <text x="120" y="630" class="link">Source Repository ↗</text>
+      </a>
+      <a href="https://github.com/GuntiPrasanthKumar/SKILLTROVEMAX" target="_blank">
+        <text x="320" y="630" class="link">Active Dashboard ↗</text>
+      </a>
+    </g>
+  </g>
+
+  <!-- ================= PRODUCT 02: AI Forensic Analyzer ================= -->
+  <g>
+    <rect x="80" y="740" width="708" height="510" rx="16" class="card-bg" />
+    <text x="120" y="790" class="protocol">AI CONTENT DETECTION</text>
+    
+    <text x="120" y="845" class="title-medium">AI Forensic Analyzer</text>
+    
+    <text x="120" y="900" class="desc">A machine learning application that analyzes</text>
+    <text x="120" y="922" class="desc">linguistic patterns, statistical signals and</text>
+    <text x="120" y="944" class="desc">NLP features to distinguish AI-generated</text>
+    <text x="120" y="966" class="desc">content from human writing.</text>
+
+    <!-- Technology -->
+    <text x="120" y="1030" class="tech-header">TECHNOLOGY</text>
+    <text x="120" y="1055" class="tech-list">Python  •  FastAPI  •  Transformers  •  Gemini API</text>
+
+    <!-- Links -->
+    <g>
+      <a href="https://github.com/GuntiPrasanthKumar/AI-ForensicLab" target="_blank">
+        <text x="120" y="1170" class="link">Source Repository ↗</text>
+      </a>
+      <a href="https://ai-forensic-lab.vercel.app" target="_blank">
+        <text x="320" y="1170" class="link">Live Platform ↗</text>
+      </a>
+    </g>
+  </g>
+
+  <!-- ================= PRODUCT 03: ClimateSCOMC ================= -->
+  <g>
+    <rect x="812" y="740" width="708" height="510" rx="16" class="card-bg" />
+    <text x="852" y="790" class="protocol">CLIMATE INTELLIGENCE</text>
+    
+    <text x="852" y="845" class="title-medium">ClimateSCOMC</text>
+    
+    <text x="852" y="900" class="desc">An AI-powered platform for environmental</text>
+    <text x="852" y="922" class="desc">monitoring, prediction and climate analytics</text>
+    <text x="852" y="944" class="desc">with interactive dashboards and intelligent</text>
+    <text x="852" y="966" class="desc">decision support.</text>
+
+    <!-- Technology -->
+    <text x="852" y="1030" class="tech-header">TECHNOLOGY</text>
+    <text x="852" y="1055" class="tech-list">Python  •  FastAPI  •  Machine Learning</text>
+
+    <!-- Links -->
+    <g>
+      <a href="https://github.com/GuntiPrasanthKumar/SCOMC" target="_blank">
+        <text x="852" y="1170" class="link">Source Repository ↗</text>
+      </a>
+      <a href="https://scomc.vercel.app" target="_blank">
+        <text x="1052" y="1170" class="link">Live Platform ↗</text>
+      </a>
+    </g>
+  </g>
+
+  <!-- ================= PRODUCT 04: Portfolio ================= -->
+  <g>
+    <rect x="80" y="1280" width="1440" height="440" rx="16" class="card-bg" />
+    <text x="120" y="1330" class="protocol">PERSONAL ENGINEERING PLATFORM</text>
+    
+    <text x="120" y="1385" class="title-medium">Portfolio</text>
+    
+    <text x="120" y="1440" class="desc">A premium portfolio showcasing AI engineering, software architecture,</text>
+    <text x="120" y="1464" class="desc">production-ready projects and technical craftsmanship.</text>
+
+    <!-- Technology -->
+    <text x="120" y="1530" class="tech-header">TECHNOLOGY</text>
+    <text x="120" y="1555" class="tech-list">React  •  Tailwind CSS  •  Framer Motion</text>
+
+    <!-- Links -->
+    <g>
+      <a href="https://github.com/GuntiPrasanthKumar/Prasanth-Future-Engine" target="_blank">
+        <text x="120" y="1650" class="link">Source Repository ↗</text>
+      </a>
+      <a href="https://prasanth-future-engine.netlify.app/" target="_blank">
+        <text x="320" y="1650" class="link">Live Platform ↗</text>
+      </a>
+    </g>
+  </g>
+
+  <!-- Fine Film Grain Overlay (Apple / OpenAI style depth) -->
+  <rect width="1600" height="1850" fill="transparent" filter="url(#noise-filter)" pointer-events="none" />
+
+  <!-- Outer Border Container Shell -->
+  <rect x="0.5" y="0.5" width="1599" height="1849" rx="16" stroke="#222222" stroke-width="1" fill="none"/>
+</svg>

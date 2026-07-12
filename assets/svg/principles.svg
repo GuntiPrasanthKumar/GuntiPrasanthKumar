@@ -1,10 +1,43 @@
 <svg width="800" height="230" viewBox="0 0 800 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles -->
+  <!-- Styles and keyframe animations -->
   <style>
     .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    
+    /* Sequential Fade-in Animations */
+    .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.3s; }
+
     .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
     .principle-item { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #A1A1AA; }
-    .highlight { fill: #EDEDED; font-weight: 600; }
+    
+    /* Hover principles highlighting */
+    .highlight { fill: #EDEDED; font-weight: 600; transition: fill 0.3s; }
+    .principle-group { transition: transform 0.2s; cursor: pointer; }
+    .principle-group:hover { transform: translateX(6px); }
+    .principle-group:hover .highlight { fill: #3B82F6; }
+    
+    /* Animations */
+    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
+    
+    /* Diamond Pulse Animations */
+    .diamond-1 { transform-origin: 36px 84px; animation: diamondPulse 4s ease-in-out infinite; }
+    .diamond-2 { transform-origin: 36px 114px; animation: diamondPulse 4s ease-in-out infinite 1s; }
+    .diamond-3 { transform-origin: 36px 144px; animation: diamondPulse 4s ease-in-out infinite 2s; }
+    .diamond-4 { transform-origin: 36px 174px; animation: diamondPulse 4s ease-in-out infinite 3s; }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes pulseAccent {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.9; }
+    }
+    @keyframes diamondPulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; fill: #3B82F6; }
+      50% { transform: scale(1.35); opacity: 1; fill: #10B981; }
+    }
   </style>
 
   <!-- Defs -->
@@ -23,27 +56,41 @@
   <!-- Card Background -->
   <rect x="0.5" y="48.5" width="799" height="179" class="bg"/>
 
-  <!-- Subtle Top Gradient Border -->
-  <path d="M 0 49 L 800 49" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Subtle Top Gradient Border (Animated Pulse) -->
+  <path d="M 0 49 L 800 49" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
 
-  <!-- Principles List -->
-  <!-- Principle 1 -->
-  <text x="56" y="88" class="principle-item">
-    <tspan class="highlight">1. Solve Real Problems.</tspan> Focus on utility and impact, not on unnecessary complexity.
-  </text>
+  <!-- Principles List with Interactive Groups & Custom Vector Diamonds -->
+  <g class="fade-item delay-2">
+    <!-- Principle 1 -->
+    <g class="principle-group">
+      <polygon points="36,80 40,84 36,88 32,84" fill="#3B82F6" class="diamond-1" />
+      <text x="56" y="88" class="principle-item">
+        <tspan class="highlight">1. Solve Real Problems.</tspan> Focus on utility and impact, not on unnecessary complexity.
+      </text>
+    </g>
 
-  <!-- Principle 2 -->
-  <text x="56" y="118" class="principle-item">
-    <tspan class="highlight">2. Simplicity Scales.</tspan> Build robust, readable, and maintainable systems from day one.
-  </text>
+    <!-- Principle 2 -->
+    <g class="principle-group" transform="translate(0, 30)">
+      <polygon points="36,80 40,84 36,88 32,84" fill="#3B82F6" class="diamond-2" />
+      <text x="56" y="88" class="principle-item">
+        <tspan class="highlight">2. Simplicity Scales.</tspan> Build robust, readable, and maintainable systems from day one.
+      </text>
+    </g>
 
-  <!-- Principle 3 -->
-  <text x="56" y="148" class="principle-item">
-    <tspan class="highlight">3. User-Centric Design.</tspan> Build with the end-user in mind, optimizing for efficiency.
-  </text>
+    <!-- Principle 3 -->
+    <g class="principle-group" transform="translate(0, 60)">
+      <polygon points="36,80 40,84 36,88 32,84" fill="#3B82F6" class="diamond-3" />
+      <text x="56" y="88" class="principle-item">
+        <tspan class="highlight">3. User-Centric Design.</tspan> Build with the end-user in mind, optimizing for efficiency.
+      </text>
+    </g>
 
-  <!-- Principle 4 -->
-  <text x="56" y="178" class="principle-item">
-    <tspan class="highlight">4. Ship and Iterate.</tspan> Execution and rapid feedback are the absolute metrics of success.
-  </text>
+    <!-- Principle 4 -->
+    <g class="principle-group" transform="translate(0, 90)">
+      <polygon points="36,80 40,84 36,88 32,84" fill="#3B82F6" class="diamond-4" />
+      <text x="56" y="88" class="principle-item">
+        <tspan class="highlight">4. Ship and Iterate.</tspan> Execution and rapid feedback are the absolute metrics of success.
+      </text>
+    </g>
+  </g>
 </svg>

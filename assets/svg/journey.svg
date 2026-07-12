@@ -1,12 +1,53 @@
 <svg width="800" height="490" viewBox="0 0 800 490" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles -->
+  <!-- Styles and keyframe animations -->
   <style>
     .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    
+    /* Sequential Fade-in Animations */
+    .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.4s; }
+
     .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
     .item { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 500; fill: #EDEDED; text-anchor: middle; }
-    .item-highlight { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 600; fill: #3B82F6; text-anchor: middle; }
+    .item-highlight { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #3B82F6; text-anchor: middle; animation: textPulse 4s ease-in-out infinite; }
+    
     .arrow { fill: #71717A; font-family: sans-serif; font-size: 14px; text-anchor: middle; }
-    .tag { fill: #121212; stroke: #3B82F6; stroke-width: 1; rx: 4px; }
+    
+    /* Tag/Capsule Glow */
+    .tag { fill: #121212; stroke: #3B82F6; stroke-width: 1.5; rx: 6px; animation: capsuleGlow 4s ease-in-out infinite; }
+    
+    /* Animations */
+    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
+    
+    /* Downward Cascading Arrows */
+    .arrow-1 { transform-origin: 400px 118px; animation: arrowBounceCascade 3s infinite 0.1s; }
+    .arrow-2 { transform-origin: 400px 174px; animation: arrowBounceCascade 3s infinite 0.3s; }
+    .arrow-3 { transform-origin: 400px 230px; animation: arrowBounceCascade 3s infinite 0.5s; }
+    .arrow-4 { transform-origin: 400px 286px; animation: arrowBounceCascade 3s infinite 0.7s; }
+    .arrow-5 { transform-origin: 400px 342px; animation: arrowBounceCascade 3s infinite 0.9s; }
+    .arrow-6 { transform-origin: 400px 398px; animation: arrowBounceCascade 3s infinite 1.1s; }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes pulseAccent {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.9; }
+    }
+    @keyframes arrowBounceCascade {
+      0%, 100% { fill: #71717A; transform: translateY(0); }
+      50% { fill: #3B82F6; transform: translateY(5px); }
+    }
+    @keyframes capsuleGlow {
+      0%, 100% { stroke: #3B82F6; fill: #121212; filter: drop-shadow(0 0 2px rgba(59,130,246,0.3)); }
+      50% { stroke: #10B981; fill: #161B22; filter: drop-shadow(0 0 8px rgba(16,185,129,0.7)); }
+    }
+    @keyframes textPulse {
+      0%, 100% { fill: #3B82F6; }
+      50% { fill: #10B981; }
+    }
   </style>
 
   <!-- Defs -->
@@ -25,35 +66,39 @@
   <!-- Card Background -->
   <rect x="0.5" y="48.5" width="799" height="430" class="bg"/>
 
-  <!-- Subtle Top Gradient Border -->
-  <path d="M 0 49 L 800 49" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Subtle Top Gradient Border (Animated Pulse) -->
+  <path d="M 0 49 L 800 49" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
 
-  <!-- Timeline Flow -->
-  <!-- Machine Learning -->
-  <text x="400" y="90" class="item">Machine Learning</text>
-  <text x="400" y="118" class="arrow">↓</text>
+  <!-- Timeline Flow with Cascading Arrow Animations -->
+  <g class="fade-item delay-2">
+    <!-- Machine Learning -->
+    <text x="400" y="90" class="item">Machine Learning</text>
+    <text x="400" y="118" class="arrow arrow-1">↓</text>
 
-  <!-- Deep Learning -->
-  <text x="400" y="146" class="item">Deep Learning</text>
-  <text x="400" y="174" class="arrow">↓</text>
+    <!-- Deep Learning -->
+    <text x="400" y="146" class="item">Deep Learning</text>
+    <text x="400" y="174" class="arrow arrow-2">↓</text>
 
-  <!-- LLMs -->
-  <text x="400" y="202" class="item">LLMs</text>
-  <text x="400" y="230" class="arrow">↓</text>
+    <!-- LLMs -->
+    <text x="400" y="202" class="item">LLMs</text>
+    <text x="400" y="230" class="arrow arrow-3">↓</text>
 
-  <!-- RAG -->
-  <text x="400" y="258" class="item">RAG</text>
-  <text x="400" y="286" class="arrow">↓</text>
+    <!-- RAG -->
+    <text x="400" y="258" class="item">RAG</text>
+    <text x="400" y="286" class="arrow arrow-4">↓</text>
 
-  <!-- LangGraph -->
-  <text x="400" y="314" class="item">LangGraph</text>
-  <text x="400" y="342" class="arrow">↓</text>
+    <!-- LangGraph -->
+    <text x="400" y="314" class="item">LangGraph</text>
+    <text x="400" y="342" class="arrow arrow-5">↓</text>
 
-  <!-- MCP -->
-  <text x="400" y="370" class="item">MCP</text>
-  <text x="400" y="398" class="arrow">↓</text>
+    <!-- MCP -->
+    <text x="400" y="370" class="item">MCP</text>
+    <text x="400" y="398" class="arrow arrow-6">↓</text>
 
-  <!-- Agentic AI (Highlight Capsule) -->
-  <rect x="340" y="420" width="120" height="30" class="tag"/>
-  <text x="400" y="440" class="item-highlight">Agentic AI</text>
+    <!-- Agentic AI (Highlight Glowing Capsule) -->
+    <g>
+      <rect x="330" y="420" width="140" height="32" class="tag"/>
+      <text x="400" y="441" class="item-highlight">Agentic AI</text>
+    </g>
+  </g>
 </svg>

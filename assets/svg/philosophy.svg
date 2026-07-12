@@ -1,10 +1,49 @@
 <svg width="800" height="150" viewBox="0 0 800 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles -->
+  <!-- Styles and keyframe animations -->
   <style>
     .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    
+    /* Fade-in animations */
+    .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.5s; }
+
     .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
     .philosophy-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 400; fill: #EDEDED; line-height: 1.6; }
-    .highlight { fill: #3B82F6; font-weight: 500; }
+    
+    /* Glowing highlights */
+    .highlight { fill: #3B82F6; font-weight: 600; animation: textGlow 4s ease-in-out infinite; }
+    
+    /* Animations */
+    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
+    .left-bar { animation: barPulse 4s ease-in-out infinite; }
+    
+    /* Geometric Wireframe Animations */
+    .geo-ring-1 { transform-origin: 700px 96px; animation: ringSwell 6s ease-in-out infinite; }
+    .geo-ring-2 { transform-origin: 700px 96px; animation: ringSwell 6s ease-in-out infinite 2s; }
+    .geo-ring-3 { transform-origin: 700px 96px; animation: ringSwell 6s ease-in-out infinite 4s; }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes pulseAccent {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.9; }
+    }
+    @keyframes barPulse {
+      0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 1px #3B82F6); }
+      50% { opacity: 1; filter: drop-shadow(0 0 4px #3B82F6); stroke: #60A5FA; }
+    }
+    @keyframes textGlow {
+      0%, 100% { fill: #3B82F6; }
+      50% { fill: #60A5FA; }
+    }
+    @keyframes ringSwell {
+      0%, 100% { transform: scale(1); opacity: 0.4; stroke: #27272A; }
+      50% { transform: scale(1.15); opacity: 0.9; stroke: #3B82F6; }
+    }
   </style>
 
   <!-- Defs -->
@@ -20,20 +59,36 @@
   <!-- Background -->
   <rect x="0.5" y="0.5" width="799" height="149" class="bg"/>
 
-  <!-- Subtle Top Gradient Border -->
-  <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Subtle Top Gradient Border (Animated Pulse) -->
+  <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
 
   <!-- Section Label -->
-  <text x="56" y="48" class="label-header">ENGINEERING PHILOSOPHY</text>
+  <text x="56" y="48" class="label-header fade-item delay-1">ENGINEERING PHILOSOPHY</text>
+
+  <!-- Vertical Glowing Divider Bar -->
+  <line x1="38" y1="65" x2="38" y2="128" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" class="left-bar fade-item delay-2" />
 
   <!-- Philosophy Narrative -->
-  <text x="56" y="80" class="philosophy-text">
-    As an Information Technology undergraduate (Class of 2027), I specialize in the integration of
-  </text>
-  <text x="56" y="102" class="philosophy-text">
-    machine learning models with robust full-stack architectures. My vision is centered on engineering
-  </text>
-  <text x="56" y="124" class="philosophy-text">
-    next-generation <tspan class="highlight">autonomous AI systems</tspan> that solve complex computational problems at scale.
-  </text>
+  <g class="fade-item delay-2">
+    <text x="56" y="78" class="philosophy-text">
+      As an Information Technology undergraduate (Class of 2027), I specialize in the integration of
+    </text>
+    <text x="56" y="100" class="philosophy-text">
+      machine learning models with robust full-stack architectures. My vision is centered on engineering
+    </text>
+    <text x="56" y="122" class="philosophy-text">
+      next-generation <tspan class="highlight">autonomous AI systems</tspan> that solve complex computational problems at scale.
+    </text>
+  </g>
+
+  <!-- Balanced Geometric Wireframe Atom (Right Side) -->
+  <g class="fade-item delay-3">
+    <!-- Concentric Ellipses simulating a 3D orbit -->
+    <ellipse cx="700" cy="96" rx="28" ry="10" transform="rotate(30 700 96)" stroke="#27272A" stroke-width="1.2" fill="none" class="geo-ring-1" />
+    <ellipse cx="700" cy="96" rx="28" ry="10" transform="rotate(90 700 96)" stroke="#27272A" stroke-width="1.2" fill="none" class="geo-ring-2" />
+    <ellipse cx="700" cy="96" rx="28" ry="10" transform="rotate(150 700 96)" stroke="#27272A" stroke-width="1.2" fill="none" class="geo-ring-3" />
+    
+    <!-- Central Node -->
+    <circle cx="700" cy="96" r="3.5" fill="#EDEDED" />
+  </g>
 </svg>

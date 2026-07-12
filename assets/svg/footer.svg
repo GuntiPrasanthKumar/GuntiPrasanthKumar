@@ -1,27 +1,42 @@
 <svg width="800" height="60" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles -->
+  <!-- Styles and keyframe animations -->
   <style>
     .link-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #A1A1AA; transition: fill 0.2s; text-anchor: middle; }
+    
+    /* Interactive Hover Translations */
+    .link { transition: transform 0.2s; cursor: pointer; }
+    .link:hover { transform: translateY(-2px); }
     .link:hover .link-text { fill: #3B82F6; }
-    .divider { stroke: #27272A; stroke-width: 1; }
+    
+    .link-1 { transform-origin: 260px 42px; }
+    .link-2 { transform-origin: 400px 42px; }
+    .link-3 { transform-origin: 540px 42px; }
+
+    /* Divider Animation */
+    .divider { stroke: #27272A; stroke-width: 1.5; animation: linePulse 4s ease-in-out infinite; }
+
+    @keyframes linePulse {
+      0%, 100% { opacity: 0.4; stroke: #27272A; }
+      50% { opacity: 1; stroke: #3B82F6; }
+    }
   </style>
 
-  <!-- Centered Divider Line -->
+  <!-- Centered Divider Line (Animated Pulse) -->
   <line x1="360" y1="16" x2="440" y2="16" class="divider"/>
 
-  <!-- Links -->
+  <!-- Links (With updated destinations and hover transitions) -->
   <!-- Link 1: Portfolio -->
-  <a href="https://prasanth.dev" target="_blank" class="link">
+  <a href="https://prasanth-future-engine.netlify.app/" target="_blank" class="link link-1">
     <text x="260" y="42" class="link-text">Portfolio ↗</text>
   </a>
 
   <!-- Link 2: LinkedIn -->
-  <a href="https://linkedin.com/in/guntiprasanthkumar" target="_blank" class="link">
+  <a href="https://www.linkedin.com/in/gunti-prasanth-kumar-68207027a/" target="_blank" class="link link-2">
     <text x="400" y="42" class="link-text">LinkedIn ↗</text>
   </a>
 
   <!-- Link 3: Email -->
-  <a href="mailto:guntiprasanthkumar@gmail.com" target="_blank" class="link">
+  <a href="mailto:prasanthgunti07@gmail.com" target="_blank" class="link link-3">
     <text x="540" y="42" class="link-text">Email ↗</text>
   </a>
 </svg>

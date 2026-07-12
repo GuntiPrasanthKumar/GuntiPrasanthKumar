@@ -1,14 +1,58 @@
 <svg width="800" height="370" viewBox="0 0 800 370" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles -->
+  <!-- Styles and keyframe animations -->
   <style>
-    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; }
+    .bg { fill: #0A0A0A; stroke: #3F3F46; stroke-width: 1; rx: 8px; transition: stroke 0.3s; }
+    
+    /* Sequential Fade-in Animations */
+    .fade-item { opacity: 0; animation: fadeIn 0.8s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.4s; }
+
     .label-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 700; fill: #71717A; letter-spacing: 1.5px; }
     .project-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 20px; font-weight: 700; fill: #F3F4F6; letter-spacing: -0.4px; }
     .project-type { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 600; fill: #3B82F6; letter-spacing: -0.1px; }
     .project-desc { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 400; fill: #A1A1AA; }
-    .tag-bg { fill: #121212; stroke: #27272A; stroke-width: 1; rx: 5px; }
+    
+    /* Tag and Card Styling with Hover Effects */
+    .tag-bg { fill: #121212; stroke: #27272A; stroke-width: 1; rx: 5px; transition: stroke 0.3s; }
     .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #EDEDED; text-anchor: middle; }
-    .arrow { fill: #A1A1AA; }
+    
+    .project-card { transition: transform 0.3s; }
+    .project-card:hover .bg { stroke: #3B82F6; }
+    .project-card:hover .tag-bg { stroke: #3B82F6; }
+
+    /* Animations */
+    .accent-line { animation: pulseAccent 6s ease-in-out infinite; }
+    .arrow { transform-origin: 743px 27px; animation: arrowBounce 3s ease-in-out infinite; }
+    
+    /* Vector Logo Animations */
+    .lens-glow { animation: pulseLens 4s ease-in-out infinite; }
+    .globe-pulse { animation: pulseGlobe 4s ease-in-out infinite; }
+    .orbit-node { transform-origin: 700px 40px; animation: spinOrbit 8s linear infinite; }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes pulseAccent {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.9; }
+    }
+    @keyframes arrowBounce {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(3px, -3px); }
+    }
+    @keyframes pulseLens {
+      0%, 100% { filter: drop-shadow(0 0 1px #3B82F6); stroke: #3B82F6; }
+      50% { filter: drop-shadow(0 0 6px #3B82F6); stroke: #60A5FA; }
+    }
+    @keyframes pulseGlobe {
+      0%, 100% { filter: drop-shadow(0 0 1px #10B981); stroke: #10B981; }
+      50% { filter: drop-shadow(0 0 6px #10B981); stroke: #34D399; }
+    }
+    @keyframes spinOrbit {
+      100% { transform: rotate(360deg); }
+    }
   </style>
 
   <!-- Defs -->
@@ -25,60 +69,84 @@
   <text x="56" y="36" class="label-header">FEATURED PROJECTS</text>
 
   <!-- PROJECT 1: AI Forensic Analyzer -->
-  <g transform="translate(0, 48)">
-    <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
-    <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
-    
-    <text x="56" y="36" class="project-title">AI Forensic Analyzer</text>
-    <text x="56" y="56" class="project-type">Machine Learning / NLP Application</text>
-    
-    <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    
-    <text x="56" y="80" class="project-desc">Leveraging natural language processing and the Gemini API for advanced data analysis and forensic insights.</text>
-    
-    <!-- Tags -->
-    <g transform="translate(56, 98)">
-      <g transform="translate(0, 0)">
-        <rect width="56" height="24" class="tag-bg" />
-        <text x="28" y="16" class="tag-text">Python</text>
+  <a href="https://github.com/GuntiPrasanthKumar/AI-ForensicLab" target="_blank" class="project-card fade-item delay-1">
+    <g transform="translate(0, 48)">
+      <!-- Background and Top Border -->
+      <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
+      <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
+      
+      <!-- Content -->
+      <text x="56" y="36" class="project-title">AI Forensic Analyzer</text>
+      <text x="56" y="56" class="project-type">Machine Learning / NLP Application</text>
+      <text x="56" y="80" class="project-desc">Leveraging natural language processing and the Gemini API for advanced data analysis and forensic insights.</text>
+      
+      <!-- Bouncing Arrow Link Indicator -->
+      <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <!-- Custom Lens Vector (Right balanced) -->
+      <g>
+        <circle cx="700" cy="40" r="10" stroke="#3B82F6" stroke-width="1.5" fill="none" class="lens-glow" />
+        <line x1="707" y1="47" x2="717" y2="57" stroke="#71717A" stroke-width="2" stroke-linecap="round" />
+        <line x1="696" y1="36" x2="704" y2="44" stroke="#27272A" stroke-width="1" />
       </g>
-      <g transform="translate(64, 0)">
-        <rect width="60" height="24" class="tag-bg" />
-        <text x="30" y="16" class="tag-text">FastAPI</text>
-      </g>
-      <g transform="translate(132, 0)">
-        <rect width="80" height="24" class="tag-bg" />
-        <text x="40" y="16" class="tag-text">Gemini API</text>
+
+      <!-- Tags -->
+      <g transform="translate(56, 98)">
+        <g>
+          <rect width="56" height="24" class="tag-bg" />
+          <text x="28" y="16" class="tag-text">Python</text>
+        </g>
+        <g transform="translate(64, 0)">
+          <rect width="60" height="24" class="tag-bg" />
+          <text x="30" y="16" class="tag-text">FastAPI</text>
+        </g>
+        <g transform="translate(132, 0)">
+          <rect width="84" height="24" class="tag-bg" />
+          <text x="42" y="16" class="tag-text">Gemini API</text>
+        </g>
       </g>
     </g>
-  </g>
+  </a>
 
   <!-- PROJECT 2: ClimateSCOMC -->
-  <g transform="translate(0, 212)">
-    <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
-    <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round"/>
-    
-    <text x="56" y="36" class="project-title">ClimateSCOMC</text>
-    <text x="56" y="56" class="project-type">AI-powered Climate Intelligence Platform</text>
-    
-    <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    
-    <text x="56" y="80" class="project-desc">A predictive modeling and data visualization platform built to provide actionable climate intelligence.</text>
-    
-    <!-- Tags -->
-    <g transform="translate(56, 98)">
-      <g transform="translate(0, 0)">
-        <rect width="56" height="24" class="tag-bg" />
-        <text x="28" y="16" class="tag-text">Python</text>
+  <a href="https://github.com/GuntiPrasanthKumar/SCOMC" target="_blank" class="project-card fade-item delay-2">
+    <g transform="translate(0, 212)">
+      <!-- Background and Top Border -->
+      <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
+      <path d="M 0 1 L 800 1" stroke="url(#top-border)" stroke-width="2" stroke-linecap="round" class="accent-line" />
+      
+      <!-- Content -->
+      <text x="56" y="36" class="project-title">ClimateSCOMC</text>
+      <text x="56" y="56" class="project-type">AI-powered Climate Intelligence Platform</text>
+      <text x="56" y="80" class="project-desc">A predictive modeling and data visualization platform built to provide actionable climate intelligence.</text>
+      
+      <!-- Bouncing Arrow Link Indicator -->
+      <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      
+      <!-- Custom Globe Vector (Right balanced) -->
+      <g>
+        <circle cx="700" cy="40" r="11" stroke="#10B981" stroke-width="1.5" fill="none" class="globe-pulse" />
+        <!-- Tilted Axis -->
+        <line x1="700" y1="26" x2="700" y2="54" stroke="#71717A" stroke-width="1" transform="rotate(23.5 700 40)" />
+        <!-- Rotating Orbital Node -->
+        <circle cx="708" cy="34" r="2" fill="#3B82F6" class="orbit-node" />
       </g>
-      <g transform="translate(64, 0)">
-        <rect width="84" height="24" class="tag-bg" />
-        <text x="42" y="16" class="tag-text">ML Libraries</text>
-      </g>
-      <g transform="translate(156, 0)">
-        <rect width="70" height="24" class="tag-bg" />
-        <text x="35" y="16" class="tag-text">Data Viz</text>
+
+      <!-- Tags -->
+      <g transform="translate(56, 98)">
+        <g>
+          <rect width="56" height="24" class="tag-bg" />
+          <text x="28" y="16" class="tag-text">Python</text>
+        </g>
+        <g transform="translate(64, 0)">
+          <rect width="84" height="24" class="tag-bg" />
+          <text x="42" y="16" class="tag-text">ML Libraries</text>
+        </g>
+        <g transform="translate(156, 0)">
+          <rect width="70" height="24" class="tag-bg" />
+          <text x="35" y="16" class="tag-text">Data Viz</text>
+        </g>
       </g>
     </g>
-  </g>
+  </a>
 </svg>

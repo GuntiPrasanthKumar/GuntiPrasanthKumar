@@ -1,4 +1,4 @@
-<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Background Radial Glow -->
     <radialGradient id="glow" cx="80%" cy="50%" r="55%">
@@ -42,7 +42,7 @@
 
     <!-- Mask Reference -->
     <mask id="grid-mask-ref">
-      <rect width="1600" height="1000" fill="url(#grid-mask)" />
+      <rect width="1600" height="1100" fill="url(#grid-mask)" />
     </mask>
   </defs>
 
@@ -54,7 +54,6 @@
     /* Typography */
     .protocol { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; font-size: 13px; font-weight: 700; fill: #52525B; letter-spacing: 5px; }
     .title-large { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 38px; font-weight: 800; fill: #FFFFFF; letter-spacing: -1px; }
-    .title-medium { font-family: -apple-system, BlinkMacSystemFont, "Outfit", "Segoe UI", sans-serif; font-size: 30px; font-weight: 800; fill: #FFFFFF; letter-spacing: -0.5px; }
     .desc { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 15px; font-weight: 400; fill: #B7B7B7; line-height: 1.6; }
     .desc-muted { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; font-size: 14px; font-weight: 400; fill: #52525B; }
     
@@ -64,143 +63,172 @@
   </style>
 
   <!-- Canvas Base -->
-  <rect width="1600" height="1000" class="bg"/>
+  <rect width="1600" height="1100" class="bg"/>
   
   <!-- Atmospheric Glow Layer -->
-  <rect width="1600" height="1000" fill="url(#glow)" />
+  <rect width="1600" height="1100" fill="url(#glow)" />
 
   <!-- Subtle Engineering Grid -->
   <g mask="url(#grid-mask-ref)">
-    <path d="M 80,0 V 1000 M 160,0 V 1000 M 240,0 V 1000 M 320,0 V 1000 M 400,0 V 1000 M 480,0 V 1000 M 560,0 V 1000 M 640,0 V 1000 M 720,0 V 1000 M 800,0 V 1000 M 880,0 V 1000 M 960,0 V 1000 M 1040,0 V 1000 M 1120,0 V 1000 M 1200,0 V 1000 M 1280,0 V 1000 M 1360,0 V 1000 M 1440,0 V 1000 M 1520,0 V 1000" stroke="#1C1C1E" stroke-width="0.5" />
-    <path d="M 0,80 H 1600 M 0,160 H 1600 M 0,240 H 1600 M 0,320 H 1600 M 0,400 H 1600 M 0,480 H 1600 M 0,560 H 1600 M 0,640 H 1600 M 0,720 H 1600 M 0,800 H 1600 M 0,880 H 1600 M 0,960 H 1600" stroke="#1C1C1E" stroke-width="0.5" />
+    <path d="M 80,0 V 1100 M 160,0 V 1100 M 240,0 V 1100 M 320,0 V 1100 M 400,0 V 1100 M 480,0 V 1100 M 560,0 V 1100 M 640,0 V 1100 M 720,0 V 1100 M 800,0 V 1100 M 880,0 V 1100 M 960,0 V 1100 M 1040,0 V 1100 M 1120,0 V 1100 M 1200,0 V 1100 M 1280,0 V 1100 M 1360,0 V 1100 M 1440,0 V 1100 M 1520,0 V 1100" stroke="#1C1C1E" stroke-width="0.5" />
+    <path d="M 0,80 H 1600 M 0,160 H 1600 M 0,240 H 1600 M 0,320 H 1600 M 0,400 H 1600 M 0,480 H 1600 M 0,560 H 1600 M 0,640 H 1600 M 0,720 H 1600 M 0,800 H 1600 M 0,880 H 1600 M 0,960 H 1600 M 0,1040 H 1600" stroke="#1C1C1E" stroke-width="0.5" />
   </g>
 
   <!-- Left Symmetrical Accent Line -->
-  <line x1="80" y1="40" x2="80" y2="960" stroke="#222222" stroke-width="1.5" />
+  <line x1="80" y1="40" x2="80" y2="1060" stroke="#222222" stroke-width="1.5" />
   <circle cx="80" cy="40" r="3.5" fill="#3B82F6" />
 
   <!-- ================= LEFT CONTENT PANEL ================= -->
   <g>
     <!-- Section Label -->
-    <text x="120" y="65" class="protocol">ENGINEERING JOURNEY</text>
+    <text x="120" y="75" class="protocol">ENGINEERING JOURNEY</text>
     
     <!-- Editorial Title -->
-    <text x="120" y="130" class="title-large">From Learning Fundamentals</text>
-    <text x="120" y="180" class="title-large" fill="#3B82F6">to Building Autonomous AI Systems</text>
+    <text x="120" y="140" class="title-large">The Road to</text>
+    <text x="120" y="190" class="title-large" fill="#3B82F6">Autonomous Intelligence</text>
     
     <!-- Description -->
-    <text x="120" y="240" class="desc">Every project expands my engineering mindset.</text>
-    <text x="120" y="265" class="desc">Every technology builds toward one goal:</text>
-    <text x="120" y="290" class="desc" fill="#FFFFFF">Developing intelligent autonomous systems capable of solving</text>
-    <text x="120" y="315" class="desc" fill="#FFFFFF">meaningful real-world problems.</text>
+    <text x="120" y="245" class="desc">Every technology I learn builds toward one long-term goal:</text>
+    <text x="120" y="270" class="desc" fill="#FFFFFF">Designing and engineering autonomous AI systems capable of</text>
+    <text x="120" y="295" class="desc" fill="#FFFFFF">solving meaningful real-world problems.</text>
 
     <!-- Side Panel Card: Current Objective -->
-    <g transform="translate(120, 380)">
+    <g transform="translate(120, 350)">
       <rect width="440" height="260" rx="16" class="card-bg" stroke="#222222" />
       <text x="40" y="50" class="protocol">CURRENT OBJECTIVE</text>
       <text x="40" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" line-height="1.6">Building production-ready</text>
-      <text x="40" y="132" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" line-height="1.6">autonomous AI systems that solve</text>
-      <text x="40" y="159" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" line-height="1.6">real-world problems through</text>
-      <text x="40" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#3B82F6" line-height="1.6">intelligent reasoning, planning</text>
-      <text x="40" y="213" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#3B82F6" line-height="1.6">and execution.</text>
+      <text x="40" y="132" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" line-height="1.6">autonomous AI systems that combine</text>
+      <text x="40" y="159" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" line-height="1.6">reasoning, planning, memory, tools</text>
+      <text x="40" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#3B82F6" line-height="1.6">and intelligent decision</text>
+      <text x="40" y="213" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#3B82F6" line-height="1.6">making.</text>
     </g>
 
-    <!-- Bottom Note -->
-    <text x="120" y="930" class="desc-muted">Continuous Learning</text>
+    <!-- Bottom Panel Card: Next Milestones -->
+    <g transform="translate(120, 640)">
+      <rect width="440" height="280" rx="16" class="card-bg" stroke="#222222" />
+      <text x="40" y="50" class="protocol">NEXT MILESTONES</text>
+      
+      <circle cx="46" cy="101" r="2.5" fill="#3B82F6" />
+      <text x="60" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Production AI Agents</text>
+      
+      <circle cx="46" cy="141" r="2.5" fill="#3B82F6" />
+      <text x="60" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Multi-Agent Collaboration</text>
+
+      <circle cx="46" cy="181" r="2.5" fill="#3B82F6" />
+      <text x="60" y="186" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">AI Infrastructure</text>
+
+      <circle cx="46" cy="221" r="2.5" fill="#3B82F6" />
+      <text x="60" y="226" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Autonomous Systems</text>
+    </g>
+
+    <!-- Footer Muted Note -->
+    <text x="120" y="1030" class="desc-muted">Continuous Learning</text>
   </g>
 
   <!-- ================= RIGHT COLUMN: VERTICAL ROADMAP ================= -->
   <g transform="translate(100, 0)">
     <!-- Timeline Vertical Track -->
-    <line x1="1100" y1="100" x2="1100" y2="815" stroke="#1C1C1E" stroke-width="1.5" stroke-dasharray="3 3" />
+    <line x1="1100" y1="100" x2="1100" y2="890" stroke="#1C1C1E" stroke-width="1.5" stroke-dasharray="3 3" />
     
     <!-- Moving Signal Flow Dash -->
-    <line x1="1100" y1="100" x2="1100" y2="815" stroke="url(#line-glow)" stroke-width="2" stroke-dasharray="25 150">
+    <line x1="1100" y1="100" x2="1100" y2="890" stroke="url(#line-glow)" stroke-width="2" stroke-dasharray="25 150">
       <animate attributeName="stroke-dashoffset" values="175;0" dur="8s" repeatCount="indefinite" />
     </line>
 
-    <!-- Node 1: Machine Learning -->
+    <!-- Node 1: Python -->
     <g>
       <circle cx="1100" cy="100" r="3.5" fill="#27272A" />
-      <text x="1080" y="104" class="timeline-label" text-anchor="end">Machine Learning</text>
+      <text x="1080" y="104" class="timeline-label" text-anchor="end">Python</text>
     </g>
 
-    <!-- Node 2: Deep Learning -->
+    <!-- Node 2: Problem Solving -->
     <g>
-      <circle cx="1100" cy="160" r="3.5" fill="#27272A" />
-      <text x="1120" y="164" class="timeline-label" text-anchor="start">Deep Learning</text>
+      <circle cx="1100" cy="155" r="3.5" fill="#27272A" />
+      <text x="1120" y="159" class="timeline-label" text-anchor="start">Problem Solving</text>
     </g>
 
-    <!-- Node 3: Neural Networks -->
+    <!-- Node 3: Machine Learning -->
     <g>
-      <circle cx="1100" cy="220" r="3.5" fill="#27272A" />
-      <text x="1080" y="224" class="timeline-label" text-anchor="end">Neural Networks</text>
+      <circle cx="1100" cy="210" r="3.5" fill="#27272A" />
+      <text x="1080" y="214" class="timeline-label" text-anchor="end">Machine Learning</text>
     </g>
 
-    <!-- Node 4: Natural Language Processing -->
+    <!-- Node 4: Deep Learning -->
     <g>
-      <circle cx="1100" cy="280" r="3.5" fill="#27272A" />
-      <text x="1120" y="284" class="timeline-label" text-anchor="start">Natural Language Processing</text>
+      <circle cx="1100" cy="265" r="3.5" fill="#27272A" />
+      <text x="1120" y="269" class="timeline-label" text-anchor="start">Deep Learning</text>
     </g>
 
-    <!-- Node 5: Large Language Models (HIGHLIGHTED) -->
+    <!-- Node 5: Neural Networks -->
     <g>
-      <circle cx="1100" cy="340" r="5" fill="#3B82F6" filter="url(#blue-glow)" />
-      <circle cx="1100" cy="340" r="5" fill="none" stroke="#3B82F6" stroke-width="1.5">
+      <circle cx="1100" cy="320" r="3.5" fill="#27272A" />
+      <text x="1080" y="324" class="timeline-label" text-anchor="end">Neural Networks</text>
+    </g>
+
+    <!-- Node 6: Natural Language Processing -->
+    <g>
+      <circle cx="1100" cy="375" r="3.5" fill="#27272A" />
+      <text x="1120" y="379" class="timeline-label" text-anchor="start">Natural Language Processing</text>
+    </g>
+
+    <!-- Node 7: Large Language Models (HIGHLIGHTED) -->
+    <g>
+      <circle cx="1100" cy="430" r="5" fill="#3B82F6" filter="url(#blue-glow)" />
+      <circle cx="1100" cy="430" r="5" fill="none" stroke="#3B82F6" stroke-width="1.5">
         <animate attributeName="r" values="5;12;5" dur="3s" repeatCount="indefinite" />
         <animate attributeName="stroke-opacity" values="1;0;1" dur="3s" repeatCount="indefinite" />
       </circle>
-      <text x="1080" y="344" class="timeline-label-active" text-anchor="end" filter="url(#blue-glow)">Large Language Models</text>
+      <text x="1080" y="434" class="timeline-label-active" text-anchor="end" filter="url(#blue-glow)">Large Language Models</text>
     </g>
 
-    <!-- Node 6: Prompt Engineering (HIGHLIGHTED) -->
+    <!-- Node 8: Prompt Engineering (HIGHLIGHTED) -->
     <g>
-      <circle cx="1100" cy="400" r="5" fill="#3B82F6" filter="url(#blue-glow)" />
-      <circle cx="1100" cy="400" r="5" fill="none" stroke="#3B82F6" stroke-width="1.5">
+      <circle cx="1100" cy="485" r="5" fill="#3B82F6" filter="url(#blue-glow)" />
+      <circle cx="1100" cy="485" r="5" fill="none" stroke="#3B82F6" stroke-width="1.5">
         <animate attributeName="r" values="5;12;5" dur="3s" repeatCount="indefinite" />
         <animate attributeName="stroke-opacity" values="1;0;1" dur="3s" repeatCount="indefinite" />
       </circle>
-      <text x="1120" y="404" class="timeline-label-active" text-anchor="start" filter="url(#blue-glow)">Prompt Engineering</text>
+      <text x="1120" y="489" class="timeline-label-active" text-anchor="start" filter="url(#blue-glow)">Prompt Engineering</text>
     </g>
 
-    <!-- Node 7: Retrieval-Augmented Generation -->
+    <!-- Node 9: Retrieval-Augmented Generation -->
     <g>
-      <circle cx="1100" cy="460" r="3.5" fill="#27272A" />
-      <text x="1080" y="464" class="timeline-label" text-anchor="end">Retrieval-Augmented Generation</text>
+      <circle cx="1100" cy="540" r="3.5" fill="#27272A" />
+      <text x="1080" y="544" class="timeline-label" text-anchor="end">Retrieval-Augmented Generation</text>
     </g>
 
-    <!-- Node 8: AI Agents -->
+    <!-- Node 10: LangChain -->
     <g>
-      <circle cx="1100" cy="520" r="3.5" fill="#27272A" />
-      <text x="1120" y="524" class="timeline-label" text-anchor="start">AI Agents</text>
+      <circle cx="1100" cy="595" r="3.5" fill="#27272A" />
+      <text x="1120" y="599" class="timeline-label" text-anchor="start">LangChain</text>
     </g>
 
-    <!-- Node 9: LangChain -->
+    <!-- Node 11: LangGraph -->
     <g>
-      <circle cx="1100" cy="580" r="3.5" fill="#27272A" />
-      <text x="1080" y="584" class="timeline-label" text-anchor="end">LangChain</text>
+      <circle cx="1100" cy="650" r="3.5" fill="#27272A" />
+      <text x="1080" y="654" class="timeline-label" text-anchor="end">LangGraph</text>
     </g>
 
-    <!-- Node 10: LangGraph -->
+    <!-- Node 12: Model Context Protocol (MCP) -->
     <g>
-      <circle cx="1100" cy="640" r="3.5" fill="#27272A" />
-      <text x="1120" y="644" class="timeline-label" text-anchor="start">LangGraph</text>
+      <circle cx="1100" cy="705" r="3.5" fill="#27272A" />
+      <text x="1120" y="709" class="timeline-label" text-anchor="start">Model Context Protocol (MCP)</text>
     </g>
 
-    <!-- Node 11: Model Context Protocol (MCP) -->
-    <g>
-      <circle cx="1100" cy="700" r="3.5" fill="#27272A" />
-      <text x="1080" y="704" class="timeline-label" text-anchor="end">Model Context Protocol (MCP)</text>
-    </g>
-
-    <!-- Node 12: Multi-Agent Systems -->
+    <!-- Node 13: AI Agents -->
     <g>
       <circle cx="1100" cy="760" r="3.5" fill="#27272A" />
-      <text x="1120" y="764" class="timeline-label" text-anchor="start">Multi-Agent Systems</text>
+      <text x="1080" y="764" class="timeline-label" text-anchor="end">AI Agents</text>
     </g>
 
-    <!-- Node 13: Agentic AI (DESTINATION CAPSULE) -->
-    <g transform="translate(1100, 840)">
+    <!-- Node 14: Multi-Agent Systems -->
+    <g>
+      <circle cx="1100" cy="815" r="3.5" fill="#27272A" />
+      <text x="1120" y="819" class="timeline-label" text-anchor="start">Multi-Agent Systems</text>
+    </g>
+
+    <!-- Node 15: Agentic AI (DESTINATION CAPSULE) -->
+    <g transform="translate(1100, 920)">
       <!-- Pulsing Glow Ring around capsule -->
       <circle cx="0" cy="0" r="28" fill="none" stroke="#3B82F6" stroke-width="1.2" opacity="0.3">
         <animate attributeName="r" values="24;48;24" dur="4s" repeatCount="indefinite" />
@@ -212,8 +240,8 @@
   </g>
 
   <!-- Fine Film Grain Overlay -->
-  <rect width="1600" height="1000" fill="transparent" filter="url(#noise-filter)" pointer-events="none" />
+  <rect width="1600" height="1100" fill="transparent" filter="url(#noise-filter)" pointer-events="none" />
 
   <!-- Outer Border Container Shell -->
-  <rect x="0.5" y="0.5" width="1599" height="999" rx="16" stroke="#222222" stroke-width="1" fill="none"/>
+  <rect x="0.5" y="0.5" width="1599" height="1099" rx="16" stroke="#222222" stroke-width="1" fill="none"/>
 </svg>

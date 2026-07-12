@@ -1,5 +1,5 @@
 <svg width="800" height="370" viewBox="0 0 800 370" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles and keyframe animations -->
+  <!-- Styles and native animations -->
   <style>
     .bg { fill: #0A0A0A; stroke: #27272A; stroke-width: 1; rx: 8px; }
     
@@ -16,7 +16,6 @@
     /* Tag Styling */
     .tag-bg { fill: #121212; stroke: #27272A; stroke-width: 1; rx: 5px; transition: stroke 0.3s; }
     .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #EDEDED; text-anchor: middle; }
-    
     .project-card:hover .tag-bg { stroke: #3B82F6; }
 
     /* Neon Border Light Trails (Perimeter = 1878) */
@@ -35,15 +34,14 @@
       animation: traceCard 6s linear infinite 1.5s;
     }
 
-    /* Background Scanner Bars */
-    .scanner-1 { animation: scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite 3s; }
-    .scanner-2 { animation: scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite 4s; }
+    /* 3D Cyber-Grid Scrolling Horizontals */
+    .grid-line-blue { stroke: #14141A; stroke-width: 0.8; }
+    .grid-line-green { stroke: #141A14; stroke-width: 0.8; }
+    .horiz-blue { animation: horizScrollBlue 4s linear infinite; }
+    .horiz-green { animation: horizScrollGreen 4s linear infinite 1.5s; }
 
-    /* Animations */
+    /* General Animations */
     .arrow { transform-origin: 743px 27px; animation: arrowBounce 3s ease-in-out infinite; }
-    .lens-glow { animation: pulseLens 4s ease-in-out infinite; }
-    .globe-pulse { animation: pulseGlobe 4s ease-in-out infinite; }
-    .orbit-node { transform-origin: 700px 40px; animation: spinOrbit 8s linear infinite; }
 
     /* Keyframes */
     @keyframes fadeIn { to { opacity: 1; } }
@@ -51,45 +49,46 @@
       0% { stroke-dashoffset: 0; }
       100% { stroke-dashoffset: -1878; }
     }
-    @keyframes scan {
-      0% { transform: translateX(-50px); opacity: 0; }
-      10% { opacity: 0.25; }
-      40% { opacity: 0.25; }
-      50% { transform: translateX(850px); opacity: 0; }
-      100% { transform: translateX(850px); opacity: 0; }
+    @keyframes horizScrollBlue {
+      0% { transform: translateY(0); opacity: 0.1; }
+      20% { opacity: 0.35; }
+      80% { opacity: 0.35; }
+      100% { transform: translateY(130px); opacity: 0; }
+    }
+    @keyframes horizScrollGreen {
+      0% { transform: translateY(0); opacity: 0.1; }
+      20% { opacity: 0.35; }
+      80% { opacity: 0.35; }
+      100% { transform: translateY(130px); opacity: 0; }
     }
     @keyframes arrowBounce {
       0%, 100% { transform: translate(0, 0); }
       50% { transform: translate(3px, -3px); }
     }
-    @keyframes pulseLens {
-      0%, 100% { filter: drop-shadow(0 0 1px #3B82F6); stroke: #3B82F6; }
-      50% { filter: drop-shadow(0 0 6px #3B82F6); stroke: #60A5FA; }
-    }
-    @keyframes pulseGlobe {
-      0%, 100% { filter: drop-shadow(0 0 1px #10B981); stroke: #10B981; }
-      50% { filter: drop-shadow(0 0 6px #10B981); stroke: #34D399; }
-    }
-    @keyframes spinOrbit { 100% { transform: rotate(360deg); } }
   </style>
 
-  <!-- Defs & Patterns -->
+  <!-- Defs & Hardware Accelerated Filters -->
   <defs>
+    <!-- Glow Filters -->
+    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
     <!-- Background Grid Pattern -->
     <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
       <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16161D" stroke-width="0.7" />
     </pattern>
-    <!-- Scanner Gradients -->
-    <linearGradient id="scan-grad-blue" x1="0" y1="0" x2="4" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3B82F6" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="scan-grad-green" x1="0" y1="0" x2="4" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#10B981" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#10B981" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#10B981" stop-opacity="0"/>
-    </linearGradient>
   </defs>
 
   <!-- Section Label -->
@@ -101,14 +100,26 @@
       <!-- Background Base -->
       <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
       
-      <!-- Grid Pattern -->
-      <rect x="1" y="1" width="798" height="138" fill="url(#grid)" rx="8" />
-
-      <!-- Scanner Bar -->
-      <rect x="0" y="1" width="4" height="138" fill="url(#scan-grad-blue)" class="scanner-1" />
+      <!-- ================= 3D CYBER-GRID BACKGROUND (BLUE) ================= -->
+      <g opacity="0.3">
+        <!-- Converging perspective lines from horizon center (400, 40) -->
+        <line x1="400" y1="40" x2="-200" y2="138" class="grid-line-blue" />
+        <line x1="400" y1="40" x2="100" y2="138" class="grid-line-blue" />
+        <line x1="400" y1="40" x2="300" y2="138" class="grid-line-blue" />
+        <line x1="400" y1="40" x2="400" y2="138" class="grid-line-blue" stroke-width="1.2" />
+        <line x1="400" y1="40" x2="500" y2="138" class="grid-line-blue" />
+        <line x1="400" y1="40" x2="700" y2="138" class="grid-line-blue" />
+        <line x1="400" y1="40" x2="1000" y2="138" class="grid-line-blue" />
+        
+        <!-- Moving horizontal lines scrolled via translation -->
+        <g transform="translate(0, 40)">
+          <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line-blue horiz-blue" />
+          <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line-blue horiz-blue" />
+        </g>
+      </g>
 
       <!-- Neon Border Trail -->
-      <rect x="0.5" y="0.5" width="799" height="139" fill="none" class="border-trace-blue" rx="8" />
+      <rect x="0.5" y="0.5" width="799" height="139" fill="none" class="border-trace-blue" rx="8" filter="url(#glow-blue)" />
       
       <!-- Content -->
       <text x="56" y="36" class="project-title">AI Forensic Analyzer</text>
@@ -118,11 +129,13 @@
       <!-- Bouncing Arrow Link Indicator -->
       <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       
-      <!-- Custom Lens Vector -->
-      <g>
-        <circle cx="700" cy="40" r="10" stroke="#3B82F6" stroke-width="1.5" fill="none" class="lens-glow" />
-        <line x1="707" y1="47" x2="717" y2="57" stroke="#71717A" stroke-width="2" stroke-linecap="round" />
-        <line x1="696" y1="36" x2="704" y2="44" stroke="#27272A" stroke-width="1" />
+      <!-- Custom Lens Vector (Breathes and glows natively) -->
+      <g transform="translate(700, 40)">
+        <circle cx="0" cy="0" r="10" stroke="#3B82F6" stroke-width="1.5" fill="none" filter="url(#glow-blue)">
+          <animate attributeName="stroke" values="#3B82F6;#60A5FA;#3B82F6" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <line x1="7" y1="7" x2="17" y2="17" stroke="#71717A" stroke-width="2" stroke-linecap="round" />
+        <line x1="-4" y1="-4" x2="4" y2="4" stroke="#27272A" stroke-width="1" />
       </g>
 
       <!-- Tags -->
@@ -149,14 +162,26 @@
       <!-- Background Base -->
       <rect x="0.5" y="0.5" width="799" height="139" class="bg"/>
       
-      <!-- Grid Pattern -->
-      <rect x="1" y="1" width="798" height="138" fill="url(#grid)" rx="8" />
-
-      <!-- Scanner Bar -->
-      <rect x="0" y="1" width="4" height="138" fill="url(#scan-grad-green)" class="scanner-2" />
+      <!-- ================= 3D CYBER-GRID BACKGROUND (GREEN) ================= -->
+      <g opacity="0.3">
+        <!-- Converging perspective lines from horizon center (400, 40) -->
+        <line x1="400" y1="40" x2="-200" y2="138" class="grid-line-green" />
+        <line x1="400" y1="40" x2="100" y2="138" class="grid-line-green" />
+        <line x1="400" y1="40" x2="300" y2="138" class="grid-line-green" />
+        <line x1="400" y1="40" x2="400" y2="138" class="grid-line-green" stroke-width="1.2" />
+        <line x1="400" y1="40" x2="500" y2="138" class="grid-line-green" />
+        <line x1="400" y1="40" x2="700" y2="138" class="grid-line-green" />
+        <line x1="400" y1="40" x2="1000" y2="138" class="grid-line-green" />
+        
+        <!-- Moving horizontal lines scrolled via translation -->
+        <g transform="translate(0, 40)">
+          <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line-green horiz-green" />
+          <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line-green horiz-green" />
+        </g>
+      </g>
 
       <!-- Neon Border Trail -->
-      <rect x="0.5" y="0.5" width="799" height="139" fill="none" class="border-trace-green" rx="8" />
+      <rect x="0.5" y="0.5" width="799" height="139" fill="none" class="border-trace-green" rx="8" filter="url(#glow-green)" />
       
       <!-- Content -->
       <text x="56" y="36" class="project-title">ClimateSCOMC</text>
@@ -166,13 +191,19 @@
       <!-- Bouncing Arrow Link Indicator -->
       <path class="arrow" d="M740.5 30.5L746 25M746 25H742M746 25V29" stroke="#EDEDED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       
-      <!-- Custom Globe Vector -->
-      <g>
-        <circle cx="700" cy="40" r="11" stroke="#10B981" stroke-width="1.5" fill="none" class="globe-pulse" />
+      <!-- Custom Globe Vector (3D rotation around local center) -->
+      <g transform="translate(700, 40)">
+        <circle cx="0" cy="0" r="11" stroke="#10B981" stroke-width="1.5" fill="none" filter="url(#glow-green)">
+          <animate attributeName="stroke" values="#10B981;#34D399;#10B981" dur="4s" repeatCount="indefinite" />
+        </circle>
         <!-- Tilted Axis -->
-        <line x1="700" y1="26" x2="700" y2="54" stroke="#71717A" stroke-width="1" transform="rotate(23.5 700 40)" />
-        <!-- Rotating Orbital Node -->
-        <circle cx="708" cy="34" r="2" fill="#3B82F6" class="orbit-node" />
+        <line x1="0" y1="-14" x2="0" y2="14" stroke="#71717A" stroke-width="1" transform="rotate(23.5)" />
+        
+        <!-- Rotating Orbital Node (Using local origin) -->
+        <g>
+          <circle cx="8" cy="-6" r="2.5" fill="#3B82F6" filter="url(#glow-blue)"/>
+          <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite" />
+        </g>
       </g>
 
       <!-- Tags -->

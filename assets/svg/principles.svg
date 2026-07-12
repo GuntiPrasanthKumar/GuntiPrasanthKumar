@@ -1,5 +1,5 @@
 <svg width="800" height="230" viewBox="0 0 800 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles and keyframe animations -->
+  <!-- Styles and native animations -->
   <style>
     .bg { fill: #0A0A0A; stroke: #27272A; stroke-width: 1; rx: 8px; }
     
@@ -17,25 +17,21 @@
     .principle-group:hover { transform: translateX(6px); }
     .principle-group:hover .highlight { fill: #3B82F6; }
 
-    /* Neon Border Light Trail Animation (Perimeter = 1958) */
+    /* Seamless Glowing Blue Border Trace (Perimeter = 1958) */
     .border-trace {
       stroke: #3B82F6;
       stroke-width: 1.5;
       stroke-linecap: round;
       stroke-dasharray: 150 1808;
-      animation: tracePrinciples 7s linear infinite;
+      animation: tracePrinciples 6s linear infinite;
     }
 
-    /* Background Scanner Bar */
-    .scanner {
-      animation: scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite 3s;
-    }
-    
-    /* Diamond Pulse Animations */
-    .diamond-1 { transform-origin: 36px 84px; animation: diamondPulse 4s ease-in-out infinite; }
-    .diamond-2 { transform-origin: 36px 114px; animation: diamondPulse 4s ease-in-out infinite 1s; }
-    .diamond-3 { transform-origin: 36px 144px; animation: diamondPulse 4s ease-in-out infinite 2s; }
-    .diamond-4 { transform-origin: 36px 174px; animation: diamondPulse 4s ease-in-out infinite 3s; }
+    /* 3D Cyber-Grid Horizontals Scroll */
+    .grid-line { stroke: #14141A; stroke-width: 1; }
+    .horiz-1 { animation: horizScroll 4s linear infinite; }
+    .horiz-2 { animation: horizScroll 4s linear infinite 1s; }
+    .horiz-3 { animation: horizScroll 4s linear infinite 2s; }
+    .horiz-4 { animation: horizScroll 4s linear infinite 3s; }
 
     /* Keyframes */
     @keyframes fadeIn { to { opacity: 1; } }
@@ -43,31 +39,28 @@
       0% { stroke-dashoffset: 0; }
       100% { stroke-dashoffset: -1958; }
     }
-    @keyframes scan {
-      0% { transform: translateX(-50px); opacity: 0; }
-      10% { opacity: 0.25; }
-      40% { opacity: 0.25; }
-      50% { transform: translateX(850px); opacity: 0; }
-      100% { transform: translateX(850px); opacity: 0; }
-    }
-    @keyframes diamondPulse {
-      0%, 100% { transform: scale(1); opacity: 0.5; fill: #3B82F6; }
-      50% { transform: scale(1.35); opacity: 1; fill: #10B981; filter: drop-shadow(0 0 3px #10B981); }
+    @keyframes horizScroll {
+      0% { transform: translateY(0); opacity: 0.1; }
+      20% { opacity: 0.35; }
+      80% { opacity: 0.35; }
+      100% { transform: translateY(170px); opacity: 0; }
     }
   </style>
 
-  <!-- Defs & Patterns -->
+  <!-- Defs & Hardware Accelerated Filters -->
   <defs>
+    <!-- Blue Neon Glow Filter -->
+    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
     <!-- Background Grid Pattern -->
     <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
       <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16161D" stroke-width="0.7" />
     </pattern>
-    <!-- Vertical Scanner Gradient -->
-    <linearGradient id="scan-grad" x1="0" y1="0" x2="4" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#3B82F6" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
-    </linearGradient>
   </defs>
 
   <!-- Section Label -->
@@ -76,20 +69,42 @@
   <!-- Card Background Base -->
   <rect x="0.5" y="48.5" width="799" height="179" class="bg"/>
 
-  <!-- Scanning Grid Pattern -->
-  <rect x="1" y="49" width="798" height="178" fill="url(#grid)" rx="8" />
+  <!-- ================= 3D CYBER-GRID BACKGROUND ================= -->
+  <g opacity="0.3">
+    <!-- Perspective lines originating from center horizon (400, 100) to bottom -->
+    <line x1="400" y1="100" x2="-200" y2="228" class="grid-line" />
+    <line x1="400" y1="100" x2="0" y2="228" class="grid-line" />
+    <line x1="400" y1="100" x2="150" y2="228" class="grid-line" />
+    <line x1="400" y1="100" x2="300" y2="228" class="grid-line" />
+    <line x1="400" y1="100" x2="400" y2="228" class="grid-line" stroke-width="1.5" />
+    <line x1="400" y1="100" x2="500" y2="228" class="grid-line" />
+    <line x1="400" y1="100" x2="650" y2="228" class="grid-line" />
+    <line x1="400" y1="100" x2="800" y2="228" class="grid-line" />
+    <line x1="400" y1="100" x2="1000" y2="228" class="grid-line" />
 
-  <!-- Animated Scanner Bar -->
-  <rect x="0" y="49" width="4" height="178" fill="url(#scan-grad)" class="scanner" />
+    <!-- Moving horizontal lines scrolled via Y translation -->
+    <g transform="translate(0, 100)">
+      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-1" />
+      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-2" />
+      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-3" />
+      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-4" />
+    </g>
+  </g>
 
   <!-- Glowing Border Light Trail (Perimeter = 1958) -->
-  <rect x="0.5" y="48.5" width="799" height="179" fill="none" class="border-trace" rx="8" />
+  <rect x="0.5" y="48.5" width="799" height="179" fill="none" class="border-trace" rx="8" filter="url(#glow-blue)" />
 
   <!-- Principles List with Interactive Groups & Custom Vector Diamonds -->
   <g class="fade-item delay-2">
     <!-- Principle 1 -->
     <g class="principle-group">
-      <polygon points="36,80 40,84 36,88 32,84" fill="#3B82F6" class="diamond-1" />
+      <!-- Native scale and glow diamond (using local centers to avoid browser origin wobble) -->
+      <g transform="translate(36, 84)">
+        <polygon points="0,-4 4,0 0,4 -4,0" fill="#3B82F6" filter="url(#glow-blue)">
+          <animate attributeName="fill" values="#3B82F6;#10B981;#3B82F6" dur="4s" repeatCount="indefinite" />
+          <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="4s" repeatCount="indefinite" />
+        </polygon>
+      </g>
       <text x="56" y="88" class="principle-item">
         <tspan class="highlight">1. Solve Real Problems.</tspan> Focus on utility and impact, not on unnecessary complexity.
       </text>
@@ -97,7 +112,12 @@
 
     <!-- Principle 2 -->
     <g class="principle-group" transform="translate(0, 30)">
-      <polygon points="36,80 40,84 36,88 32,84" fill="#3B82F6" class="diamond-2" />
+      <g transform="translate(36, 84)">
+        <polygon points="0,-4 4,0 0,4 -4,0" fill="#3B82F6" filter="url(#glow-blue)">
+          <animate attributeName="fill" values="#3B82F6;#10B981;#3B82F6" dur="4s" begin="1s" repeatCount="indefinite" />
+          <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="4s" begin="1s" repeatCount="indefinite" />
+        </polygon>
+      </g>
       <text x="56" y="88" class="principle-item">
         <tspan class="highlight">2. Simplicity Scales.</tspan> Build robust, readable, and maintainable systems from day one.
       </text>
@@ -105,7 +125,12 @@
 
     <!-- Principle 3 -->
     <g class="principle-group" transform="translate(0, 60)">
-      <polygon points="36,80 40,84 36,88 32,84" fill="#3B82F6" class="diamond-3" />
+      <g transform="translate(36, 84)">
+        <polygon points="0,-4 4,0 0,4 -4,0" fill="#3B82F6" filter="url(#glow-blue)">
+          <animate attributeName="fill" values="#3B82F6;#10B981;#3B82F6" dur="4s" begin="2s" repeatCount="indefinite" />
+          <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="4s" begin="2s" repeatCount="indefinite" />
+        </polygon>
+      </g>
       <text x="56" y="88" class="principle-item">
         <tspan class="highlight">3. User-Centric Design.</tspan> Build with the end-user in mind, optimizing for efficiency.
       </text>
@@ -113,7 +138,12 @@
 
     <!-- Principle 4 -->
     <g class="principle-group" transform="translate(0, 90)">
-      <polygon points="36,80 40,84 36,88 32,84" fill="#3B82F6" class="diamond-4" />
+      <g transform="translate(36, 84)">
+        <polygon points="0,-4 4,0 0,4 -4,0" fill="#3B82F6" filter="url(#glow-blue)">
+          <animate attributeName="fill" values="#3B82F6;#10B981;#3B82F6" dur="4s" begin="3s" repeatCount="indefinite" />
+          <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="4s" begin="3s" repeatCount="indefinite" />
+        </polygon>
+      </g>
       <text x="56" y="88" class="principle-item">
         <tspan class="highlight">4. Ship and Iterate.</tspan> Execution and rapid feedback are the absolute metrics of success.
       </text>

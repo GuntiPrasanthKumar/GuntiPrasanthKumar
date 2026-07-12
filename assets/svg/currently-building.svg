@@ -1,5 +1,5 @@
 <svg width="800" height="260" viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Styles and keyframe animations -->
+  <!-- Styles and native animations -->
   <style>
     .bg { fill: #0A0A0A; stroke: #27272A; stroke-width: 1; rx: 8px; }
     
@@ -24,81 +24,75 @@
     .tag-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #EDEDED; text-anchor: middle; }
     .tag:hover .tag-bg { stroke: #3B82F6; fill: #161B22; }
 
-    /* Active Green Neon Border Light Trail Animation */
+    /* Seamless Glowing Green Border Trace (Perimeter = 2120) */
     .border-trace {
       stroke: #10B981;
       stroke-width: 1.5;
       stroke-linecap: round;
       stroke-dasharray: 180 1940;
-      animation: traceGreen 7s linear infinite;
+      animation: trace 6s linear infinite;
     }
 
-    /* Background Scanner Bar */
-    .scanner {
-      animation: scan 8s cubic-bezier(0.4, 0, 0.2, 1) infinite 1s;
-    }
-
-    /* Green Status Dot Pulse Ring */
-    .pulse-ring { transform-origin: 611px 44px; animation: ringGlow 2.5s ease-out infinite; }
-
-    /* Custom Vector Logo Animations */
-    .logo-core { transform-origin: 700px 95px; animation: logoHeartbeat 3s ease-in-out infinite; }
-    .logo-shield { transform-origin: 700px 95px; animation: shieldGlow 6s ease-in-out infinite; }
+    /* 3D Grid Horizontals Scroll */
+    .grid-line { stroke: #141A14; stroke-width: 1; }
+    .horiz-1 { animation: horizScroll 4s linear infinite; }
+    .horiz-2 { animation: horizScroll 4s linear infinite 1s; }
+    .horiz-3 { animation: horizScroll 4s linear infinite 2s; }
+    .horiz-4 { animation: horizScroll 4s linear infinite 3s; }
 
     /* Keyframes */
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    @keyframes traceGreen {
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes trace {
       0% { stroke-dashoffset: 0; }
       100% { stroke-dashoffset: -2120; }
     }
-    @keyframes scan {
-      0% { transform: translateX(-50px); opacity: 0; }
-      10% { opacity: 0.25; }
-      40% { opacity: 0.25; }
-      50% { transform: translateX(850px); opacity: 0; }
-      100% { transform: translateX(850px); opacity: 0; }
-    }
-    @keyframes ringGlow {
-      0% { transform: scale(1); opacity: 1; stroke-width: 1.5px; }
-      100% { transform: scale(3.5); opacity: 0; stroke-width: 0.5px; }
-    }
-    @keyframes logoHeartbeat {
-      0%, 100% { transform: scale(1); opacity: 0.7; fill: #3B82F6; }
-      50% { transform: scale(1.3); opacity: 1; fill: #10B981; filter: drop-shadow(0 0 3px #10B981); }
-    }
-    @keyframes shieldGlow {
-      0%, 100% { filter: drop-shadow(0 0 1px rgba(16,185,129,0.2)); stroke: #3B82F6; }
-      50% { filter: drop-shadow(0 0 6px rgba(16,185,129,0.6)); stroke: #10B981; }
+    @keyframes horizScroll {
+      0% { transform: translateY(0); opacity: 0.1; }
+      20% { opacity: 0.4; }
+      80% { opacity: 0.4; }
+      100% { transform: translateY(140px); opacity: 0; }
     }
   </style>
 
-  <!-- Defs & Patterns -->
+  <!-- Defs & Hardware Accelerated Filters -->
   <defs>
-    <!-- Background Grid Pattern -->
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#16161D" stroke-width="0.7" />
-    </pattern>
-    <!-- Vertical Scanner Gradient -->
-    <linearGradient id="scan-grad" x1="0" y1="0" x2="4" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#10B981" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#10B981" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#10B981" stop-opacity="0"/>
-    </linearGradient>
+    <!-- Green Neon Filter -->
+    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
 
   <!-- Background Base -->
   <rect x="0.5" y="0.5" width="799" height="259" class="bg"/>
 
-  <!-- Scanning Grid Pattern -->
-  <rect x="1" y="1" width="798" height="258" fill="url(#grid)" rx="8" />
+  <!-- ================= 3D CYBER-GRID BACKGROUND (GREEN) ================= -->
+  <g opacity="0.3">
+    <!-- Perspective lines originating from center horizon (400, 100) to bottom -->
+    <line x1="400" y1="100" x2="-200" y2="260" class="grid-line" />
+    <line x1="400" y1="100" x2="0" y2="260" class="grid-line" />
+    <line x1="400" y1="100" x2="150" y2="260" class="grid-line" />
+    <line x1="400" y1="100" x2="300" y2="260" class="grid-line" />
+    <line x1="400" y1="100" x2="400" y2="260" class="grid-line" stroke-width="1.5" />
+    <line x1="400" y1="100" x2="500" y2="260" class="grid-line" />
+    <line x1="400" y1="100" x2="650" y2="260" class="grid-line" />
+    <line x1="400" y1="100" x2="800" y2="260" class="grid-line" />
+    <line x1="400" y1="100" x2="1000" y2="260" class="grid-line" />
 
-  <!-- Animated Scanner Bar -->
-  <rect x="0" y="1" width="4" height="258" fill="url(#scan-grad)" class="scanner" />
+    <!-- Moving horizontal lines scrolled via Y translation -->
+    <g transform="translate(0, 100)">
+      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-1" />
+      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-2" />
+      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-3" />
+      <line x1="-200" y1="0" x2="1000" y2="0" class="grid-line horiz-4" />
+    </g>
+  </g>
 
   <!-- Glowing Border Light Trail (Perimeter = 2120) -->
-  <rect x="0.5" y="0.5" width="799" height="259" fill="none" class="border-trace" rx="8" />
+  <rect x="0.5" y="0.5" width="799" height="259" fill="none" class="border-trace" rx="8" filter="url(#glow-green)" />
 
   <!-- Section Label & Animated Status Dot -->
   <text x="56" y="48" class="label-header fade-item delay-1">CURRENTLY BUILDING</text>
@@ -106,7 +100,15 @@
   <g class="fade-item delay-1">
     <g transform="translate(605, 38)">
       <circle cx="6" cy="6" r="4" fill="#10B981" />
-      <circle cx="6" cy="6" r="4" fill="none" stroke="#10B981" stroke-width="1.5" class="pulse-ring" />
+      
+      <!-- Native scale animation pulse ring (centered 100% bug-free) -->
+      <g transform="translate(6, 6)">
+        <circle cx="0" cy="0" r="4" fill="none" stroke="#10B981" stroke-width="1.5">
+          <animate attributeName="r" values="4;14;4" dur="2.5s" repeatCount="indefinite" />
+          <animate attributeName="stroke-opacity" values="1;0;1" dur="2.5s" repeatCount="indefinite" />
+          <animate attributeName="stroke-width" values="1.5;0.5;1.5" dur="2.5s" repeatCount="indefinite" />
+        </circle>
+      </g>
       <text x="20" y="11" class="status-text">ACTIVE DEVELOPMENT</text>
     </g>
   </g>
@@ -117,18 +119,23 @@
     <text x="56" y="102" class="project-type">AI-Powered Learning &amp; Assessment Platform</text>
     <text x="56" y="126" class="project-desc">Building an intelligent learning platform combining adaptive assessments and secure AI proctoring.</text>
 
-    <!-- SkillTrove Secure Proctoring Shield Vector Graphic (Right Balanced) -->
-    <g>
-      <!-- Shield Base -->
-      <path class="logo-shield" d="M685,83 L700,77 L715,83 L715,95 C715,106 700,114 700,114 C700,114 685,106 685,95 Z" stroke="#3B82F6" stroke-width="1.5" fill="none" />
+    <!-- SkillTrove Secure Proctoring Shield Vector (Native Local Animations) -->
+    <g transform="translate(700, 95)">
+      <!-- Shield Base (Soft glow sequence) -->
+      <path d="M-15,-12 L0,-18 L15,-12 L15,0 C15,11 0,19 0,19 C0,19 -15,11 -15,0 Z" stroke="#3B82F6" stroke-width="1.5" fill="none">
+        <animate attributeName="stroke" values="#3B82F6;#10B981;#3B82F6" dur="5s" repeatCount="indefinite" />
+      </path>
       
-      <!-- Network Nodes (Security Web) -->
-      <line x1="700" y1="95" x2="690" y2="88" stroke="#27272A" stroke-width="1" />
-      <line x1="700" y1="95" x2="710" y2="88" stroke="#27272A" stroke-width="1" />
-      <line x1="700" y1="95" x2="700" y2="108" stroke="#27272A" stroke-width="1" />
+      <!-- Security lines -->
+      <line x1="0" y1="0" x2="-10" y2="-7" stroke="#27272A" stroke-width="1" />
+      <line x1="0" y1="0" x2="10" y2="-7" stroke="#27272A" stroke-width="1" />
+      <line x1="0" y1="0" x2="0" y2="13" stroke="#27272A" stroke-width="1" />
       
-      <!-- Central Active Node -->
-      <circle cx="700" cy="95" r="3.5" fill="#3B82F6" class="logo-core" />
+      <!-- Central Node -->
+      <circle cx="0" cy="0" r="3.5" fill="#3B82F6" filter="url(#glow-green)">
+        <animate attributeName="fill" values="#3B82F6;#10B981;#3B82F6" dur="3s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="3s" repeatCount="indefinite" />
+      </circle>
     </g>
   </g>
 
@@ -153,7 +160,7 @@
     </g>
   </g>
 
-  <!-- Technology Stack Tags (With Interactive Hover Animations) -->
+  <!-- Technology Stack Tags -->
   <g class="fade-item delay-4" transform="translate(56, 200)">
     <!-- React 19 -->
     <a href="https://github.com/GuntiPrasanthKumar/SKILLTROVEMAX" target="_blank" class="tag">
